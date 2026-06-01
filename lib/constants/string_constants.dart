@@ -107,10 +107,36 @@ const String kNavTabPatients = 'Patients';
 const String kNavTabAppointments = 'Appts';
 const String kNavTabMore = 'More';
 
-// Main app — tab placeholders
+// Dashboard
 const String kDashboardTitle = 'Dashboard';
-const String kDashboardPlaceholderSubtitle =
-    "Today's appointments and clinic overview will appear here.";
+const String kDashboardGreetingMorning = 'Good morning';
+const String kDashboardGreetingAfternoon = 'Good afternoon';
+const String kDashboardGreetingEvening = 'Good evening';
+const String kDashboardMockClinicName = 'Sunrise Dental Clinic';
+const String kDashboardMockOwnerName = 'Dr. Parth Shah';
+const String kDashboardStatToday = "Today's visits";
+const String kDashboardStatUpcoming = 'Upcoming';
+const String kDashboardStatPatients = 'All patients';
+const String kDashboardQuickActionsTitle = 'Quick actions';
+const String kDashboardAddPatientAction = 'Add patient';
+const String kDashboardAddPatientSubtitle = 'Register new patient';
+const String kDashboardBookAppointmentAction = 'Book visit';
+const String kDashboardBookAppointmentSubtitle = 'Schedule appointment';
+const String kDashboardTodayTitle = "Today's schedule";
+const String kDashboardViewAll = 'View all';
+const String kDashboardEmptyAppointmentsTitle = 'No appointments today';
+const String kDashboardEmptyAppointmentsSubtitle =
+    'Your clinic schedule is clear. Book a visit or enjoy the break.';
+const String kDashboardBookFirstAppointment = 'Book appointment';
+const String kDashboardStatusUpcoming = 'Upcoming';
+const String kDashboardStatusInProgress = 'In progress';
+const String kDashboardStatusCompleted = 'Completed';
+const String kDashboardStatusCancelled = 'Cancelled';
+const String kDashboardAppointmentDetailPending =
+    'Appointment detail screen coming soon.';
+const String kDashboardClinicOpenBadge = 'Clinic open';
+
+// Main app — tab placeholders
 const String kPatientsTitle = 'Patients';
 const String kPatientsPlaceholderSubtitle =
     'Search, add, and manage patient records from this tab.';

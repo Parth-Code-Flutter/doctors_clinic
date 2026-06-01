@@ -29,6 +29,12 @@ const Color kColorBorder = Color(0xFFE2E8F0);
 /// Soft shadow for floating bottom nav dock (~8% slate).
 const Color kColorBottomNavShadow = Color(0x140F172A);
 
+/// Dashboard hero gradient end (#1E293B).
+const Color kColorDashboardGradientEnd = Color(0xFF1E293B);
+
+/// Soft card shadow on dashboard (~6% slate).
+const Color kColorCardShadow = Color(0x0F0F172A);
+
 // --- Buttons & links ---
 
 /// Primary button background (#0F172A).

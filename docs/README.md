@@ -721,7 +721,7 @@ Status values:
 | Forgot Password | Low | Done | Not Started | Sends OTP → reset password flow; API pending v0.2 |
 | Clinic Setup | Medium | Done | Not Started | Profile, hours, reminder defaults; API pending v0.2 |
 | Main shell (custom bottom nav) | High | Done | Not Needed | Floating clinic dock; 4 tabs with placeholders |
-| Dashboard | High | In Progress | Not Started | Tab placeholder; full UI next |
+| Dashboard | High | Done | Not Started | Hero, stats, quick actions, today's schedule (mock data) |
 | Patient List | High | In Progress | Not Started | Patients tab placeholder; full list UI next |
 | Add Patient | High | Not Started | Not Started | Core MVP screen |
 | Patient Profile | High | Not Started | Not Started | Patient details and appointment history |
@@ -779,7 +779,7 @@ Status values:
 | Patient Management | Not Started | Not Started | Not Started | Not Started | Highest MVP priority |
 | Appointment Management | Not Started | Not Started | Not Started | Not Started | Highest MVP priority |
 | Reminder System | Not Started | Not Started | Not Started | Not Started | Manual reminder first, automation second |
-| Dashboard | In Progress | In Progress | Not Started | Not Started | Home tab placeholder inside main shell |
+| Dashboard | In Progress | Done | Not Started | Not Started | Home tab UI with mock data; APIs in v0.3 |
 | Settings | Not Started | Not Started | Not Started | Not Started | Can stay basic in MVP |
 
 ### 24.4 Release Progress
