@@ -52,7 +52,14 @@ class MoreTabView extends GetView<MoreTabController> {
               ),
               const SettingsSectionHeader(title: kSettingsSectionReminders),
               SettingsMenuTile(
-                icon: Icons.notifications_active_outlined,
+                icon: Icons.sms_outlined,
+                title: kRemindersListMenuTitle,
+                subtitle: kRemindersListMenuSubtitle,
+                onTap: controller.onRemindersList,
+              ),
+              const SizedBox(height: 10),
+              SettingsMenuTile(
+                icon: Icons.tune_rounded,
                 title: kSettingsRemindersTitle,
                 subtitle: controller.reminderMenuSubtitle,
                 onTap: controller.onReminderSettings,

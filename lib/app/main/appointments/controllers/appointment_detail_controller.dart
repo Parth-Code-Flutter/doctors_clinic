@@ -1,5 +1,6 @@
 import 'package:doctors_clinic/app/main/appointments/appointment_route_arguments.dart';
 import 'package:doctors_clinic/app/main/appointments/data/appointment_repository.dart';
+import 'package:doctors_clinic/app/main/reminders/data/reminder_repository.dart';
 import 'package:doctors_clinic/app/main/appointments/models/appointment_model.dart';
 import 'package:doctors_clinic/app/main/appointments/models/appointment_status.dart';
 import 'package:doctors_clinic/constants/string_constants.dart';
@@ -61,12 +62,15 @@ class AppointmentDetailController extends GetxController {
     final updated = current.copyWith(reminderSent: true);
     _repo.updateAppointment(updated);
     appointment.value = updated;
+    if (Get.isRegistered<ReminderRepository>()) {
+      Get.find<ReminderRepository>().markSentForAppointment(_appointmentId);
+    }
     Get.snackbar(
       kAppointmentDetailSendReminder,
-      kAppointmentDetailReminderPending,
+      kRemindersManualSentNote,
       snackPosition: SnackPosition.BOTTOM,
       margin: const EdgeInsets.all(16),
-      duration: const Duration(seconds: 2),
+      duration: const Duration(seconds: 3),
     );
   }
 

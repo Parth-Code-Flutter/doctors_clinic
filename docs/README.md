@@ -729,7 +729,7 @@ Status values:
 | Add Appointment | High | Done | Not Started | 2-step booking wizard with patient picker |
 | Appointment List | High | Done | Not Started | Grouped by day, filters, summary strip |
 | Appointment Detail | Medium | Done | Not Started | Status actions + reminder placeholder |
-| Notifications / Reminders | Medium | Not Started | Not Started | Scheduled and sent reminders |
+| Notifications / Reminders | Medium | Done | Not Started | List with filters, summary, retry; mock repository |
 | Settings | Medium | Done | Not Started | More hub + clinic profile, reminders, account, about (mock repository) |
 | Staff Management | Future | Not Started | Not Started | Phase 3 feature |
 | Doctor Management | Future | Not Started | Not Started | Phase 3 feature |
@@ -778,7 +778,7 @@ Status values:
 | Clinic Setup | In Progress | Done | Not Started | Not Started | Onboarding form after register/login/OTP |
 | Patient Management | In Progress | Done | Not Started | Not Started | UI complete; APIs in v0.2 |
 | Appointment Management | In Progress | Done | Not Started | Not Started | UI complete; APIs in v0.3 |
-| Reminder System | Not Started | Not Started | Not Started | Not Started | Manual reminder first, automation second |
+| Reminder System | In Progress | Done | Not Started | Not Started | Reminders log UI; delivery APIs in v0.4 |
 | Dashboard | In Progress | Done | Not Started | Not Started | Home tab UI with mock data; APIs in v0.3 |
 | Settings | In Progress | Done | Not Started | Not Started | UI complete; APIs in v0.2/v0.4 |
 

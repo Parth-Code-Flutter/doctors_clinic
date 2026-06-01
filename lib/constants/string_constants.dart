@@ -372,3 +372,37 @@ const List<String> kReminderChannelOptions = [
   'WhatsApp only',
   'SMS & WhatsApp',
 ];
+
+// Reminders list screen
+const String kRemindersTitle = 'Reminders';
+const String kRemindersSubtitle =
+    'Scheduled and sent patient reminders for upcoming visits.';
+const String kRemindersListMenuTitle = 'Reminders log';
+const String kRemindersListMenuSubtitle =
+    'View scheduled, sent, and failed messages';
+const String kRemindersSearchHint = 'Search patient, mobile, or channel';
+const String kRemindersFilterAll = 'All';
+const String kRemindersFilterToday = 'Today';
+const String kRemindersFilterScheduled = 'Scheduled';
+const String kRemindersFilterSent = 'Sent';
+const String kRemindersFilterFailed = 'Failed';
+const String kRemindersSummaryScheduled = 'Scheduled';
+const String kRemindersSummarySentToday = 'Sent today';
+const String kRemindersSummaryFailed = 'Failed';
+const String kRemindersStatusScheduled = 'Scheduled';
+const String kRemindersStatusSent = 'Sent';
+const String kRemindersStatusFailed = 'Failed';
+const String kRemindersDeliverLabel = 'Remind at';
+const String kRemindersVisitLabel = 'Visit';
+const String kRemindersChannelPrefix = 'via';
+const String kRemindersRetryButton = 'Retry';
+const String kRemindersRetriedMessage = 'Reminder queued to send again';
+const String kRemindersEmptyTitle = 'No reminders here';
+const String kRemindersEmptySearchSubtitle =
+    'Try another search or filter to find reminders.';
+const String kRemindersEmptyFilterSubtitle =
+    'Reminders appear when visits are booked or messages are sent.';
+const String kRemindersMockFailureDelivery =
+    'Could not deliver — patient number unreachable';
+const String kRemindersManualSentNote =
+    'Delivery APIs connect in the next release. Status updated locally.';

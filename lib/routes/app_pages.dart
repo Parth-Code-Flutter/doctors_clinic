@@ -23,6 +23,8 @@ import '../app/main/settings/views/about_settings_view.dart';
 import '../app/main/settings/views/account_settings_view.dart';
 import '../app/main/settings/views/clinic_profile_settings_view.dart';
 import '../app/main/settings/views/reminder_settings_view.dart';
+import '../app/main/reminders/bindings/reminders_list_binding.dart';
+import '../app/main/reminders/views/reminders_list_view.dart';
 import '../app/auth/clinic_setup/views/clinic_setup_view.dart';
 import '../app/auth/forgot_password/bindings/forgot_password_binding.dart';
 import '../app/auth/forgot_password/views/forgot_password_view.dart';
@@ -151,6 +153,12 @@ class AppPages {
       name: _Paths.SETTINGS_ABOUT,
       page: () => const AboutSettingsView(),
       binding: AboutSettingsBinding(),
+      preventDuplicates: true,
+    ),
+    GetPage(
+      name: _Paths.REMINDERS_LIST,
+      page: () => const RemindersListView(),
+      binding: RemindersListBinding(),
       preventDuplicates: true,
     ),
   ];

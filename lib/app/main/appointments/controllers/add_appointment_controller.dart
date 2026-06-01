@@ -1,5 +1,6 @@
 import 'package:doctors_clinic/app/main/appointments/appointment_route_arguments.dart';
 import 'package:doctors_clinic/app/main/appointments/data/appointment_repository.dart';
+import 'package:doctors_clinic/app/main/reminders/data/reminder_repository.dart';
 import 'package:doctors_clinic/app/main/appointments/models/appointment_model.dart';
 import 'package:doctors_clinic/app/main/appointments/models/appointment_status.dart';
 import 'package:doctors_clinic/app/main/appointments/utils/appointment_format_utils.dart';
@@ -263,6 +264,9 @@ class AddAppointmentController extends GetxController {
       );
 
       _appointments.addAppointment(appointment);
+      if (Get.isRegistered<ReminderRepository>()) {
+        Get.find<ReminderRepository>().upsertScheduledForAppointment(appointment);
+      }
       Get.back(result: true);
       Get.snackbar(
         kAddAppointmentTitle,

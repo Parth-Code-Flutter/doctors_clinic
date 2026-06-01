@@ -1,5 +1,6 @@
 import 'package:doctors_clinic/app/main/appointments/controllers/appointments_tab_controller.dart';
 import 'package:doctors_clinic/app/main/appointments/data/appointment_repository.dart';
+import 'package:doctors_clinic/app/main/reminders/data/reminder_repository.dart';
 import 'package:doctors_clinic/app/main/settings/data/clinic_settings_repository.dart';
 import 'package:doctors_clinic/app/main/dashboard/controllers/dashboard_controller.dart';
 import 'package:doctors_clinic/app/main/more/controllers/more_tab_controller.dart';
@@ -20,6 +21,9 @@ class BottomNavBinding extends Bindings {
     }
     if (!Get.isRegistered<ClinicSettingsRepository>()) {
       Get.put(ClinicSettingsRepository(), permanent: true);
+    }
+    if (!Get.isRegistered<ReminderRepository>()) {
+      Get.put(ReminderRepository(), permanent: true);
     }
     Get.lazyPut<BottomNavController>(() => BottomNavController(), fenix: true);
     Get.lazyPut<DashboardController>(() => DashboardController(), fenix: true);

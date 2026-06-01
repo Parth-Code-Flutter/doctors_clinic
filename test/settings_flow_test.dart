@@ -36,8 +36,8 @@ void main() {
     expect(find.text(kMoreSubtitle), findsOneWidget);
     expect(find.text(kDashboardMockClinicName), findsOneWidget);
     expect(find.text(kSettingsClinicProfileTitle), findsOneWidget);
+    expect(find.text(kRemindersListMenuTitle), findsOneWidget);
     expect(find.text(kSettingsRemindersTitle), findsOneWidget);
-    expect(find.text(kSettingsAccountTitle), findsOneWidget);
   });
 
   testWidgets('Clinic profile settings screen shows form', (

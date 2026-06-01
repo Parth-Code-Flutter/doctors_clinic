@@ -24,6 +24,7 @@ abstract class Routes {
   static const SETTINGS_REMINDERS = _Paths.SETTINGS_REMINDERS;
   static const SETTINGS_ACCOUNT = _Paths.SETTINGS_ACCOUNT;
   static const SETTINGS_ABOUT = _Paths.SETTINGS_ABOUT;
+  static const REMINDERS_LIST = _Paths.REMINDERS_LIST;
 }
 
 abstract class _Paths {
@@ -47,4 +48,5 @@ abstract class _Paths {
   static const SETTINGS_REMINDERS = '/settings-reminders';
   static const SETTINGS_ACCOUNT = '/settings-account';
   static const SETTINGS_ABOUT = '/settings-about';
+  static const REMINDERS_LIST = '/reminders-list';
 }
