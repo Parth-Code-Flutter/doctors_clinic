@@ -92,13 +92,7 @@ class AuthLoginController extends GetxController {
   }
 
   void onOpenNewClinic() {
-    // Open New Clinic screen will be added in the next feature pass.
-    Get.snackbar(
-      kOpenNewClinicButton,
-      'Registration screen is next in the build plan (${Routes.OPEN_NEW_CLINIC}).',
-      snackPosition: SnackPosition.BOTTOM,
-      margin: const EdgeInsets.all(16),
-      duration: const Duration(seconds: 2),
-    );
+    // Replace login route so the same Form GlobalKey is not mounted twice.
+    Get.offNamed(Routes.OPEN_NEW_CLINIC);
   }
 }

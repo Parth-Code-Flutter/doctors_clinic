@@ -98,7 +98,7 @@ class AuthLoginView extends GetView<AuthLoginController> {
             maxLength: controller.isPhoneInput.value ? 10 : null,
             textInputAction: TextInputAction.next,
             textCapitalization: TextCapitalization.none,
-            prefix: _fieldIcon(Icons.mail_outline_rounded),
+            prefix: AppTextField.fieldIcon(Icons.mail_outline_rounded),
           ),
         ),
         Spacing.v12,
@@ -111,7 +111,7 @@ class AuthLoginView extends GetView<AuthLoginController> {
             textInputType: TextInputType.visiblePassword,
             textInputAction: TextInputAction.done,
             textCapitalization: TextCapitalization.none,
-            prefix: _fieldIcon(Icons.lock_outline_rounded),
+            prefix: AppTextField.fieldIcon(Icons.lock_outline_rounded),
             suffix: AppTextField.visibilityToggle(
               isHidden: controller.isPasswordHidden.value,
               onToggle: controller.togglePasswordVisibility,
@@ -131,13 +131,6 @@ class AuthLoginView extends GetView<AuthLoginController> {
           ),
         ),
       ],
-    );
-  }
-
-  Widget _fieldIcon(IconData icon) {
-    return Padding(
-      padding: const EdgeInsets.only(left: 12, right: 8),
-      child: Icon(icon, color: kColorTextSecondary, size: 20),
     );
   }
 

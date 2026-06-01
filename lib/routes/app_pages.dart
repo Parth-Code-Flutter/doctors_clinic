@@ -4,6 +4,8 @@ import 'package:get/get.dart';
 
 import '../app/auth/login/bindings/auth_login_binding.dart';
 import '../app/auth/login/views/auth_login_view.dart';
+import '../app/auth/open_new_clinic/bindings/open_new_clinic_binding.dart';
+import '../app/auth/open_new_clinic/views/open_new_clinic_view.dart';
 import '../app/auth/welcome/bindings/welcome_binding.dart';
 import '../app/auth/welcome/views/welcome_view.dart';
 import '../app/splash/splash/bindings/splash_binding.dart';
@@ -31,6 +33,13 @@ class AppPages {
       name: _Paths.AUTH_LOGIN,
       page: () => const AuthLoginView(),
       binding: AuthLoginBinding(),
+      preventDuplicates: true,
+    ),
+    GetPage(
+      name: _Paths.OPEN_NEW_CLINIC,
+      page: () => const OpenNewClinicView(),
+      binding: OpenNewClinicBinding(),
+      preventDuplicates: true,
     ),
   ];
 }

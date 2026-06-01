@@ -77,6 +77,14 @@ class AppTextField extends StatelessWidget {
   final TextCapitalization? textCapitalization;
   final Color? borderColor;
 
+  /// Leading icon aligned for [AppTextField] prefix slot.
+  static Widget fieldIcon(IconData icon) {
+    return Padding(
+      padding: const EdgeInsets.only(left: 12, right: 8),
+      child: Icon(icon, color: kColorTextSecondary, size: 20),
+    );
+  }
+
   /// Password visibility toggle aligned for [AppTextField] suffix slot.
   static Widget visibilityToggle({
     required bool isHidden,
