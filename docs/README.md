@@ -383,6 +383,8 @@ Reference project path:
 
 When this keyword is used, inspect the reference project before implementation and follow its Flutter structure and coding pattern where suitable.
 
+**Coding rules:** See [`DEVELOPMENT_RULES.md`](DEVELOPMENT_RULES.md) for mandatory project conventions (common widgets, GetX structure, string constants, controllers, etc.).
+
 Current observed reference pattern:
 
 - GetX architecture
@@ -697,6 +699,8 @@ Possible future features:
 
 Use this section to track product, UI, and API progress during development.
 
+**Maintenance rule:** Whenever a screen, API, module, or shared foundation (theme, routing, etc.) is completed in code, update the tables in this section in the same work session so the README stays aligned with the repo.
+
 Status values:
 
 - `Not Started`
@@ -710,7 +714,7 @@ Status values:
 | Screen | Priority | UI Status | API Status | Notes |
 | --- | --- | --- | --- | --- |
 | Splash Screen | Low | Done | Not Needed | Initial animated splash screen created |
-| Welcome / Entry Screen | High | Not Started | Not Needed | Shows Login To Clinic and Open New Clinic |
+| Welcome / Entry Screen | High | Done | Not Needed | Login / Open New Clinic choices; navigates from splash |
 | Login To Clinic | High | Not Started | Not Started | Needs login API |
 | Open New Clinic | High | Not Started | Not Started | Needs clinic registration API |
 | OTP Verification | Medium | Not Started | Not Started | Can be skipped if password login is used first |
@@ -766,7 +770,10 @@ Status values:
 
 | Module | Product Status | UI Status | API Status | Database Status | Notes |
 | --- | --- | --- | --- | --- | --- |
-| Authentication | Not Started | Not Started | Not Started | Not Started | Start with simple login, add OTP later |
+| App foundation (GetX, routes, qobo folder layout) | In Progress | Done | Not Needed | Not Needed | Splash + Welcome; `lib/routes`, `lib/constants` |
+| Design tokens (theme colors) | Done | Done | Not Needed | Not Needed | `lib/constants/color_constants.dart` — primary/secondary buttons, surfaces, appointment status colors |
+| Shared UI widgets (`appButton`, `AppTextField`) | Done | Done | Not Needed | Not Needed | `lib/utils/app_widgets/`, `lib/utils/text_utils/`, `lib/utils/ui_utils/` |
+| Authentication | In Progress | In Progress | Not Started | Not Started | Welcome done; Login + Open New Clinic screens next |
 | Clinic Setup | Not Started | Not Started | Not Started | Not Started | Required for new clinic onboarding |
 | Patient Management | Not Started | Not Started | Not Started | Not Started | Highest MVP priority |
 | Appointment Management | Not Started | Not Started | Not Started | Not Started | Highest MVP priority |
@@ -778,7 +785,7 @@ Status values:
 
 | Version | Goal | Status | Notes |
 | --- | --- | --- | --- |
-| v0.1 | Static UI screens and navigation | In Progress | Splash screen completed |
+| v0.1 | Static UI screens and navigation | In Progress | Splash + Welcome entry screen + shared button/text field widgets |
 | v0.2 | Auth, clinic setup, patient CRUD | Not Started | First usable internal version |
 | v0.3 | Appointment CRUD and dashboard | Not Started | First clinic demo version |
 | v0.4 | Manual reminders | Not Started | Can test real workflow |

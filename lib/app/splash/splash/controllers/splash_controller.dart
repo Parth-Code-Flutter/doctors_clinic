@@ -1,3 +1,4 @@
+import 'package:doctors_clinic/routes/app_pages.dart';
 import 'package:get/get.dart';
 
 class SplashController extends GetxController {
@@ -21,7 +22,6 @@ class SplashController extends GetxController {
   }
 
   void _onSplashComplete() {
-    // Welcome screen will be wired here in the next feature pass.
-    // Get.offNamed(Routes.WELCOME);
+    Get.offNamed(Routes.WELCOME);
   }
 }

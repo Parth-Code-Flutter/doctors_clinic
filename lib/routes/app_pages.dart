@@ -2,6 +2,8 @@
 
 import 'package:get/get.dart';
 
+import '../app/auth/welcome/bindings/welcome_binding.dart';
+import '../app/auth/welcome/views/welcome_view.dart';
 import '../app/splash/splash/bindings/splash_binding.dart';
 import '../app/splash/splash/views/splash_view.dart';
 
@@ -17,6 +19,11 @@ class AppPages {
       name: _Paths.SPLASH,
       page: () => const SplashView(),
       binding: SplashBinding(),
+    ),
+    GetPage(
+      name: _Paths.WELCOME,
+      page: () => const WelcomeView(),
+      binding: WelcomeBinding(),
     ),
   ];
 }
