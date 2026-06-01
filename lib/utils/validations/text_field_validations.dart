@@ -69,6 +69,29 @@ class Validate {
     return null;
   }
 
+  static String? patientNameValidation(String? value) {
+    final name = (value ?? '').trim();
+    if (name.isEmpty) {
+      return kValidationPatientNameRequired;
+    }
+    if (name.length < 2) {
+      return kValidationPatientNameTooShort;
+    }
+    return null;
+  }
+
+  static String? optionalAgeValidation(String? value) {
+    final ageText = (value ?? '').trim();
+    if (ageText.isEmpty) {
+      return null;
+    }
+    final age = int.tryParse(ageText);
+    if (age == null || age < 0 || age > 120) {
+      return kValidationPatientAgeInvalid;
+    }
+    return null;
+  }
+
   static String? otpValidation(String? value) {
     final otp = (value ?? '').trim();
     if (otp.isEmpty) {

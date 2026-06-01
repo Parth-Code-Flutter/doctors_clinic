@@ -32,6 +32,6 @@ void main() {
     await tester.pumpAndSettle();
 
     expect(find.text(kPatientsTitle), findsWidgets);
-    expect(find.text(kPatientsPlaceholderSubtitle), findsOneWidget);
+    expect(find.text('Riya Sharma'), findsOneWidget);
   });
 }

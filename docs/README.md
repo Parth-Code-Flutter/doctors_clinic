@@ -722,10 +722,10 @@ Status values:
 | Clinic Setup | Medium | Done | Not Started | Profile, hours, reminder defaults; API pending v0.2 |
 | Main shell (custom bottom nav) | High | Done | Not Needed | Floating clinic dock; 4 tabs with placeholders |
 | Dashboard | High | Done | Not Started | Hero, stats, quick actions, today's schedule (mock data) |
-| Patient List | High | In Progress | Not Started | Patients tab placeholder; full list UI next |
-| Add Patient | High | Not Started | Not Started | Core MVP screen |
-| Patient Profile | High | Not Started | Not Started | Patient details and appointment history |
-| Edit Patient | Medium | Not Started | Not Started | Can reuse Add Patient form |
+| Patient List | High | Done | Not Started | Search, filters, FAB; mock repository |
+| Add Patient | High | Done | Not Started | 3-step wizard with tips and quick picks |
+| Patient Profile | High | Done | Not Started | Details, visit history mock, call/book/edit |
+| Edit Patient | Medium | Done | Not Started | Single-page form; updates mock repository |
 | Add Appointment | High | Not Started | Not Started | Core MVP screen |
 | Appointment List | High | In Progress | Not Started | Appointments tab placeholder; full list UI next |
 | Appointment Detail | Medium | Not Started | Not Started | Appointment status and reminder action |
@@ -776,7 +776,7 @@ Status values:
 | Shared UI widgets (`appButton`, `AppTextField`) | Done | Done | Not Needed | Not Needed | `lib/utils/app_widgets/`, `lib/utils/text_utils/`, `lib/utils/ui_utils/` |
 | Authentication | In Progress | Done | Not Started | Not Started | All auth/setup screens UI done; APIs pending v0.2 |
 | Clinic Setup | In Progress | Done | Not Started | Not Started | Onboarding form after register/login/OTP |
-| Patient Management | Not Started | Not Started | Not Started | Not Started | Highest MVP priority |
+| Patient Management | In Progress | Done | Not Started | Not Started | UI complete; APIs in v0.2 |
 | Appointment Management | Not Started | Not Started | Not Started | Not Started | Highest MVP priority |
 | Reminder System | Not Started | Not Started | Not Started | Not Started | Manual reminder first, automation second |
 | Dashboard | In Progress | Done | Not Started | Not Started | Home tab UI with mock data; APIs in v0.3 |

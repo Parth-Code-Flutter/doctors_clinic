@@ -5,6 +5,12 @@ import 'package:get/get.dart';
 import '../app/auth/clinic_setup/bindings/clinic_setup_binding.dart';
 import '../app/main/bottom_nav/bindings/bottom_nav_binding.dart';
 import '../app/main/bottom_nav/views/bottom_nav_view.dart';
+import '../app/main/patients/bindings/add_patient_binding.dart';
+import '../app/main/patients/bindings/edit_patient_binding.dart';
+import '../app/main/patients/bindings/patient_profile_binding.dart';
+import '../app/main/patients/views/add_patient_view.dart';
+import '../app/main/patients/views/edit_patient_view.dart';
+import '../app/main/patients/views/patient_profile_view.dart';
 import '../app/auth/clinic_setup/views/clinic_setup_view.dart';
 import '../app/auth/forgot_password/bindings/forgot_password_binding.dart';
 import '../app/auth/forgot_password/views/forgot_password_view.dart';
@@ -79,6 +85,24 @@ class AppPages {
       name: _Paths.MAIN,
       page: () => const BottomNavView(),
       binding: BottomNavBinding(),
+      preventDuplicates: true,
+    ),
+    GetPage(
+      name: _Paths.PATIENT_ADD,
+      page: () => const AddPatientView(),
+      binding: AddPatientBinding(),
+      preventDuplicates: true,
+    ),
+    GetPage(
+      name: _Paths.PATIENT_PROFILE,
+      page: () => const PatientProfileView(),
+      binding: PatientProfileBinding(),
+      preventDuplicates: true,
+    ),
+    GetPage(
+      name: _Paths.PATIENT_EDIT,
+      page: () => const EditPatientView(),
+      binding: EditPatientBinding(),
       preventDuplicates: true,
     ),
   ];

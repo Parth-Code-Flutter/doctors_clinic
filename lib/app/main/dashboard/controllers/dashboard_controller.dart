@@ -1,4 +1,6 @@
 import 'package:doctors_clinic/app/main/bottom_nav/controllers/bottom_nav_controller.dart';
+import 'package:doctors_clinic/app/main/patients/controllers/patients_tab_controller.dart';
+import 'package:doctors_clinic/routes/app_pages.dart';
 import 'package:doctors_clinic/app/main/dashboard/models/dashboard_appointment_item.dart';
 import 'package:doctors_clinic/app/main/dashboard/models/dashboard_appointment_status.dart';
 import 'package:doctors_clinic/app/main/dashboard/models/dashboard_stat_item.dart';
@@ -80,6 +82,11 @@ class DashboardController extends GetxController {
     if (Get.isRegistered<BottomNavController>()) {
       Get.find<BottomNavController>().onTabSelected(1);
     }
+    Get.toNamed(Routes.PATIENT_ADD)?.then((result) {
+      if (result == true && Get.isRegistered<PatientsTabController>()) {
+        Get.find<PatientsTabController>().refreshList();
+      }
+    });
   }
 
   void onBookAppointment() {

@@ -136,10 +136,89 @@ const String kDashboardAppointmentDetailPending =
     'Appointment detail screen coming soon.';
 const String kDashboardClinicOpenBadge = 'Clinic open';
 
-// Main app — tab placeholders
+// Patients
 const String kPatientsTitle = 'Patients';
-const String kPatientsPlaceholderSubtitle =
-    'Search, add, and manage patient records from this tab.';
+const String kPatientsListSubtitle = 'Find patients in seconds — search by name or mobile.';
+const String kPatientsSearchHint = 'Search name or mobile number';
+const String kPatientsFilterAll = 'All';
+const String kPatientsFilterRecent = 'New this week';
+const String kPatientsFilterUpcoming = 'Has visit';
+const String kPatientsCountLabel = 'registered';
+const String kPatientsEmptyTitle = 'No patients yet';
+const String kPatientsEmptySubtitle =
+    'Add your first patient — it takes less than a minute.';
+const String kPatientsEmptySearchTitle = 'No matches found';
+const String kPatientsEmptySearchSubtitle = 'Try another name or mobile number.';
+const String kPatientsAddFab = 'New patient';
+const String kPatientsLastVisit = 'Last visit';
+const String kPatientsNextVisit = 'Next visit';
+const String kPatientsNewBadge = 'New';
+
+const String kAddPatientTitle = 'New patient';
+const String kEditPatientTitle = 'Edit patient';
+const String kPatientProfileTitle = 'Patient profile';
+const String kAddPatientStepBasics = 'Basics';
+const String kAddPatientStepPersonal = 'Personal';
+const String kAddPatientStepOptional = 'Extra';
+const String kAddPatientStepBasicsTitle = "Let's start with the essentials";
+const String kAddPatientStepBasicsSubtitle =
+    'Name and mobile are enough to register — you can add more later.';
+const String kAddPatientStepPersonalTitle = 'A few personal details';
+const String kAddPatientStepPersonalSubtitle =
+    'Tap a gender and age — quick picks save time at the desk.';
+const String kAddPatientStepOptionalTitle = 'Anything else to note?';
+const String kAddPatientStepOptionalSubtitle =
+    'Address and notes are optional. Skip if the patient is in a hurry.';
+const String kAddPatientTipName = 'Tip: Use the name exactly as on their ID or bill.';
+const String kAddPatientTipPhone =
+    'Tip: Double-check the mobile — reminders go to this number.';
+const String kAddPatientTipGender = 'Tip: Gender helps doctors personalize care.';
+const String kAddPatientTipAge = 'Tip: Tap a quick age or type a custom number.';
+const String kAddPatientTipNotes = 'Tip: Allergies, language, or preferred doctor fit here.';
+const String kAddPatientFullNameHint = 'Patient full name';
+const String kAddPatientPhoneHint = 'Mobile number (10 digits)';
+const String kAddPatientAgeHint = 'Age (years)';
+const String kAddPatientAddressHint = 'Address (optional)';
+const String kAddPatientNotesHint = 'Notes for reception / doctor (optional)';
+const String kAddPatientGenderLabel = 'Gender';
+const String kAddPatientQuickAgeLabel = 'Quick age';
+const String kAddPatientContinue = 'Continue';
+const String kAddPatientBack = 'Back';
+const String kAddPatientSave = 'Save patient';
+const String kAddPatientUpdate = 'Update patient';
+const String kAddPatientSkipOptional = 'Skip & save';
+const String kAddPatientSuccess = 'Patient saved successfully';
+const String kAddPatientUpdateSuccess = 'Patient updated successfully';
+
+const String kPatientGenderMale = 'Male';
+const String kPatientGenderFemale = 'Female';
+const String kPatientGenderOther = 'Other';
+const String kPatientGenderNotSpecified = 'Prefer not to say';
+
+const String kPatientQuickAgeChild = 'Child';
+const String kPatientQuickAgeYoung = '20s';
+const String kPatientQuickAgeMid = '30s';
+const String kPatientQuickAgeSenior = '50+';
+
+const String kPatientProfileCall = 'Call';
+const String kPatientProfileBookVisit = 'Book visit';
+const String kPatientProfileEdit = 'Edit details';
+const String kPatientProfileVisitsTitle = 'Visit history';
+const String kPatientProfileNoVisits = 'No visits recorded yet';
+const String kPatientProfileAgeLabel = 'Age';
+const String kPatientProfilePhoneLabel = 'Mobile';
+const String kPatientProfileAddressLabel = 'Address';
+const String kPatientProfileNotesLabel = 'Notes';
+const String kPatientProfileRegistered = 'Registered';
+const String kPatientProfileBookPending =
+    'Appointment booking screen is coming next.';
+
+const String kValidationPatientNameRequired = 'Patient name is required';
+const String kValidationPatientNameTooShort = 'Enter at least 2 characters';
+const String kValidationPatientAgeInvalid = 'Enter a valid age (0–120)';
+const String kValidationPatientGenderRequired = 'Please select a gender';
+
+// Main app — tab placeholders
 const String kAppointmentsTitle = 'Appointments';
 const String kAppointmentsPlaceholderSubtitle =
     'View and book appointments for your clinic here.';
