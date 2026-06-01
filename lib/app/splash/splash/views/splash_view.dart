@@ -1,5 +1,6 @@
 import 'package:doctors_clinic/constants/color_constants.dart';
 import 'package:doctors_clinic/constants/string_constants.dart';
+import 'package:doctors_clinic/utils/app_widgets/app_clinic_logo.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -40,31 +41,12 @@ class _SplashContent extends StatelessWidget {
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
-        Container(
-          width: 96,
-          height: 96,
-          decoration: BoxDecoration(
-            color: kColorPrimary,
-            borderRadius: BorderRadius.circular(28),
-            boxShadow: [
-              BoxShadow(
-                color: kColorPrimary.withValues(alpha: 0.22),
-                blurRadius: 28,
-                offset: const Offset(0, 16),
-              ),
-            ],
-          ),
-          child: const Icon(
-            Icons.local_hospital_rounded,
-            color: kColorSurface,
-            size: 46,
-          ),
-        ),
+        const AppClinicLogo(),
         const SizedBox(height: 22),
         const Text(
           kAppName,
           style: TextStyle(
-            color: kColorText,
+            color: kColorTitle,
             fontSize: 28,
             fontWeight: FontWeight.w700,
             letterSpacing: 0,
@@ -90,7 +72,7 @@ class _SplashContent extends StatelessWidget {
           height: 24,
           child: CircularProgressIndicator(
             strokeWidth: 2.4,
-            color: kColorPrimary,
+            color: kColorLogoIcon,
           ),
         ),
       ],

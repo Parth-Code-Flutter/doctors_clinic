@@ -77,6 +77,24 @@ class AppTextField extends StatelessWidget {
   final TextCapitalization? textCapitalization;
   final Color? borderColor;
 
+  /// Password visibility toggle aligned for [AppTextField] suffix slot.
+  static Widget visibilityToggle({
+    required bool isHidden,
+    required VoidCallback onToggle,
+  }) {
+    return IconButton(
+      onPressed: onToggle,
+      splashRadius: 22,
+      padding: EdgeInsets.zero,
+      constraints: const BoxConstraints(minWidth: 48, minHeight: 48),
+      icon: Icon(
+        isHidden ? Icons.visibility_off_outlined : Icons.visibility_outlined,
+        color: kColorTextSecondary,
+        size: 20,
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -147,20 +165,10 @@ class AppTextField extends StatelessWidget {
             focusedBorder: _border(kColorPrimary),
             errorBorder: _border(kColorError),
             focusedErrorBorder: _border(kColorError),
-            prefixIcon: prefix,
-            prefixIconConstraints: const BoxConstraints(
-              minWidth: 0,
-              maxWidth: 120,
-              minHeight: 48,
-              maxHeight: 48,
-            ),
-            suffixIcon: suffix,
-            suffixIconConstraints: const BoxConstraints(
-              minWidth: 0,
-              maxWidth: 120,
-              minHeight: 48,
-              maxHeight: 48,
-            ),
+            prefixIcon: _alignFieldIcon(prefix),
+            prefixIconConstraints: _fieldIconConstraints,
+            suffixIcon: _alignFieldIcon(suffix),
+            suffixIconConstraints: _fieldIconConstraints,
           ),
         ),
         if (exText != null) ...[
@@ -194,6 +202,25 @@ class AppTextField extends StatelessWidget {
             ),
           ),
       ],
+    );
+  }
+
+  static const BoxConstraints _fieldIconConstraints = BoxConstraints(
+    minWidth: 48,
+    maxWidth: 48,
+    minHeight: 48,
+    maxHeight: 48,
+  );
+
+  /// Centers prefix/suffix inside the field height (fixes eye icon sitting top-right).
+  Widget? _alignFieldIcon(Widget? icon) {
+    if (icon == null) {
+      return null;
+    }
+    return SizedBox(
+      width: 48,
+      height: 48,
+      child: Center(child: icon),
     );
   }
 

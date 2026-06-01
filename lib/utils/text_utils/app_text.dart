@@ -38,6 +38,39 @@ class AppText extends StatelessWidget {
   }
 }
 
+class SemiBoldText extends StatelessWidget {
+  const SemiBoldText({
+    required this.text,
+    super.key,
+    this.align,
+    this.fontSize,
+    this.color,
+    this.maxLines,
+    this.overflow,
+  });
+
+  final String text;
+  final TextAlign? align;
+  final double? fontSize;
+  final Color? color;
+  final int? maxLines;
+  final TextOverflow? overflow;
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      text,
+      style: TextStyles.kSemiBold(
+        fontSize: fontSize ?? TextStyles.k14FontSize,
+        colors: color ?? kColorText,
+      ),
+      textAlign: align,
+      maxLines: maxLines,
+      overflow: overflow,
+    );
+  }
+}
+
 class BoldText extends StatelessWidget {
   const BoldText({
     required this.text,

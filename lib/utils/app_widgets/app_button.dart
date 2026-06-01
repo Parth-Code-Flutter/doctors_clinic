@@ -25,7 +25,7 @@ Widget appButton({
   final Color background = buttonColor ??
       (isPrimary ? kColorPrimary : kColorSecondaryButtonBackground);
   final Color foreground = textColor ??
-      (isPrimary ? kColorSurface : kColorSecondaryButtonText);
+      (isPrimary ? kColorOnPrimary : kColorSecondaryButtonText);
   final Color border = buttonBorderColor ??
       (isPrimary ? kColorPrimary : kColorSecondaryButtonBackground);
 

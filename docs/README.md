@@ -715,7 +715,7 @@ Status values:
 | --- | --- | --- | --- | --- |
 | Splash Screen | Low | Done | Not Needed | Initial animated splash screen created |
 | Welcome / Entry Screen | High | Done | Not Needed | Login / Open New Clinic choices; navigates from splash |
-| Login To Clinic | High | Not Started | Not Started | Needs login API |
+| Login To Clinic | High | Done | Not Started | Email/phone + password UI; API pending v0.2 |
 | Open New Clinic | High | Not Started | Not Started | Needs clinic registration API |
 | OTP Verification | Medium | Not Started | Not Started | Can be skipped if password login is used first |
 | Forgot Password | Low | Not Started | Not Started | Add after core MVP |
@@ -771,9 +771,9 @@ Status values:
 | Module | Product Status | UI Status | API Status | Database Status | Notes |
 | --- | --- | --- | --- | --- | --- |
 | App foundation (GetX, routes, qobo folder layout) | In Progress | Done | Not Needed | Not Needed | Splash + Welcome; `lib/routes`, `lib/constants` |
-| Design tokens (theme colors) | Done | Done | Not Needed | Not Needed | `lib/constants/color_constants.dart` — primary/secondary buttons, surfaces, appointment status colors |
+| Design tokens (theme colors) | Done | Done | Not Needed | Not Needed | `lib/constants/color_constants.dart` — slate primary, cyan logo accent, cyan-tint secondary buttons |
 | Shared UI widgets (`appButton`, `AppTextField`) | Done | Done | Not Needed | Not Needed | `lib/utils/app_widgets/`, `lib/utils/text_utils/`, `lib/utils/ui_utils/` |
-| Authentication | In Progress | In Progress | Not Started | Not Started | Welcome done; Login + Open New Clinic screens next |
+| Authentication | In Progress | In Progress | Not Started | Not Started | Welcome + Login UI done; Open New Clinic + APIs next |
 | Clinic Setup | Not Started | Not Started | Not Started | Not Started | Required for new clinic onboarding |
 | Patient Management | Not Started | Not Started | Not Started | Not Started | Highest MVP priority |
 | Appointment Management | Not Started | Not Started | Not Started | Not Started | Highest MVP priority |
@@ -785,7 +785,7 @@ Status values:
 
 | Version | Goal | Status | Notes |
 | --- | --- | --- | --- |
-| v0.1 | Static UI screens and navigation | In Progress | Splash + Welcome entry screen + shared button/text field widgets |
+| v0.1 | Static UI screens and navigation | In Progress | Splash, Welcome, Login To Clinic UI + shared widgets |
 | v0.2 | Auth, clinic setup, patient CRUD | Not Started | First usable internal version |
 | v0.3 | Appointment CRUD and dashboard | Not Started | First clinic demo version |
 | v0.4 | Manual reminders | Not Started | Can test real workflow |

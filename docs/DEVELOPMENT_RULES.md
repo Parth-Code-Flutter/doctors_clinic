@@ -13,6 +13,8 @@ Reference Flutter structure: **qobo ref project** (`qobo_one_live`) — see [`RE
 - **Always** use existing shared UI from `lib/utils/app_widgets/` (and related utils) before building one-off UI.
 - Current shared widgets include (extend as needed):
   - `app_button.dart` — `appButton()`
+  - `app_clinic_logo.dart` — `AppClinicLogo`
+  - `common_app_bar_widget.dart` — `CommonAppBarWidget`
   - `app_text_field.dart` — `AppTextField`
   - `app_spaces.dart` — `Spacing`
   - `app_text.dart` / `text_styles.dart` — text helpers

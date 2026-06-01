@@ -1,6 +1,7 @@
 import 'package:doctors_clinic/constants/color_constants.dart';
 import 'package:doctors_clinic/constants/string_constants.dart';
 import 'package:doctors_clinic/utils/app_widgets/app_button.dart';
+import 'package:doctors_clinic/utils/app_widgets/app_clinic_logo.dart';
 import 'package:doctors_clinic/utils/app_widgets/app_spaces.dart';
 import 'package:doctors_clinic/utils/text_utils/app_text.dart';
 import 'package:doctors_clinic/utils/text_utils/text_styles.dart';
@@ -47,30 +48,12 @@ class WelcomeView extends GetView<WelcomeController> {
   Widget _buildHeader() {
     return Column(
       children: [
-        Container(
-          width: 88,
-          height: 88,
-          decoration: BoxDecoration(
-            color: kColorPrimary,
-            borderRadius: BorderRadius.circular(24),
-            boxShadow: [
-              BoxShadow(
-                color: kColorPrimary.withValues(alpha: 0.2),
-                blurRadius: 24,
-                offset: const Offset(0, 12),
-              ),
-            ],
-          ),
-          child: const Icon(
-            Icons.local_hospital_rounded,
-            color: kColorSurface,
-            size: 42,
-          ),
-        ),
+        const AppClinicLogo(size: 88, iconSize: 42, borderRadius: 24),
         Spacing.v24,
         const BoldText(
           text: kWelcomeTitle,
           fontSize: TextStyles.k28FontSize,
+          color: kColorTitle,
           align: TextAlign.center,
         ),
         Spacing.v12,

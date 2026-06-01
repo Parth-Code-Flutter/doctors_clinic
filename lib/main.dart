@@ -27,6 +27,19 @@ class MyApp extends StatelessWidget {
           error: kColorError,
         ),
         scaffoldBackgroundColor: kColorBackground,
+        appBarTheme: const AppBarTheme(
+          backgroundColor: kColorBackground,
+          surfaceTintColor: Colors.transparent,
+          elevation: 0,
+          scrolledUnderElevation: 0,
+          shadowColor: Colors.transparent,
+          iconTheme: IconThemeData(color: kColorTitle),
+          titleTextStyle: TextStyle(
+            color: kColorTitle,
+            fontSize: 18,
+            fontWeight: FontWeight.w600,
+          ),
+        ),
         useMaterial3: true,
       ),
     );
