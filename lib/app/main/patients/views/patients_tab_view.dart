@@ -3,6 +3,7 @@ import 'package:doctors_clinic/app/main/patients/widgets/patient_list_tile.dart'
 import 'package:doctors_clinic/constants/color_constants.dart';
 import 'package:doctors_clinic/constants/string_constants.dart';
 import 'package:doctors_clinic/utils/app_widgets/app_text_field.dart';
+import 'package:doctors_clinic/utils/app_widgets/tab_header_action_button.dart';
 import 'package:doctors_clinic/utils/text_utils/app_text.dart';
 import 'package:doctors_clinic/utils/text_utils/text_styles.dart';
 import 'package:doctors_clinic/utils/ui_utils/app_ui_utils.dart';
@@ -16,18 +17,6 @@ class PatientsTabView extends GetView<PatientsTabController> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: kColorBackground,
-      floatingActionButton: FloatingActionButton.extended(
-        heroTag: 'fab_patients',
-        onPressed: controller.onAddPatient,
-        backgroundColor: kColorPrimary,
-        foregroundColor: kColorOnPrimary,
-        icon: const Icon(Icons.person_add_alt_1_rounded),
-        label: const SemiBoldText(
-          text: kPatientsAddFab,
-          fontSize: TextStyles.k14FontSize,
-          color: kColorOnPrimary,
-        ),
-      ),
       body: SafeArea(
         bottom: false,
         child: Column(
@@ -35,23 +24,36 @@ class PatientsTabView extends GetView<PatientsTabController> {
           children: [
             Padding(
               padding: AppUIUtils.horizontalPadding.copyWith(top: 8, bottom: 4),
-              child: Column(
+              child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const BoldText(
-                    text: kPatientsTitle,
-                    fontSize: TextStyles.k24FontSize,
-                    color: kColorTitle,
-                  ),
-                  const SizedBox(height: 4),
-                  Obx(
-                    () => AppText(
-                      text:
-                          '${controller.totalCount} $kPatientsCountLabel · $kPatientsListSubtitle',
-                      fontSize: TextStyles.k12FontSize,
-                      color: kColorTextSecondary,
-                      maxLines: 2,
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const BoldText(
+                          text: kPatientsTitle,
+                          fontSize: TextStyles.k24FontSize,
+                          color: kColorTitle,
+                        ),
+                        const SizedBox(height: 4),
+                        Obx(
+                          () => AppText(
+                            text:
+                                '${controller.totalCount} $kPatientsCountLabel · $kPatientsListSubtitle',
+                            fontSize: TextStyles.k12FontSize,
+                            color: kColorTextSecondary,
+                            maxLines: 2,
+                          ),
+                        ),
+                      ],
                     ),
+                  ),
+                  const SizedBox(width: 12),
+                  TabHeaderActionButton(
+                    icon: Icons.person_add_alt_1_rounded,
+                    tooltip: kPatientsAddFab,
+                    onPressed: controller.onAddPatient,
                   ),
                 ],
               ),
@@ -80,7 +82,7 @@ class PatientsTabView extends GetView<PatientsTabController> {
                 return ListView.separated(
                   padding: AppUIUtils.horizontalPadding.copyWith(
                     top: 8,
-                    bottom: 100,
+                    bottom: 24,
                   ),
                   itemCount: patients.length,
                   separatorBuilder: (_, __) => const SizedBox(height: 10),

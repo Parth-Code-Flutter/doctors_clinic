@@ -31,7 +31,7 @@ void main() {
     await tester.pumpAndSettle();
 
     expect(find.text('Riya Sharma'), findsOneWidget);
-    expect(find.text(kPatientsAddFab), findsOneWidget);
+    expect(find.byTooltip(kPatientsAddFab), findsOneWidget);
   });
 
   testWidgets('Add patient wizard shows step one', (WidgetTester tester) async {

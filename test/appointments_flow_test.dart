@@ -32,7 +32,7 @@ void main() {
     await tester.tap(find.text(kNavTabAppointments).last);
     await tester.pumpAndSettle();
 
-    expect(find.text(kAppointmentsAddFab), findsOneWidget);
+    expect(find.byTooltip(kAppointmentsAddFab), findsOneWidget);
     expect(find.text('Riya Sharma'), findsWidgets);
   });
 

@@ -5,6 +5,7 @@ import 'package:doctors_clinic/app/main/appointments/widgets/appointment_summary
 import 'package:doctors_clinic/constants/color_constants.dart';
 import 'package:doctors_clinic/constants/string_constants.dart';
 import 'package:doctors_clinic/utils/app_widgets/app_text_field.dart';
+import 'package:doctors_clinic/utils/app_widgets/tab_header_action_button.dart';
 import 'package:doctors_clinic/utils/text_utils/app_text.dart';
 import 'package:doctors_clinic/utils/text_utils/text_styles.dart';
 import 'package:doctors_clinic/utils/ui_utils/app_ui_utils.dart';
@@ -18,18 +19,6 @@ class AppointmentsTabView extends GetView<AppointmentsTabController> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: kColorBackground,
-      floatingActionButton: FloatingActionButton.extended(
-        heroTag: 'fab_appointments',
-        onPressed: () => controller.onBookAppointment(),
-        backgroundColor: kColorPrimary,
-        foregroundColor: kColorOnPrimary,
-        icon: const Icon(Icons.event_available_rounded),
-        label: const SemiBoldText(
-          text: kAppointmentsAddFab,
-          fontSize: TextStyles.k14FontSize,
-          color: kColorOnPrimary,
-        ),
-      ),
       body: SafeArea(
         bottom: false,
         child: Column(
@@ -37,10 +26,22 @@ class AppointmentsTabView extends GetView<AppointmentsTabController> {
           children: [
             Padding(
               padding: AppUIUtils.horizontalPadding.copyWith(top: 8, bottom: 8),
-              child: const BoldText(
-                text: kAppointmentsTitle,
-                fontSize: TextStyles.k24FontSize,
-                color: kColorTitle,
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  const Expanded(
+                    child: BoldText(
+                      text: kAppointmentsTitle,
+                      fontSize: TextStyles.k24FontSize,
+                      color: kColorTitle,
+                    ),
+                  ),
+                  TabHeaderActionButton(
+                    icon: Icons.event_available_rounded,
+                    tooltip: kAppointmentsAddFab,
+                    onPressed: controller.onBookAppointment,
+                  ),
+                ],
               ),
             ),
             Padding(
@@ -76,7 +77,7 @@ class AppointmentsTabView extends GetView<AppointmentsTabController> {
                 return ListView.builder(
                   padding: AppUIUtils.horizontalPadding.copyWith(
                     top: 8,
-                    bottom: 100,
+                    bottom: 24,
                   ),
                   itemCount: keys.length,
                   itemBuilder: (context, index) {
