@@ -730,7 +730,7 @@ Status values:
 | Appointment List | High | Done | Not Started | Grouped by day, filters, summary strip |
 | Appointment Detail | Medium | Done | Not Started | Status actions + reminder placeholder |
 | Notifications / Reminders | Medium | Not Started | Not Started | Scheduled and sent reminders |
-| Settings | Medium | In Progress | Not Started | More tab placeholder + logout |
+| Settings | Medium | Done | Not Started | More hub + clinic profile, reminders, account, about (mock repository) |
 | Staff Management | Future | Not Started | Not Started | Phase 3 feature |
 | Doctor Management | Future | Not Started | Not Started | Phase 3 feature |
 | Branch Management | Future | Not Started | Not Started | Phase 5 feature |
@@ -780,7 +780,7 @@ Status values:
 | Appointment Management | In Progress | Done | Not Started | Not Started | UI complete; APIs in v0.3 |
 | Reminder System | Not Started | Not Started | Not Started | Not Started | Manual reminder first, automation second |
 | Dashboard | In Progress | Done | Not Started | Not Started | Home tab UI with mock data; APIs in v0.3 |
-| Settings | Not Started | Not Started | Not Started | Not Started | Can stay basic in MVP |
+| Settings | In Progress | Done | Not Started | Not Started | UI complete; APIs in v0.2/v0.4 |
 
 ### 24.4 Release Progress
 

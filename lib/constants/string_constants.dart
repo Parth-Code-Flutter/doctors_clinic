@@ -284,16 +284,91 @@ const String kAppointmentDetailStatusUpdated = 'Appointment status updated';
 const String kAppointmentDetailReminderPending =
     'Automated reminders will connect in the next release.';
 
-// Main app — tab placeholders
+// Main app — More / Settings hub
 const String kMoreTitle = 'More';
-const String kMorePlaceholderSubtitle =
-    'Clinic settings, profile, and account options will live here.';
+const String kMoreSubtitle = 'Clinic profile, reminders, and account';
 const String kMoreLogoutButton = 'Log out';
+const String kSettingsSectionClinic = 'CLINIC';
+const String kSettingsSectionReminders = 'REMINDERS & ACCOUNT';
+const String kSettingsSectionSupport = 'SUPPORT';
+const String kSettingsClinicProfileTitle = 'Clinic profile';
+const String kSettingsClinicProfileSubtitle = 'Name, contact, hours, and address';
+const String kSettingsRemindersTitle = 'Reminder settings';
+const String kSettingsRemindersSubtitle = 'Default timing and delivery channel';
+const String kSettingsAccountTitle = 'Account';
+const String kSettingsAccountSubtitle = 'Password and sign-in';
+const String kSettingsAboutTitle = 'About';
+const String kSettingsAboutSubtitle = 'App version and support';
 
-// Reminder options (clinic setup dropdown labels)
+// Settings — mock clinic defaults (until API v0.2)
+const String kSettingsMockMobile = '9876543210';
+const String kSettingsMockEmail = 'hello@sunrisedental.com';
+const String kSettingsMockAddress = '12 MG Road, Near City Mall';
+const String kSettingsMockCity = 'Ahmedabad';
+const String kSettingsMockState = 'Gujarat';
+const String kSettingsMockPincode = '380015';
+const String kSettingsMockClinicType = 'Dental';
+const String kSettingsMockWorkingDays = 'Mon – Sat';
+const String kSettingsMockWorkingHours = '9:00 AM – 6:00 PM';
+
+// Settings — clinic profile screen
+const String kSettingsClinicProfileScreenTitle = 'Clinic profile';
+const String kSettingsClinicProfileScreenSubtitle =
+    'Keep your clinic details accurate for staff and patient reminders.';
+const String kSettingsSaveProfileButton = 'Save changes';
+const String kSettingsProfileSavedMessage = 'Clinic profile updated';
+
+// Settings — reminder screen
+const String kSettingsRemindersScreenTitle = 'Reminder settings';
+const String kSettingsRemindersScreenSubtitle =
+    'Defaults apply when booking visits. Per-visit overrides still work.';
+const String kSettingsReminderChannelHint = 'Send reminders via';
+const String kSettingsAutoRemindersTitle = 'Automatic reminders';
+const String kSettingsAutoRemindersSubtitle =
+    'Send default reminders before each visit when enabled.';
+const String kSettingsSaveRemindersButton = 'Save reminder settings';
+const String kSettingsRemindersSavedMessage = 'Reminder settings updated';
+const String kSettingsRemindersApiNote =
+    'SMS and WhatsApp delivery will connect in the next release.';
+
+// Settings — account screen
+const String kSettingsAccountScreenTitle = 'Account';
+const String kSettingsAccountScreenSubtitle =
+    'Manage how you sign in to this clinic workspace.';
+const String kSettingsSignedInAs = 'Signed in as';
+const String kSettingsChangePassword = 'Change password';
+const String kSettingsChangePasswordSubtitle =
+    'Update your clinic account password';
+const String kSettingsLogoutTitle = 'Log out';
+const String kSettingsLogoutSubtitle = 'Sign out on this device';
+
+// Settings — about screen
+const String kSettingsAboutScreenTitle = 'About';
+const String kSettingsAppVersionLabel = 'Version';
+const String kSettingsAppVersion = '1.0.0 (UI preview)';
+const String kSettingsSupportTitle = 'Help & support';
+const String kSettingsSupportEmail = 'support@doctorsclinic.app';
+const String kSettingsPrivacyTitle = 'Privacy policy';
+const String kSettingsTermsTitle = 'Terms of use';
+const String kSettingsLegalPendingMessage =
+    'Legal pages will be available before public launch.';
+
+// Settings — API placeholders
+const String kSettingsProfileApiPendingMessage =
+    'Clinic profile API will be connected in v0.2.';
+const String kSettingsRemindersApiPendingMessage =
+    'Reminder settings API will be connected in v0.4.';
+
+// Reminder options (clinic setup & settings dropdown labels)
 const List<String> kDefaultReminderOptions = [
   '15 minutes before',
   '30 minutes before',
   '1 hour before',
   '24 hours before',
+];
+
+const List<String> kReminderChannelOptions = [
+  'SMS only',
+  'WhatsApp only',
+  'SMS & WhatsApp',
 ];

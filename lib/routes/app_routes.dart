@@ -20,6 +20,10 @@ abstract class Routes {
   static const PATIENT_EDIT = _Paths.PATIENT_EDIT;
   static const APPOINTMENT_ADD = _Paths.APPOINTMENT_ADD;
   static const APPOINTMENT_DETAIL = _Paths.APPOINTMENT_DETAIL;
+  static const SETTINGS_CLINIC_PROFILE = _Paths.SETTINGS_CLINIC_PROFILE;
+  static const SETTINGS_REMINDERS = _Paths.SETTINGS_REMINDERS;
+  static const SETTINGS_ACCOUNT = _Paths.SETTINGS_ACCOUNT;
+  static const SETTINGS_ABOUT = _Paths.SETTINGS_ABOUT;
 }
 
 abstract class _Paths {
@@ -39,4 +43,8 @@ abstract class _Paths {
   static const PATIENT_EDIT = '/patient-edit';
   static const APPOINTMENT_ADD = '/appointment-add';
   static const APPOINTMENT_DETAIL = '/appointment-detail';
+  static const SETTINGS_CLINIC_PROFILE = '/settings-clinic-profile';
+  static const SETTINGS_REMINDERS = '/settings-reminders';
+  static const SETTINGS_ACCOUNT = '/settings-account';
+  static const SETTINGS_ABOUT = '/settings-about';
 }

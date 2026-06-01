@@ -1,8 +1,25 @@
+import 'package:doctors_clinic/app/main/settings/data/clinic_settings_repository.dart';
+import 'package:doctors_clinic/constants/string_constants.dart';
 import 'package:doctors_clinic/routes/app_pages.dart';
 import 'package:get/get.dart';
 
 class MoreTabController extends GetxController {
-  void onLogout() {
-    Get.offAllNamed(Routes.WELCOME);
+  ClinicSettingsRepository get _repo => Get.find<ClinicSettingsRepository>();
+
+  String get reminderMenuSubtitle {
+    final s = _repo.settings.value;
+    final timing = kDefaultReminderOptions[s.defaultReminderIndex];
+    final channel = kReminderChannelOptions[s.reminderChannelIndex];
+    return '$timing · $channel';
   }
+
+  void onClinicProfile() => Get.toNamed(Routes.SETTINGS_CLINIC_PROFILE);
+
+  void onReminderSettings() => Get.toNamed(Routes.SETTINGS_REMINDERS);
+
+  void onAccount() => Get.toNamed(Routes.SETTINGS_ACCOUNT);
+
+  void onAbout() => Get.toNamed(Routes.SETTINGS_ABOUT);
+
+  void onLogout() => Get.offAllNamed(Routes.WELCOME);
 }

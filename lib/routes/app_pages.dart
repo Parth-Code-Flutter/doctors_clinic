@@ -15,6 +15,14 @@ import '../app/main/appointments/bindings/add_appointment_binding.dart';
 import '../app/main/appointments/bindings/appointment_detail_binding.dart';
 import '../app/main/appointments/views/add_appointment_view.dart';
 import '../app/main/appointments/views/appointment_detail_view.dart';
+import '../app/main/settings/bindings/about_settings_binding.dart';
+import '../app/main/settings/bindings/account_settings_binding.dart';
+import '../app/main/settings/bindings/clinic_profile_settings_binding.dart';
+import '../app/main/settings/bindings/reminder_settings_binding.dart';
+import '../app/main/settings/views/about_settings_view.dart';
+import '../app/main/settings/views/account_settings_view.dart';
+import '../app/main/settings/views/clinic_profile_settings_view.dart';
+import '../app/main/settings/views/reminder_settings_view.dart';
 import '../app/auth/clinic_setup/views/clinic_setup_view.dart';
 import '../app/auth/forgot_password/bindings/forgot_password_binding.dart';
 import '../app/auth/forgot_password/views/forgot_password_view.dart';
@@ -119,6 +127,30 @@ class AppPages {
       name: _Paths.APPOINTMENT_DETAIL,
       page: () => const AppointmentDetailView(),
       binding: AppointmentDetailBinding(),
+      preventDuplicates: true,
+    ),
+    GetPage(
+      name: _Paths.SETTINGS_CLINIC_PROFILE,
+      page: () => const ClinicProfileSettingsView(),
+      binding: ClinicProfileSettingsBinding(),
+      preventDuplicates: true,
+    ),
+    GetPage(
+      name: _Paths.SETTINGS_REMINDERS,
+      page: () => const ReminderSettingsView(),
+      binding: ReminderSettingsBinding(),
+      preventDuplicates: true,
+    ),
+    GetPage(
+      name: _Paths.SETTINGS_ACCOUNT,
+      page: () => const AccountSettingsView(),
+      binding: AccountSettingsBinding(),
+      preventDuplicates: true,
+    ),
+    GetPage(
+      name: _Paths.SETTINGS_ABOUT,
+      page: () => const AboutSettingsView(),
+      binding: AboutSettingsBinding(),
       preventDuplicates: true,
     ),
   ];

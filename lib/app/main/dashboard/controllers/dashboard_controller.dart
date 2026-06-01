@@ -1,4 +1,6 @@
 import 'package:doctors_clinic/app/main/bottom_nav/controllers/bottom_nav_controller.dart';
+import 'package:doctors_clinic/app/main/settings/data/clinic_settings_model.dart';
+import 'package:doctors_clinic/app/main/settings/data/clinic_settings_repository.dart';
 import 'package:doctors_clinic/app/main/appointments/appointment_route_arguments.dart';
 import 'package:doctors_clinic/app/main/appointments/controllers/appointments_tab_controller.dart';
 import 'package:doctors_clinic/app/main/appointments/data/appointment_repository.dart';
@@ -47,6 +49,21 @@ class DashboardController extends GetxController {
   void onInit() {
     super.onInit();
     _loadMockData();
+    _bindClinicSettings();
+  }
+
+  void _bindClinicSettings() {
+    if (!Get.isRegistered<ClinicSettingsRepository>()) {
+      return;
+    }
+    final repo = Get.find<ClinicSettingsRepository>();
+    _applyClinicSettings(repo.settings.value);
+    ever(repo.settings, _applyClinicSettings);
+  }
+
+  void _applyClinicSettings(ClinicSettingsModel settings) {
+    clinicName.value = settings.clinicName;
+    ownerName.value = settings.ownerName;
   }
 
   String get greeting {
