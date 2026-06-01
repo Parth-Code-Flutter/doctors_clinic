@@ -66,13 +66,7 @@ class OpenNewClinicController extends GetxController {
       isRegisterLoading.value = true;
       // Clinic registration API (`POST /auth/register-clinic`) — v0.2.
       await Future<void>.delayed(const Duration(milliseconds: 600));
-      Get.snackbar(
-        kOpenNewClinicTitle,
-        kRegisterClinicApiPendingMessage,
-        snackPosition: SnackPosition.BOTTOM,
-        margin: const EdgeInsets.all(16),
-        duration: const Duration(seconds: 3),
-      );
+      Get.offNamed(Routes.CLINIC_SETUP);
     } finally {
       isRegisterLoading.value = false;
     }

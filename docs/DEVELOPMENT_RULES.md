@@ -16,6 +16,7 @@ Reference Flutter structure: **qobo ref project** (`qobo_one_live`) — see [`RE
   - `app_clinic_logo.dart` — `AppClinicLogo`
   - `common_app_bar_widget.dart` — `CommonAppBarWidget`
   - `app_text_field.dart` — `AppTextField`
+  - `app_drop_down.dart` — `AppDropDown`
   - `app_spaces.dart` — `Spacing`
   - `app_text.dart` / `text_styles.dart` — text helpers
 - If a UI pattern is needed more than once, or is clearly reusable (buttons, fields, cards, dialogs, app bars), **add or extend a common widget** in the correct file under `lib/utils/app_widgets/` (or a dedicated utils subfolder), then use it from feature views.

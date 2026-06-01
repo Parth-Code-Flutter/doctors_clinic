@@ -715,11 +715,11 @@ Status values:
 | --- | --- | --- | --- | --- |
 | Splash Screen | Low | Done | Not Needed | Initial animated splash screen created |
 | Welcome / Entry Screen | High | Done | Not Needed | Login / Open New Clinic choices; navigates from splash |
-| Login To Clinic | High | Done | Not Started | Email/phone + password UI; API pending v0.2 |
+| Login To Clinic | High | Done | Not Started | Email/phone + password + OTP link; API pending v0.2 |
 | Open New Clinic | High | Done | Not Started | Registration form UI; API pending v0.2 |
-| OTP Verification | Medium | Not Started | Not Started | Can be skipped if password login is used first |
-| Forgot Password | Low | Not Started | Not Started | Add after core MVP |
-| Clinic Setup | Medium | Not Started | Not Started | Clinic profile and reminder defaults |
+| OTP Verification | Medium | Done | Not Started | 6-digit OTP, resend timer; API pending v0.2 |
+| Forgot Password | Low | Done | Not Started | Sends OTP → reset password flow; API pending v0.2 |
+| Clinic Setup | Medium | Done | Not Started | Profile, hours, reminder defaults; API pending v0.2 |
 | Dashboard | High | Not Started | Not Started | Shows today's appointments and patient count |
 | Patient List | High | Not Started | Not Started | Search, filter, and open patient profile |
 | Add Patient | High | Not Started | Not Started | Core MVP screen |
@@ -773,8 +773,8 @@ Status values:
 | App foundation (GetX, routes, qobo folder layout) | In Progress | Done | Not Needed | Not Needed | Splash + Welcome; `lib/routes`, `lib/constants` |
 | Design tokens (theme colors) | Done | Done | Not Needed | Not Needed | `lib/constants/color_constants.dart` — slate primary, cyan logo accent, cyan-tint secondary buttons |
 | Shared UI widgets (`appButton`, `AppTextField`) | Done | Done | Not Needed | Not Needed | `lib/utils/app_widgets/`, `lib/utils/text_utils/`, `lib/utils/ui_utils/` |
-| Authentication | In Progress | In Progress | Not Started | Not Started | Welcome, Login, Open New Clinic UI done; APIs next |
-| Clinic Setup | Not Started | Not Started | Not Started | Not Started | Required for new clinic onboarding |
+| Authentication | In Progress | Done | Not Started | Not Started | All auth/setup screens UI done; APIs pending v0.2 |
+| Clinic Setup | In Progress | Done | Not Started | Not Started | Onboarding form after register/login/OTP |
 | Patient Management | Not Started | Not Started | Not Started | Not Started | Highest MVP priority |
 | Appointment Management | Not Started | Not Started | Not Started | Not Started | Highest MVP priority |
 | Reminder System | Not Started | Not Started | Not Started | Not Started | Manual reminder first, automation second |
@@ -785,8 +785,8 @@ Status values:
 
 | Version | Goal | Status | Notes |
 | --- | --- | --- | --- |
-| v0.1 | Static UI screens and navigation | In Progress | Splash, Welcome, Login, Open New Clinic UI + shared widgets |
-| v0.2 | Auth, clinic setup, patient CRUD | Not Started | First usable internal version |
+| v0.1 | Static UI screens and navigation | Done | Full auth + clinic setup UI flow complete |
+| v0.2 | Auth, clinic setup, patient CRUD | Not Started | Wire auth/clinic APIs + patient CRUD |
 | v0.3 | Appointment CRUD and dashboard | Not Started | First clinic demo version |
 | v0.4 | Manual reminders | Not Started | Can test real workflow |
 | v0.5 | Automated reminders | Not Started | Pilot-ready version |

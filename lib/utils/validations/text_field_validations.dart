@@ -26,6 +26,17 @@ class Validate {
     return null;
   }
 
+  static String? emailOrPhoneValidation(String? value) {
+    final input = (value ?? '').trim();
+    if (input.isEmpty) {
+      return kValidationUsernameRequired;
+    }
+    if (RegExp(r'^\d+$').hasMatch(input)) {
+      return mobile10DigitValidation(input);
+    }
+    return emailValidation(input);
+  }
+
   static String? mobile10DigitValidation(String? value) {
     final mobile = (value ?? '').trim();
     if (mobile.isEmpty) {
@@ -41,6 +52,9 @@ class Validate {
     if (value.trim().isEmpty) {
       return kValidationPasswordRequired;
     }
+    if (value.trim().length < 6) {
+      return kValidationPasswordMinLength;
+    }
     return null;
   }
 
@@ -51,6 +65,17 @@ class Validate {
     }
     if (confirmed != password.trim()) {
       return kValidationPasswordMismatch;
+    }
+    return null;
+  }
+
+  static String? otpValidation(String? value) {
+    final otp = (value ?? '').trim();
+    if (otp.isEmpty) {
+      return kValidationOtpRequired;
+    }
+    if (!RegExp(r'^\d{6}$').hasMatch(otp)) {
+      return kValidationOtpInvalid;
     }
     return null;
   }

@@ -21,5 +21,6 @@ void main() {
     expect(find.text(kLoginPasswordHint), findsOneWidget);
     expect(find.text(kLoginButtonText), findsOneWidget);
     expect(find.text(kForgotPassword), findsOneWidget);
+    expect(find.text(kLoginWithOtp), findsOneWidget);
   });
 }

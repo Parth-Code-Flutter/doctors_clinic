@@ -1,3 +1,4 @@
+import 'package:doctors_clinic/app/auth/auth_route_arguments.dart';
 import 'package:doctors_clinic/constants/string_constants.dart';
 import 'package:doctors_clinic/routes/app_pages.dart';
 import 'package:doctors_clinic/utils/validations/text_field_validations.dart';
@@ -24,7 +25,6 @@ class AuthLoginController extends GetxController {
     isPasswordHidden.value = !isPasswordHidden.value;
   }
 
-  /// Switches to phone validation when the first character is a digit.
   void onUsernameChanged(String value) {
     final trimmed = value.trimLeft();
     if (trimmed.isEmpty) {
@@ -67,32 +67,42 @@ class AuthLoginController extends GetxController {
 
     try {
       isLoginLoading.value = true;
-      // Auth API (`POST /auth/login`) will be wired in v0.2.
       await Future<void>.delayed(const Duration(milliseconds: 600));
-      Get.snackbar(
-        kLoginTitle,
-        kLoginApiPendingMessage,
-        snackPosition: SnackPosition.BOTTOM,
-        margin: const EdgeInsets.all(16),
-        duration: const Duration(seconds: 3),
-      );
+      Get.offNamed(Routes.CLINIC_SETUP);
     } finally {
       isLoginLoading.value = false;
     }
   }
 
   void onForgotPassword() {
-    Get.snackbar(
-      kForgotPassword,
-      'Forgot password screen is planned for a later release.',
-      snackPosition: SnackPosition.BOTTOM,
-      margin: const EdgeInsets.all(16),
-      duration: const Duration(seconds: 2),
+    Get.toNamed(Routes.AUTH_FORGOT_PASSWORD);
+  }
+
+  void onLoginWithOtp() {
+    final contact = emailOrPhoneController.text.trim();
+    final error = validateUsername(contact);
+    if (error != null) {
+      Get.snackbar(
+        kLoginWithOtp,
+        error,
+        snackPosition: SnackPosition.BOTTOM,
+        margin: const EdgeInsets.all(16),
+        duration: const Duration(seconds: 2),
+      );
+      return;
+    }
+
+    Get.toNamed(
+      Routes.AUTH_OTP_VERIFICATION,
+      arguments: {
+        AuthRouteArgs.otpFlow: AuthOtpFlow.login.name,
+        AuthRouteArgs.contact: contact,
+        AuthRouteArgs.isPhone: isPhoneInput.value,
+      },
     );
   }
 
   void onOpenNewClinic() {
-    // Replace login route so the same Form GlobalKey is not mounted twice.
     Get.offNamed(Routes.OPEN_NEW_CLINIC);
   }
 }

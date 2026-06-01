@@ -119,16 +119,26 @@ class AuthLoginView extends GetView<AuthLoginController> {
           ),
         ),
         Spacing.v8,
-        Align(
-          alignment: Alignment.centerRight,
-          child: GestureDetector(
-            onTap: controller.onForgotPassword,
-            child: const SemiBoldText(
-              text: kForgotPassword,
-              fontSize: TextStyles.k12FontSize,
-              color: kColorLink,
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            GestureDetector(
+              onTap: controller.onLoginWithOtp,
+              child: const SemiBoldText(
+                text: kLoginWithOtp,
+                fontSize: TextStyles.k12FontSize,
+                color: kColorLink,
+              ),
             ),
-          ),
+            GestureDetector(
+              onTap: controller.onForgotPassword,
+              child: const SemiBoldText(
+                text: kForgotPassword,
+                fontSize: TextStyles.k12FontSize,
+                color: kColorLink,
+              ),
+            ),
+          ],
         ),
       ],
     );
