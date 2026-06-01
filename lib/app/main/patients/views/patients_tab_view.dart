@@ -17,6 +17,7 @@ class PatientsTabView extends GetView<PatientsTabController> {
     return Scaffold(
       backgroundColor: kColorBackground,
       floatingActionButton: FloatingActionButton.extended(
+        heroTag: 'fab_patients',
         onPressed: controller.onAddPatient,
         backgroundColor: kColorPrimary,
         foregroundColor: kColorOnPrimary,

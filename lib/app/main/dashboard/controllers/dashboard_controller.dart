@@ -1,4 +1,7 @@
 import 'package:doctors_clinic/app/main/bottom_nav/controllers/bottom_nav_controller.dart';
+import 'package:doctors_clinic/app/main/appointments/appointment_route_arguments.dart';
+import 'package:doctors_clinic/app/main/appointments/controllers/appointments_tab_controller.dart';
+import 'package:doctors_clinic/app/main/appointments/data/appointment_repository.dart';
 import 'package:doctors_clinic/app/main/patients/controllers/patients_tab_controller.dart';
 import 'package:doctors_clinic/routes/app_pages.dart';
 import 'package:doctors_clinic/app/main/dashboard/models/dashboard_appointment_item.dart';
@@ -93,6 +96,11 @@ class DashboardController extends GetxController {
     if (Get.isRegistered<BottomNavController>()) {
       Get.find<BottomNavController>().onTabSelected(2);
     }
+    Get.toNamed(Routes.APPOINTMENT_ADD)?.then((_) {
+      if (Get.isRegistered<AppointmentsTabController>()) {
+        Get.find<AppointmentsTabController>().refreshList();
+      }
+    });
   }
 
   void onViewAllAppointments() {
@@ -100,12 +108,22 @@ class DashboardController extends GetxController {
   }
 
   void onAppointmentTap(DashboardAppointmentItem item) {
-    Get.snackbar(
-      kDashboardTitle,
-      '${item.patientName} — $kDashboardAppointmentDetailPending',
-      snackPosition: SnackPosition.BOTTOM,
-      margin: const EdgeInsets.all(16),
-      duration: const Duration(seconds: 2),
+    if (!Get.isRegistered<AppointmentRepository>()) {
+      return;
+    }
+    final repo = Get.find<AppointmentRepository>();
+    final match = repo.appointments.where(
+      (a) => a.patientName == item.patientName && a.reason == item.serviceLabel,
+    );
+    if (match.isEmpty) {
+      Get.toNamed(Routes.APPOINTMENT_DETAIL, arguments: {
+        AppointmentRouteArgs.appointmentId: repo.appointments.first.id,
+      });
+      return;
+    }
+    Get.toNamed(
+      Routes.APPOINTMENT_DETAIL,
+      arguments: {AppointmentRouteArgs.appointmentId: match.first.id},
     );
   }
 

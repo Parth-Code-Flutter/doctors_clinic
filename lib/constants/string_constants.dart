@@ -218,10 +218,73 @@ const String kValidationPatientNameTooShort = 'Enter at least 2 characters';
 const String kValidationPatientAgeInvalid = 'Enter a valid age (0–120)';
 const String kValidationPatientGenderRequired = 'Please select a gender';
 
-// Main app — tab placeholders
+// Appointments
 const String kAppointmentsTitle = 'Appointments';
-const String kAppointmentsPlaceholderSubtitle =
-    'View and book appointments for your clinic here.';
+const String kAppointmentsListSubtitle =
+    'Clear schedule view — filter by day or status in one tap.';
+const String kAppointmentsSearchHint = 'Search patient, mobile, or reason';
+const String kAppointmentsAddFab = 'Book visit';
+const String kAppointmentsSummaryToday = 'Today';
+const String kAppointmentsSummaryUpcoming = 'Upcoming';
+const String kAppointmentsFilterAll = 'All';
+const String kAppointmentsFilterToday = 'Today';
+const String kAppointmentsFilterUpcoming = 'Upcoming';
+const String kAppointmentsFilterCompleted = 'Done';
+const String kAppointmentsFilterCancelled = 'Cancelled';
+const String kAppointmentsFilterMissed = 'Missed';
+const String kAppointmentsEmptyTitle = 'No appointments here';
+const String kAppointmentsEmptySubtitle =
+    'Book a visit to fill your clinic schedule.';
+const String kAppointmentsEmptySearchTitle = 'No matching appointments';
+const String kAppointmentsEmptySearchSubtitle =
+    'Try another filter or search term.';
+
+const String kAddAppointmentTitle = 'Book visit';
+const String kAppointmentDetailTitle = 'Visit details';
+const String kAddAppointmentStepPatient = 'Patient';
+const String kAddAppointmentStepSchedule = 'Schedule';
+const String kAddAppointmentStepPatientTitle = 'Who is visiting today?';
+const String kAddAppointmentStepPatientSubtitle =
+    'Search and tap a patient — only name and mobile are required on file.';
+const String kAddAppointmentStepScheduleTitle = 'When is the visit?';
+const String kAddAppointmentStepScheduleSubtitle =
+    'Pick a date, tap a time slot, and add a short reason if needed.';
+const String kAddAppointmentTipPatient =
+    'Tip: Can’t find them? Add a new patient first, then book.';
+const String kAddAppointmentTipSchedule =
+    'Tip: Morning slots fill fast — confirm time with the patient aloud.';
+const String kAddAppointmentSelectPatient = 'Select patient';
+const String kAddAppointmentSelectedPatient = 'Selected patient';
+const String kAddAppointmentChangePatient = 'Change';
+const String kAddAppointmentDateLabel = 'Appointment date';
+const String kAddAppointmentTimeLabel = 'Quick time slots';
+const String kAddAppointmentReasonHint = 'Visit reason (e.g. follow-up, cleaning)';
+const String kAddAppointmentNotesHint = 'Internal notes (optional)';
+const String kAddAppointmentReminderLabel = 'Reminder';
+const String kAddAppointmentContinue = 'Continue';
+const String kAddAppointmentBack = 'Back';
+const String kAddAppointmentSave = 'Confirm booking';
+const String kAddAppointmentSuccess = 'Appointment booked successfully';
+const String kAddAppointmentPickDate = 'Choose date';
+const String kValidationPatientSelectRequired = 'Please select a patient';
+const String kValidationAppointmentDateRequired = 'Please choose a date';
+const String kValidationAppointmentTimeRequired = 'Please choose a time';
+
+const String kAppointmentStatusUpcoming = 'Upcoming';
+const String kAppointmentStatusCompleted = 'Completed';
+const String kAppointmentStatusCancelled = 'Cancelled';
+const String kAppointmentStatusMissed = 'Missed';
+const String kAppointmentDetailCall = 'Call patient';
+const String kAppointmentDetailSendReminder = 'Send reminder';
+const String kAppointmentDetailMarkComplete = 'Mark completed';
+const String kAppointmentDetailMarkMissed = 'Mark missed';
+const String kAppointmentDetailCancel = 'Cancel visit';
+const String kAppointmentDetailReminderSent = 'Reminder marked as sent';
+const String kAppointmentDetailStatusUpdated = 'Appointment status updated';
+const String kAppointmentDetailReminderPending =
+    'Automated reminders will connect in the next release.';
+
+// Main app — tab placeholders
 const String kMoreTitle = 'More';
 const String kMorePlaceholderSubtitle =
     'Clinic settings, profile, and account options will live here.';

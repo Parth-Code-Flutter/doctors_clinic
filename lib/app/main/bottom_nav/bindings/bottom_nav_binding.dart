@@ -1,4 +1,5 @@
 import 'package:doctors_clinic/app/main/appointments/controllers/appointments_tab_controller.dart';
+import 'package:doctors_clinic/app/main/appointments/data/appointment_repository.dart';
 import 'package:doctors_clinic/app/main/dashboard/controllers/dashboard_controller.dart';
 import 'package:doctors_clinic/app/main/more/controllers/more_tab_controller.dart';
 import 'package:doctors_clinic/app/main/patients/controllers/patients_tab_controller.dart';
@@ -12,6 +13,9 @@ class BottomNavBinding extends Bindings {
   void dependencies() {
     if (!Get.isRegistered<PatientRepository>()) {
       Get.put(PatientRepository(), permanent: true);
+    }
+    if (!Get.isRegistered<AppointmentRepository>()) {
+      Get.put(AppointmentRepository(), permanent: true);
     }
     Get.lazyPut<BottomNavController>(() => BottomNavController(), fenix: true);
     Get.lazyPut<DashboardController>(() => DashboardController(), fenix: true);

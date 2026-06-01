@@ -18,6 +18,8 @@ abstract class Routes {
   static const PATIENT_ADD = _Paths.PATIENT_ADD;
   static const PATIENT_PROFILE = _Paths.PATIENT_PROFILE;
   static const PATIENT_EDIT = _Paths.PATIENT_EDIT;
+  static const APPOINTMENT_ADD = _Paths.APPOINTMENT_ADD;
+  static const APPOINTMENT_DETAIL = _Paths.APPOINTMENT_DETAIL;
 }
 
 abstract class _Paths {
@@ -35,4 +37,6 @@ abstract class _Paths {
   static const PATIENT_ADD = '/patient-add';
   static const PATIENT_PROFILE = '/patient-profile';
   static const PATIENT_EDIT = '/patient-edit';
+  static const APPOINTMENT_ADD = '/appointment-add';
+  static const APPOINTMENT_DETAIL = '/appointment-detail';
 }

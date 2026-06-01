@@ -11,6 +11,10 @@ import '../app/main/patients/bindings/patient_profile_binding.dart';
 import '../app/main/patients/views/add_patient_view.dart';
 import '../app/main/patients/views/edit_patient_view.dart';
 import '../app/main/patients/views/patient_profile_view.dart';
+import '../app/main/appointments/bindings/add_appointment_binding.dart';
+import '../app/main/appointments/bindings/appointment_detail_binding.dart';
+import '../app/main/appointments/views/add_appointment_view.dart';
+import '../app/main/appointments/views/appointment_detail_view.dart';
 import '../app/auth/clinic_setup/views/clinic_setup_view.dart';
 import '../app/auth/forgot_password/bindings/forgot_password_binding.dart';
 import '../app/auth/forgot_password/views/forgot_password_view.dart';
@@ -103,6 +107,18 @@ class AppPages {
       name: _Paths.PATIENT_EDIT,
       page: () => const EditPatientView(),
       binding: EditPatientBinding(),
+      preventDuplicates: true,
+    ),
+    GetPage(
+      name: _Paths.APPOINTMENT_ADD,
+      page: () => const AddAppointmentView(),
+      binding: AddAppointmentBinding(),
+      preventDuplicates: true,
+    ),
+    GetPage(
+      name: _Paths.APPOINTMENT_DETAIL,
+      page: () => const AppointmentDetailView(),
+      binding: AppointmentDetailBinding(),
       preventDuplicates: true,
     ),
   ];

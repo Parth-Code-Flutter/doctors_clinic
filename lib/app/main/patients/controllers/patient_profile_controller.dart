@@ -1,4 +1,3 @@
-import 'package:doctors_clinic/app/main/bottom_nav/controllers/bottom_nav_controller.dart';
 import 'package:doctors_clinic/app/main/patients/data/patient_repository.dart';
 import 'package:doctors_clinic/app/main/patients/models/patient_model.dart';
 import 'package:doctors_clinic/app/main/patients/models/patient_visit_item.dart';
@@ -44,16 +43,9 @@ class PatientProfileController extends GetxController {
   }
 
   void onBookVisit() {
-    if (Get.isRegistered<BottomNavController>()) {
-      Get.find<BottomNavController>().onTabSelected(2);
-      Get.until((route) => route.settings.name == Routes.MAIN);
-    }
-    Get.snackbar(
-      kPatientProfileBookVisit,
-      kPatientProfileBookPending,
-      snackPosition: SnackPosition.BOTTOM,
-      margin: const EdgeInsets.all(16),
-      duration: const Duration(seconds: 2),
+    Get.toNamed(
+      Routes.APPOINTMENT_ADD,
+      arguments: {PatientRouteArgs.patientId: _patientId},
     );
   }
 

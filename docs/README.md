@@ -726,9 +726,9 @@ Status values:
 | Add Patient | High | Done | Not Started | 3-step wizard with tips and quick picks |
 | Patient Profile | High | Done | Not Started | Details, visit history mock, call/book/edit |
 | Edit Patient | Medium | Done | Not Started | Single-page form; updates mock repository |
-| Add Appointment | High | Not Started | Not Started | Core MVP screen |
-| Appointment List | High | In Progress | Not Started | Appointments tab placeholder; full list UI next |
-| Appointment Detail | Medium | Not Started | Not Started | Appointment status and reminder action |
+| Add Appointment | High | Done | Not Started | 2-step booking wizard with patient picker |
+| Appointment List | High | Done | Not Started | Grouped by day, filters, summary strip |
+| Appointment Detail | Medium | Done | Not Started | Status actions + reminder placeholder |
 | Notifications / Reminders | Medium | Not Started | Not Started | Scheduled and sent reminders |
 | Settings | Medium | In Progress | Not Started | More tab placeholder + logout |
 | Staff Management | Future | Not Started | Not Started | Phase 3 feature |
@@ -777,7 +777,7 @@ Status values:
 | Authentication | In Progress | Done | Not Started | Not Started | All auth/setup screens UI done; APIs pending v0.2 |
 | Clinic Setup | In Progress | Done | Not Started | Not Started | Onboarding form after register/login/OTP |
 | Patient Management | In Progress | Done | Not Started | Not Started | UI complete; APIs in v0.2 |
-| Appointment Management | Not Started | Not Started | Not Started | Not Started | Highest MVP priority |
+| Appointment Management | In Progress | Done | Not Started | Not Started | UI complete; APIs in v0.3 |
 | Reminder System | Not Started | Not Started | Not Started | Not Started | Manual reminder first, automation second |
 | Dashboard | In Progress | Done | Not Started | Not Started | Home tab UI with mock data; APIs in v0.3 |
 | Settings | Not Started | Not Started | Not Started | Not Started | Can stay basic in MVP |
