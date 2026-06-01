@@ -367,9 +367,58 @@ Database
   |-- reminders
 ```
 
-## 13. API Planning
+## 13. Reference Project Keyword
 
-### 13.1 Auth APIs
+Use this keyword when asking future development work to follow the existing Flutter project structure:
+
+```text
+qobo ref project
+```
+
+Reference project path:
+
+```text
+/Users/onlymac/Documents/Projects/qobo_one_live
+```
+
+When this keyword is used, inspect the reference project before implementation and follow its Flutter structure and coding pattern where suitable.
+
+Current observed reference pattern:
+
+- GetX architecture
+- Feature folders with `bindings`, `controllers`, and `views`
+- Routes managed through `lib/routes/app_pages.dart` and `lib/routes/app_routes.dart`
+- Shared code organized under `lib/constants`, `lib/repo`, `lib/services`, and `lib/utils`
+- Controllers extend `GetxController`
+- Views commonly extend `GetView<Controller>`
+- Bindings use `Get.lazyPut`
+
+### Project Folder Convention
+
+For this Doctors Clinic app, always create normal lowercase folders in the same style as the qobo ref project unless explicitly told otherwise:
+
+```text
+lib/app/<feature_group>/<feature_name>/bindings
+lib/app/<feature_group>/<feature_name>/controllers
+lib/app/<feature_group>/<feature_name>/views
+```
+
+Example (same as qobo ref project):
+
+```text
+lib/app/splash/splash/bindings/splash_binding.dart
+lib/app/splash/splash/controllers/splash_controller.dart
+lib/app/splash/splash/views/splash_view.dart
+```
+
+Note: In Cursor/VS Code, `app` → `splash` → `splash` may display as a compact name like `app.splash.splash`. That is normal; on disk these are separate nested folders, not one dotted folder name.
+
+Do not create package-style or dotted folders such as `App.splash`.
+Create real folders using filesystem directories, matching the qobo ref project pattern.
+
+## 14. API Planning
+
+### 14.1 Auth APIs
 
 - `POST /auth/register-clinic`
 - `POST /auth/login`
@@ -377,12 +426,12 @@ Database
 - `POST /auth/verify-otp`
 - `POST /auth/logout`
 
-### 13.2 Clinic APIs
+### 14.2 Clinic APIs
 
 - `GET /clinic/me`
 - `PATCH /clinic/me`
 
-### 13.3 Patient APIs
+### 14.3 Patient APIs
 
 - `GET /patients`
 - `POST /patients`
@@ -392,7 +441,7 @@ Database
 
 For production, prefer soft delete instead of permanent delete.
 
-### 13.4 Appointment APIs
+### 14.4 Appointment APIs
 
 - `GET /appointments`
 - `POST /appointments`
@@ -402,13 +451,13 @@ For production, prefer soft delete instead of permanent delete.
 - `POST /appointments/:id/cancel`
 - `POST /appointments/:id/mark-missed`
 
-### 13.5 Reminder APIs
+### 14.5 Reminder APIs
 
 - `GET /reminders`
 - `POST /appointments/:id/send-reminder`
 - `POST /reminders/:id/retry`
 
-## 14. MVP Business Model
+## 15. MVP Business Model
 
 All pricing should be considered in Indian rupees.
 
@@ -430,7 +479,7 @@ Suggested setup fee:
 
 The first 5 to 10 clinics can be offered a discounted pilot price in exchange for feedback.
 
-## 15. Cost Estimate
+## 16. Cost Estimate
 
 Early monthly operating cost estimate:
 
@@ -458,7 +507,7 @@ Example revenue:
 | 50 | ₹1,999 | ₹99,950 |
 | 100 | ₹1,999 | ₹1,99,900 |
 
-## 16. Compliance & Privacy Notes
+## 17. Compliance & Privacy Notes
 
 Because the app handles patient information, privacy must be treated seriously from the beginning.
 
@@ -483,7 +532,7 @@ MVP should avoid:
 
 These can be added later after stronger compliance planning.
 
-## 17. Development Phases
+## 18. Development Phases
 
 ### Phase 1: MVP
 
@@ -552,7 +601,7 @@ Features:
 - Patient portal
 - Mobile apps
 
-## 18. Success Metrics
+## 19. Success Metrics
 
 Track these from the beginning:
 
@@ -566,7 +615,7 @@ Track these from the beginning:
 - Churn rate
 - Average revenue per clinic
 
-## 19. MVP Validation Plan
+## 20. MVP Validation Plan
 
 Before building too much, validate with 10 to 20 clinics.
 
@@ -587,7 +636,7 @@ Validation target:
 - At least 2 clinics agree to pay after demo
 - Clinics clearly say appointment reminders save time or reduce missed visits
 
-## 20. Design Principles
+## 21. Design Principles
 
 The app should be:
 
@@ -606,7 +655,7 @@ Avoid:
 - Features that require patient app installation
 - Full EMR complexity in the MVP
 
-## 21. Future Feature Backlog
+## 22. Future Feature Backlog
 
 Possible future features:
 
@@ -627,7 +676,7 @@ Possible future features:
 - Android app
 - Patient app
 
-## 22. First Build Checklist
+## 23. First Build Checklist
 
 - [ ] Decide app name
 - [ ] Choose tech stack
@@ -644,7 +693,7 @@ Possible future features:
 - [ ] Collect feedback
 - [ ] Improve MVP
 
-## 23. Implementation Progress Tracker
+## 24. Implementation Progress Tracker
 
 Use this section to track product, UI, and API progress during development.
 
@@ -656,11 +705,11 @@ Status values:
 - `Needs Review`
 - `Done`
 
-### 23.1 Screen List & UI Progress
+### 24.1 Screen List & UI Progress
 
 | Screen | Priority | UI Status | API Status | Notes |
 | --- | --- | --- | --- | --- |
-| Splash Screen | Low | Not Started | Not Needed | Optional for first web MVP |
+| Splash Screen | Low | Done | Not Needed | Initial animated splash screen created |
 | Welcome / Entry Screen | High | Not Started | Not Needed | Shows Login To Clinic and Open New Clinic |
 | Login To Clinic | High | Not Started | Not Started | Needs login API |
 | Open New Clinic | High | Not Started | Not Started | Needs clinic registration API |
@@ -686,7 +735,7 @@ Status values:
 | Subscription Plan | Future | Not Started | Not Started | SaaS billing feature |
 | Patient Portal | Future | Not Started | Not Started | Patient-facing feature |
 
-### 23.2 API Progress
+### 24.2 API Progress
 
 | API | Method | Priority | Status | Used By Screen |
 | --- | --- | --- | --- | --- |
@@ -713,7 +762,7 @@ Status values:
 | `/appointments/:id/send-reminder` | POST | Medium | Not Started | Appointment Detail |
 | `/reminders/:id/retry` | POST | Low | Not Started | Notifications / Reminders |
 
-### 23.3 Module Progress
+### 24.3 Module Progress
 
 | Module | Product Status | UI Status | API Status | Database Status | Notes |
 | --- | --- | --- | --- | --- | --- |
@@ -725,18 +774,18 @@ Status values:
 | Dashboard | Not Started | Not Started | Not Started | Not Started | Needs patient and appointment APIs |
 | Settings | Not Started | Not Started | Not Started | Not Started | Can stay basic in MVP |
 
-### 23.4 Release Progress
+### 24.4 Release Progress
 
 | Version | Goal | Status | Notes |
 | --- | --- | --- | --- |
-| v0.1 | Static UI screens and navigation | Not Started | No backend required |
+| v0.1 | Static UI screens and navigation | In Progress | Splash screen completed |
 | v0.2 | Auth, clinic setup, patient CRUD | Not Started | First usable internal version |
 | v0.3 | Appointment CRUD and dashboard | Not Started | First clinic demo version |
 | v0.4 | Manual reminders | Not Started | Can test real workflow |
 | v0.5 | Automated reminders | Not Started | Pilot-ready version |
 | v1.0 | Paid MVP launch | Not Started | Stable enough for first paying clinics |
 
-## 24. Important Product Decision
+## 25. Important Product Decision
 
 The first version should not depend on patients installing an app.
 
@@ -744,7 +793,7 @@ Reason:
 
 Most patients will not install a separate app for one clinic. Clinics already communicate through phone calls, SMS, and WhatsApp. Therefore, the clinic-facing app should be the main product, while patient-facing app features can come later.
 
-## 25. Recommended First Version Name Ideas
+## 26. Recommended First Version Name Ideas
 
 - ClinicPulse
 - ClinicDay
