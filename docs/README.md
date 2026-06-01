@@ -720,16 +720,17 @@ Status values:
 | OTP Verification | Medium | Done | Not Started | 6-digit OTP, resend timer; API pending v0.2 |
 | Forgot Password | Low | Done | Not Started | Sends OTP → reset password flow; API pending v0.2 |
 | Clinic Setup | Medium | Done | Not Started | Profile, hours, reminder defaults; API pending v0.2 |
-| Dashboard | High | Not Started | Not Started | Shows today's appointments and patient count |
-| Patient List | High | Not Started | Not Started | Search, filter, and open patient profile |
+| Main shell (custom bottom nav) | High | Done | Not Needed | Floating clinic dock; 4 tabs with placeholders |
+| Dashboard | High | In Progress | Not Started | Tab placeholder; full UI next |
+| Patient List | High | In Progress | Not Started | Patients tab placeholder; full list UI next |
 | Add Patient | High | Not Started | Not Started | Core MVP screen |
 | Patient Profile | High | Not Started | Not Started | Patient details and appointment history |
 | Edit Patient | Medium | Not Started | Not Started | Can reuse Add Patient form |
 | Add Appointment | High | Not Started | Not Started | Core MVP screen |
-| Appointment List | High | Not Started | Not Started | Today, upcoming, completed, cancelled, missed |
+| Appointment List | High | In Progress | Not Started | Appointments tab placeholder; full list UI next |
 | Appointment Detail | Medium | Not Started | Not Started | Appointment status and reminder action |
 | Notifications / Reminders | Medium | Not Started | Not Started | Scheduled and sent reminders |
-| Settings | Medium | Not Started | Not Started | Clinic profile and reminder settings |
+| Settings | Medium | In Progress | Not Started | More tab placeholder + logout |
 | Staff Management | Future | Not Started | Not Started | Phase 3 feature |
 | Doctor Management | Future | Not Started | Not Started | Phase 3 feature |
 | Branch Management | Future | Not Started | Not Started | Phase 5 feature |
@@ -770,7 +771,7 @@ Status values:
 
 | Module | Product Status | UI Status | API Status | Database Status | Notes |
 | --- | --- | --- | --- | --- | --- |
-| App foundation (GetX, routes, qobo folder layout) | In Progress | Done | Not Needed | Not Needed | Splash + Welcome; `lib/routes`, `lib/constants` |
+| App foundation (GetX, routes, qobo folder layout) | In Progress | Done | Not Needed | Not Needed | Splash + Welcome + main shell; `lib/routes`, `lib/constants` |
 | Design tokens (theme colors) | Done | Done | Not Needed | Not Needed | `lib/constants/color_constants.dart` — slate primary, cyan logo accent, cyan-tint secondary buttons |
 | Shared UI widgets (`appButton`, `AppTextField`) | Done | Done | Not Needed | Not Needed | `lib/utils/app_widgets/`, `lib/utils/text_utils/`, `lib/utils/ui_utils/` |
 | Authentication | In Progress | Done | Not Started | Not Started | All auth/setup screens UI done; APIs pending v0.2 |
@@ -778,7 +779,7 @@ Status values:
 | Patient Management | Not Started | Not Started | Not Started | Not Started | Highest MVP priority |
 | Appointment Management | Not Started | Not Started | Not Started | Not Started | Highest MVP priority |
 | Reminder System | Not Started | Not Started | Not Started | Not Started | Manual reminder first, automation second |
-| Dashboard | Not Started | Not Started | Not Started | Not Started | Needs patient and appointment APIs |
+| Dashboard | In Progress | In Progress | Not Started | Not Started | Home tab placeholder inside main shell |
 | Settings | Not Started | Not Started | Not Started | Not Started | Can stay basic in MVP |
 
 ### 24.4 Release Progress

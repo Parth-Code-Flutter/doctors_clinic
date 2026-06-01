@@ -98,7 +98,29 @@ const String kOtpApiPendingMessage =
     'OTP APIs will be connected in the next release.';
 const String kClinicSetupApiPendingMessage =
     'Clinic profile API will be connected in the next release.';
-const String kClinicSetupSuccessMessage = 'Clinic setup saved. Main app screens are next.';
+const String kClinicSetupSuccessMessage =
+    'Clinic setup saved. Welcome to your clinic workspace.';
+
+// Main app — bottom navigation
+const String kNavTabHome = 'Home';
+const String kNavTabPatients = 'Patients';
+const String kNavTabAppointments = 'Appts';
+const String kNavTabMore = 'More';
+
+// Main app — tab placeholders
+const String kDashboardTitle = 'Dashboard';
+const String kDashboardPlaceholderSubtitle =
+    "Today's appointments and clinic overview will appear here.";
+const String kPatientsTitle = 'Patients';
+const String kPatientsPlaceholderSubtitle =
+    'Search, add, and manage patient records from this tab.';
+const String kAppointmentsTitle = 'Appointments';
+const String kAppointmentsPlaceholderSubtitle =
+    'View and book appointments for your clinic here.';
+const String kMoreTitle = 'More';
+const String kMorePlaceholderSubtitle =
+    'Clinic settings, profile, and account options will live here.';
+const String kMoreLogoutButton = 'Log out';
 
 // Reminder options (clinic setup dropdown labels)
 const List<String> kDefaultReminderOptions = [

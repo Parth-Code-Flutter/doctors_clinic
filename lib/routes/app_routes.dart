@@ -14,6 +14,7 @@ abstract class Routes {
   static const AUTH_OTP_VERIFICATION = _Paths.AUTH_OTP_VERIFICATION;
   static const AUTH_RESET_PASSWORD = _Paths.AUTH_RESET_PASSWORD;
   static const CLINIC_SETUP = _Paths.CLINIC_SETUP;
+  static const MAIN = _Paths.MAIN;
 }
 
 abstract class _Paths {
@@ -27,4 +28,5 @@ abstract class _Paths {
   static const AUTH_OTP_VERIFICATION = '/auth-otp-verification';
   static const AUTH_RESET_PASSWORD = '/auth-reset-password';
   static const CLINIC_SETUP = '/clinic-setup';
+  static const MAIN = '/main';
 }

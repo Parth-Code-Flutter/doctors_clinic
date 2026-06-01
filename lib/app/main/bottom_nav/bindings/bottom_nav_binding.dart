@@ -1,0 +1,21 @@
+import 'package:doctors_clinic/app/main/appointments/controllers/appointments_tab_controller.dart';
+import 'package:doctors_clinic/app/main/dashboard/controllers/dashboard_controller.dart';
+import 'package:doctors_clinic/app/main/more/controllers/more_tab_controller.dart';
+import 'package:doctors_clinic/app/main/patients/controllers/patients_tab_controller.dart';
+import 'package:get/get.dart';
+
+import '../controllers/bottom_nav_controller.dart';
+
+class BottomNavBinding extends Bindings {
+  @override
+  void dependencies() {
+    Get.lazyPut<BottomNavController>(() => BottomNavController(), fenix: true);
+    Get.lazyPut<DashboardController>(() => DashboardController(), fenix: true);
+    Get.lazyPut<PatientsTabController>(() => PatientsTabController(), fenix: true);
+    Get.lazyPut<AppointmentsTabController>(
+      () => AppointmentsTabController(),
+      fenix: true,
+    );
+    Get.lazyPut<MoreTabController>(() => MoreTabController(), fenix: true);
+  }
+}

@@ -49,14 +49,13 @@ class ClinicSetupController extends GetxController {
         margin: const EdgeInsets.all(16),
         duration: const Duration(seconds: 3),
       );
-      // Auth flow complete — return to login until main app shell exists.
-      Get.offAllNamed(Routes.AUTH_LOGIN);
+      Get.offAllNamed(Routes.MAIN);
     } finally {
       isLoading.value = false;
     }
   }
 
   void onSkipSetup() {
-    Get.offAllNamed(Routes.AUTH_LOGIN);
+    Get.offAllNamed(Routes.MAIN);
   }
 }

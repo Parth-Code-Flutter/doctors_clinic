@@ -26,6 +26,9 @@ const Color kColorText = kColorTitle;
 const Color kColorTextSecondary = Color(0xFF64748B);
 const Color kColorBorder = Color(0xFFE2E8F0);
 
+/// Soft shadow for floating bottom nav dock (~8% slate).
+const Color kColorBottomNavShadow = Color(0x140F172A);
+
 // --- Buttons & links ---
 
 /// Primary button background (#0F172A).

@@ -68,7 +68,7 @@ class AuthLoginController extends GetxController {
     try {
       isLoginLoading.value = true;
       await Future<void>.delayed(const Duration(milliseconds: 600));
-      Get.offNamed(Routes.CLINIC_SETUP);
+      Get.offAllNamed(Routes.MAIN);
     } finally {
       isLoginLoading.value = false;
     }
