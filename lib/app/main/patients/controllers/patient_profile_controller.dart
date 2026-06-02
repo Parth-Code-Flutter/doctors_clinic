@@ -2,6 +2,9 @@ import 'package:doctors_clinic/app/main/patients/data/patient_repository.dart';
 import 'package:doctors_clinic/app/main/patients/models/patient_model.dart';
 import 'package:doctors_clinic/app/main/patients/models/patient_visit_item.dart';
 import 'package:doctors_clinic/app/main/patients/patient_route_arguments.dart';
+import 'package:doctors_clinic/app/main/appointments/utils/appointment_format_utils.dart';
+import 'package:doctors_clinic/app/main/visits/data/visit_repository.dart';
+import 'package:doctors_clinic/app/main/visits/visit_route_arguments.dart';
 import 'package:doctors_clinic/constants/string_constants.dart';
 import 'package:doctors_clinic/routes/app_pages.dart';
 import 'package:flutter/material.dart';
@@ -14,6 +17,7 @@ class PatientProfileController extends GetxController {
   late String _patientId;
 
   PatientRepository get _repo => Get.find<PatientRepository>();
+  VisitRepository get _visitRepo => Get.find<VisitRepository>();
 
   @override
   void onInit() {
@@ -29,7 +33,7 @@ class PatientProfileController extends GetxController {
       return;
     }
     patient.value = found;
-    visits.assignAll(_mockVisitsFor(found));
+    visits.assignAll(_visitsForPatient(found));
   }
 
   Future<void> onEdit() async {
@@ -59,7 +63,36 @@ class PatientProfileController extends GetxController {
     );
   }
 
-  List<PatientVisitItem> _mockVisitsFor(PatientModel p) {
+  Future<void> onTapVisit(PatientVisitItem visit) async {
+    if (visit.visitId == null) {
+      return;
+    }
+    final result = await Get.toNamed(
+      Routes.VISIT_DETAIL,
+      arguments: {VisitRouteArgs.visitId: visit.visitId},
+    );
+    if (result == true) {
+      loadPatient();
+    }
+  }
+
+  List<PatientVisitItem> _visitsForPatient(PatientModel p) {
+    final visitRecords = _visitRepo.visitsForPatient(p.id);
+    final mapped = visitRecords
+        .map(
+          (record) => PatientVisitItem(
+            visitId: record.id,
+            dateLabel: AppointmentFormatUtils.formatDateLong(record.visitAt),
+            timeLabel: AppointmentFormatUtils.formatTime(record.visitAt),
+            reason: record.diagnosis ?? record.chiefComplaint ?? 'Visit note',
+            statusLabel: kDashboardStatusCompleted,
+            isUpcoming: false,
+          ),
+        )
+        .toList();
+    if (mapped.isNotEmpty) {
+      return mapped;
+    }
     return [
       if (p.nextAppointmentAt != null)
         const PatientVisitItem(

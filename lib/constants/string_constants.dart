@@ -19,7 +19,8 @@ const String kForgotPassword = 'Forgot password?';
 const String kLoginWithOtp = 'Login with OTP';
 const String kLoginNoAccountPrefix = 'Need to register your clinic? ';
 const String kLoginOpenNewClinicLink = 'Open New Clinic';
-const String kRegisterAlreadyHaveAccountPrefix = 'Already have a clinic account? ';
+const String kRegisterAlreadyHaveAccountPrefix =
+    'Already have a clinic account? ';
 const String kRegisterLoginLink = 'Login To Clinic';
 
 // Open New Clinic
@@ -50,7 +51,8 @@ const String kVerifyOtpButtonText = 'Verify & Continue';
 
 // Reset password
 const String kResetPasswordTitle = 'Reset Password';
-const String kResetPasswordSubtitle = 'Create a new password for your clinic account.';
+const String kResetPasswordSubtitle =
+    'Create a new password for your clinic account.';
 const String kNewPasswordHint = 'New password';
 const String kResetPasswordButtonText = 'Update Password';
 
@@ -82,7 +84,8 @@ const String kValidationMobileRequired = 'Mobile number is required';
 const String kValidationMobileInvalid = 'Enter a valid 10-digit mobile number';
 const String kValidationEmailRequired = 'Email address is required';
 const String kValidationEmailInvalid = 'Enter a valid email address';
-const String kValidationConfirmPasswordRequired = 'Confirm password is required';
+const String kValidationConfirmPasswordRequired =
+    'Confirm password is required';
 const String kValidationPasswordMismatch = 'Passwords do not match';
 const String kValidationOtpRequired = 'OTP is required';
 const String kValidationOtpInvalid = 'Enter a valid 6-digit OTP';
@@ -138,7 +141,8 @@ const String kDashboardClinicOpenBadge = 'Clinic open';
 
 // Patients
 const String kPatientsTitle = 'Patients';
-const String kPatientsListSubtitle = 'Find patients in seconds — search by name or mobile.';
+const String kPatientsListSubtitle =
+    'Find patients in seconds — search by name or mobile.';
 const String kPatientsSearchHint = 'Search name or mobile number';
 const String kPatientsFilterAll = 'All';
 const String kPatientsFilterRecent = 'New this week';
@@ -148,7 +152,8 @@ const String kPatientsEmptyTitle = 'No patients yet';
 const String kPatientsEmptySubtitle =
     'Add your first patient — it takes less than a minute.';
 const String kPatientsEmptySearchTitle = 'No matches found';
-const String kPatientsEmptySearchSubtitle = 'Try another name or mobile number.';
+const String kPatientsEmptySearchSubtitle =
+    'Try another name or mobile number.';
 const String kPatientsAddFab = 'New patient';
 const String kPatientsLastVisit = 'Last visit';
 const String kPatientsNextVisit = 'Next visit';
@@ -169,12 +174,16 @@ const String kAddPatientStepPersonalSubtitle =
 const String kAddPatientStepOptionalTitle = 'Anything else to note?';
 const String kAddPatientStepOptionalSubtitle =
     'Address and notes are optional. Skip if the patient is in a hurry.';
-const String kAddPatientTipName = 'Tip: Use the name exactly as on their ID or bill.';
+const String kAddPatientTipName =
+    'Tip: Use the name exactly as on their ID or bill.';
 const String kAddPatientTipPhone =
     'Tip: Double-check the mobile — reminders go to this number.';
-const String kAddPatientTipGender = 'Tip: Gender helps doctors personalize care.';
-const String kAddPatientTipAge = 'Tip: Tap a quick age or type a custom number.';
-const String kAddPatientTipNotes = 'Tip: Allergies, language, or preferred doctor fit here.';
+const String kAddPatientTipGender =
+    'Tip: Gender helps doctors personalize care.';
+const String kAddPatientTipAge =
+    'Tip: Tap a quick age or type a custom number.';
+const String kAddPatientTipNotes =
+    'Tip: Allergies, language, or preferred doctor fit here.';
 const String kAddPatientFullNameHint = 'Patient full name';
 const String kAddPatientPhoneHint = 'Mobile number (10 digits)';
 const String kAddPatientAgeHint = 'Age (years)';
@@ -258,7 +267,8 @@ const String kAddAppointmentSelectedPatient = 'Selected patient';
 const String kAddAppointmentChangePatient = 'Change';
 const String kAddAppointmentDateLabel = 'Appointment date';
 const String kAddAppointmentTimeLabel = 'Quick time slots';
-const String kAddAppointmentReasonHint = 'Visit reason (e.g. follow-up, cleaning)';
+const String kAddAppointmentReasonHint =
+    'Visit reason (e.g. follow-up, cleaning)';
 const String kAddAppointmentNotesHint = 'Internal notes (optional)';
 const String kAddAppointmentReminderLabel = 'Reminder';
 const String kAddAppointmentContinue = 'Continue';
@@ -292,7 +302,8 @@ const String kSettingsSectionClinic = 'CLINIC';
 const String kSettingsSectionReminders = 'REMINDERS & ACCOUNT';
 const String kSettingsSectionSupport = 'SUPPORT';
 const String kSettingsClinicProfileTitle = 'Clinic profile';
-const String kSettingsClinicProfileSubtitle = 'Name, contact, hours, and address';
+const String kSettingsClinicProfileSubtitle =
+    'Name, contact, hours, and address';
 const String kSettingsRemindersTitle = 'Reminder settings';
 const String kSettingsRemindersSubtitle = 'Default timing and delivery channel';
 const String kSettingsAccountTitle = 'Account';
@@ -543,3 +554,35 @@ const List<String> kWhatsAppTemplateVariables = [
   '{{time}}',
   '{{clinicPhone}}',
 ];
+
+// Visit notes / basic prescription
+const String kVisitEditorTitle = 'Visit notes';
+const String kVisitEditorSubtitle =
+    'Capture complaint, diagnosis, and a lightweight prescription.';
+const String kVisitDetailTitle = 'Visit summary';
+const String kVisitPatientHint = 'Select patient';
+const String kVisitComplaintHint = 'Chief complaint';
+const String kVisitClinicalNotesHint = 'Clinical notes';
+const String kVisitDiagnosisHint = 'Diagnosis';
+const String kVisitFollowUpHint = 'Follow-up advice';
+const String kVisitPrescriptionSectionTitle = 'Prescription';
+const String kVisitMedicineNameHint = 'Medicine name';
+const String kVisitMedicineDosageHint = 'Dosage';
+const String kVisitMedicineFrequencyHint = 'Frequency';
+const String kVisitMedicineDurationHint = 'Duration';
+const String kVisitMedicineInstructionHint = 'Instructions';
+const String kVisitAddMedicineButton = 'Add medicine';
+const String kVisitPrescriptionEmpty = 'No medicines added yet.';
+const String kVisitSaveButton = 'Save visit note';
+const String kVisitEditButton = 'Edit visit note';
+const String kVisitComplaintSectionTitle = 'Chief complaint';
+const String kVisitClinicalNotesSectionTitle = 'Clinical notes';
+const String kVisitDiagnosisSectionTitle = 'Diagnosis';
+const String kVisitFollowUpSectionTitle = 'Follow-up advice';
+const String kVisitSavedMessage = 'Visit note saved';
+const String kVisitValidationPatientRequired = 'Please select a patient.';
+const String kVisitValidationContentRequired =
+    'Add complaint, diagnosis, or medicine before saving.';
+const String kVisitValidationMedicineRequired =
+    'Medicine, dosage, frequency, and duration are required.';
+const String kAppointmentDetailVisitNoteButton = 'Visit notes';

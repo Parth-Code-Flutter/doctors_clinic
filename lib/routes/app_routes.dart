@@ -34,6 +34,8 @@ abstract class Routes {
   static const WHATSAPP_COMPOSE = _Paths.WHATSAPP_COMPOSE;
   static const WHATSAPP_LOGS = _Paths.WHATSAPP_LOGS;
   static const WHATSAPP_TEMPLATE_EDITOR = _Paths.WHATSAPP_TEMPLATE_EDITOR;
+  static const VISIT_EDITOR = _Paths.VISIT_EDITOR;
+  static const VISIT_DETAIL = _Paths.VISIT_DETAIL;
 }
 
 abstract class _Paths {
@@ -67,4 +69,6 @@ abstract class _Paths {
   static const WHATSAPP_COMPOSE = '/whatsapp-compose';
   static const WHATSAPP_LOGS = '/whatsapp-logs';
   static const WHATSAPP_TEMPLATE_EDITOR = '/whatsapp-template-editor';
+  static const VISIT_EDITOR = '/visit-editor';
+  static const VISIT_DETAIL = '/visit-detail';
 }

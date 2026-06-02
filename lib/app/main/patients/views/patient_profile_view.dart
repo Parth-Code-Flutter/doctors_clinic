@@ -82,7 +82,10 @@ class PatientProfileView extends GetView<PatientProfileController> {
               ...controller.visits.map(
                 (visit) => Padding(
                   padding: const EdgeInsets.only(bottom: 10),
-                  child: _VisitCard(visit: visit),
+                  child: _VisitCard(
+                    visit: visit,
+                    onTap: () => controller.onTapVisit(visit),
+                  ),
                 ),
               ),
           ],
@@ -258,82 +261,88 @@ class _InfoRow extends StatelessWidget {
 }
 
 class _VisitCard extends StatelessWidget {
-  const _VisitCard({required this.visit});
+  const _VisitCard({required this.visit, required this.onTap});
 
   final PatientVisitItem visit;
+  final VoidCallback onTap;
 
   @override
   Widget build(BuildContext context) {
-    final statusColor =
-        visit.isUpcoming ? kColorAppointmentPending : kColorAppointmentSuccess;
+    final statusColor = visit.isUpcoming
+        ? kColorAppointmentPending
+        : kColorAppointmentSuccess;
 
-    return Container(
-      padding: const EdgeInsets.all(14),
-      decoration: BoxDecoration(
-        color: kColorSurface,
-        borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: kColorBorder),
-      ),
-      child: Row(
-        children: [
-          Container(
-            width: 48,
-            padding: const EdgeInsets.symmetric(vertical: 8),
-            decoration: BoxDecoration(
-              color: kColorBackground,
-              borderRadius: BorderRadius.circular(12),
+    return InkWell(
+      borderRadius: BorderRadius.circular(16),
+      onTap: onTap,
+      child: Container(
+        padding: const EdgeInsets.all(14),
+        decoration: BoxDecoration(
+          color: kColorSurface,
+          borderRadius: BorderRadius.circular(16),
+          border: Border.all(color: kColorBorder),
+        ),
+        child: Row(
+          children: [
+            Container(
+              width: 48,
+              padding: const EdgeInsets.symmetric(vertical: 8),
+              decoration: BoxDecoration(
+                color: kColorBackground,
+                borderRadius: BorderRadius.circular(12),
+              ),
+              child: Column(
+                children: [
+                  Icon(
+                    visit.isUpcoming
+                        ? Icons.event_rounded
+                        : Icons.check_circle_outline_rounded,
+                    size: 18,
+                    color: statusColor,
+                  ),
+                  const SizedBox(height: 4),
+                  SemiBoldText(
+                    text: visit.timeLabel,
+                    fontSize: TextStyles.k12FontSize,
+                    color: kColorTitle,
+                    align: TextAlign.center,
+                  ),
+                ],
+              ),
             ),
-            child: Column(
-              children: [
-                Icon(
-                  visit.isUpcoming
-                      ? Icons.event_rounded
-                      : Icons.check_circle_outline_rounded,
-                  size: 18,
-                  color: statusColor,
-                ),
-                const SizedBox(height: 4),
-                SemiBoldText(
-                  text: visit.timeLabel,
-                  fontSize: TextStyles.k12FontSize,
-                  color: kColorTitle,
-                  align: TextAlign.center,
-                ),
-              ],
+            const SizedBox(width: 12),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  SemiBoldText(
+                    text: visit.dateLabel,
+                    fontSize: TextStyles.k14FontSize,
+                    color: kColorTitle,
+                  ),
+                  const SizedBox(height: 4),
+                  AppText(
+                    text: visit.reason,
+                    fontSize: TextStyles.k12FontSize,
+                    color: kColorTextSecondary,
+                  ),
+                ],
+              ),
             ),
-          ),
-          const SizedBox(width: 12),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                SemiBoldText(
-                  text: visit.dateLabel,
-                  fontSize: TextStyles.k14FontSize,
-                  color: kColorTitle,
-                ),
-                const SizedBox(height: 4),
-                AppText(
-                  text: visit.reason,
-                  fontSize: TextStyles.k12FontSize,
-                  color: kColorTextSecondary,
-                ),
-              ],
+            Container(
+              padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+              decoration: BoxDecoration(
+                color: statusColor.withValues(alpha: 0.12),
+                borderRadius: BorderRadius.circular(8),
+              ),
+              child: AppText(
+                text: visit.statusLabel,
+                fontSize: TextStyles.k12FontSize,
+                color: statusColor,
+              ),
             ),
-          ),
-          Container(
-            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-            decoration: BoxDecoration(
-              color: statusColor.withValues(alpha: 0.12),
-              borderRadius: BorderRadius.circular(8),
-            ),
-            child: AppText(
-              text: visit.statusLabel,
-              fontSize: TextStyles.k12FontSize,
-              color: statusColor,
-            ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

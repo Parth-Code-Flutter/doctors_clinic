@@ -3,7 +3,9 @@ import 'package:doctors_clinic/app/main/appointments/data/appointment_repository
 import 'package:doctors_clinic/app/main/reminders/data/reminder_repository.dart';
 import 'package:doctors_clinic/app/main/appointments/models/appointment_model.dart';
 import 'package:doctors_clinic/app/main/appointments/models/appointment_status.dart';
+import 'package:doctors_clinic/app/main/visits/visit_route_arguments.dart';
 import 'package:doctors_clinic/constants/string_constants.dart';
+import 'package:doctors_clinic/routes/app_pages.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -81,6 +83,20 @@ class AppointmentDetailController extends GetxController {
       snackPosition: SnackPosition.BOTTOM,
       margin: const EdgeInsets.all(16),
       duration: const Duration(seconds: 2),
+    );
+  }
+
+  Future<void> onVisitNotes() async {
+    final item = appointment.value;
+    if (item == null) {
+      return;
+    }
+    await Get.toNamed(
+      Routes.VISIT_EDITOR,
+      arguments: {
+        VisitRouteArgs.patientId: item.patientId,
+        VisitRouteArgs.appointmentId: item.id,
+      },
     );
   }
 }

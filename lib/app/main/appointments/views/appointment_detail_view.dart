@@ -91,7 +91,10 @@ class AppointmentDetailView extends GetView<AppointmentDetailController> {
                   ),
                   if (item.reason != null && item.reason!.isNotEmpty) ...[
                     const SizedBox(height: 8),
-                    _HeroRow(icon: Icons.medical_services_outlined, label: item.reason!),
+                    _HeroRow(
+                      icon: Icons.medical_services_outlined,
+                      label: item.reason!,
+                    ),
                   ],
                 ],
               ),
@@ -123,6 +126,13 @@ class AppointmentDetailView extends GetView<AppointmentDetailController> {
                   ),
                 ),
               ],
+            ),
+            Spacing.v12,
+            appButton(
+              onPressed: controller.onVisitNotes,
+              buttonText: kAppointmentDetailVisitNoteButton,
+              variant: AppButtonVariant.secondary,
+              buttonIcon: const Icon(Icons.note_alt_outlined, size: 20),
             ),
             Spacing.v16,
             if (item.status == AppointmentStatus.upcoming ||

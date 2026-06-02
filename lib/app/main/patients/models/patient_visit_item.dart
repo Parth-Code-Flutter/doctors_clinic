@@ -1,5 +1,6 @@
 class PatientVisitItem {
   const PatientVisitItem({
+    this.visitId,
     required this.dateLabel,
     required this.timeLabel,
     required this.reason,
@@ -7,6 +8,7 @@ class PatientVisitItem {
     required this.isUpcoming,
   });
 
+  final String? visitId;
   final String dateLabel;
   final String timeLabel;
   final String reason;

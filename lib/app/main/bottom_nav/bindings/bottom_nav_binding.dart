@@ -3,6 +3,7 @@ import 'package:doctors_clinic/app/main/appointments/data/appointment_repository
 import 'package:doctors_clinic/app/main/queue/data/queue_repository.dart';
 import 'package:doctors_clinic/app/main/reminders/data/reminder_repository.dart';
 import 'package:doctors_clinic/app/main/settings/data/clinic_settings_repository.dart';
+import 'package:doctors_clinic/app/main/visits/data/visit_repository.dart';
 import 'package:doctors_clinic/app/main/whatsapp/data/whatsapp_repository.dart';
 import 'package:doctors_clinic/app/main/dashboard/controllers/dashboard_controller.dart';
 import 'package:doctors_clinic/app/main/more/controllers/more_tab_controller.dart';
@@ -33,9 +34,15 @@ class BottomNavBinding extends Bindings {
     if (!Get.isRegistered<WhatsAppRepository>()) {
       Get.put(WhatsAppRepository(), permanent: true);
     }
+    if (!Get.isRegistered<VisitRepository>()) {
+      Get.put(VisitRepository(), permanent: true);
+    }
     Get.lazyPut<BottomNavController>(() => BottomNavController(), fenix: true);
     Get.lazyPut<DashboardController>(() => DashboardController(), fenix: true);
-    Get.lazyPut<PatientsTabController>(() => PatientsTabController(), fenix: true);
+    Get.lazyPut<PatientsTabController>(
+      () => PatientsTabController(),
+      fenix: true,
+    );
     Get.lazyPut<AppointmentsTabController>(
       () => AppointmentsTabController(),
       fenix: true,
