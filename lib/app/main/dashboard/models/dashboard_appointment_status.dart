@@ -2,12 +2,7 @@ import 'package:doctors_clinic/constants/color_constants.dart';
 import 'package:doctors_clinic/constants/string_constants.dart';
 import 'package:flutter/material.dart';
 
-enum DashboardAppointmentStatus {
-  upcoming,
-  inProgress,
-  completed,
-  cancelled,
-}
+enum DashboardAppointmentStatus { upcoming, inProgress, completed, cancelled }
 
 extension DashboardAppointmentStatusX on DashboardAppointmentStatus {
   String get label {

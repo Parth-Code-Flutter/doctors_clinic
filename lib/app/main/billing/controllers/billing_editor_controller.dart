@@ -6,6 +6,7 @@ import 'package:doctors_clinic/app/main/patients/data/patient_repository.dart';
 import 'package:doctors_clinic/app/main/patients/models/patient_model.dart';
 import 'package:doctors_clinic/app/main/visits/data/visit_repository.dart';
 import 'package:doctors_clinic/constants/string_constants.dart';
+import 'package:doctors_clinic/utils/ui_utils/app_toast.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -108,7 +109,7 @@ class BillingEditorController extends GetxController {
     final qty = int.tryParse(qtyController.text.trim()) ?? 0;
     final price = _toDouble(priceController.text);
     if (label.isEmpty || qty <= 0 || price <= 0) {
-      Get.snackbar(
+      showAppToast(
         kBillingEditorTitle,
         kBillingValidationLineRequired,
         snackPosition: SnackPosition.BOTTOM,
@@ -135,7 +136,7 @@ class BillingEditorController extends GetxController {
     }
     final patientId = selectedPatientId.value;
     if (patientId == null) {
-      Get.snackbar(
+      showAppToast(
         kBillingEditorTitle,
         kBillingValidationPatientRequired,
         snackPosition: SnackPosition.BOTTOM,
@@ -144,7 +145,7 @@ class BillingEditorController extends GetxController {
       return;
     }
     if (lineItems.isEmpty) {
-      Get.snackbar(
+      showAppToast(
         kBillingEditorTitle,
         kBillingValidationNoItems,
         snackPosition: SnackPosition.BOTTOM,
@@ -182,7 +183,7 @@ class BillingEditorController extends GetxController {
         ),
       );
       Get.back(result: true);
-      Get.snackbar(
+      showAppToast(
         kBillingEditorTitle,
         kBillingSavedMessage,
         snackPosition: SnackPosition.BOTTOM,

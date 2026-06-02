@@ -74,9 +74,9 @@ class PatientsTabView extends GetView<PatientsTabController> {
                 final patients = controller.filteredPatients;
                 if (patients.isEmpty) {
                   return _EmptyState(
-                    isSearch: controller.searchQuery.value.isNotEmpty ||
-                        controller.activeFilter.value !=
-                            PatientListFilter.all,
+                    isSearch:
+                        controller.searchQuery.value.isNotEmpty ||
+                        controller.activeFilter.value != PatientListFilter.all,
                   );
                 }
                 return ListView.separated(
@@ -127,7 +127,8 @@ class _FilterRow extends StatelessWidget {
               label: kPatientsFilterRecent,
               selected:
                   controller.activeFilter.value == PatientListFilter.recent,
-              onTap: () => controller.onFilterSelected(PatientListFilter.recent),
+              onTap: () =>
+                  controller.onFilterSelected(PatientListFilter.recent),
             ),
             const SizedBox(width: 8),
             _FilterChip(
@@ -209,8 +210,9 @@ class _EmptyState extends StatelessWidget {
             ),
             const SizedBox(height: 8),
             AppText(
-              text:
-                  isSearch ? kPatientsEmptySearchSubtitle : kPatientsEmptySubtitle,
+              text: isSearch
+                  ? kPatientsEmptySearchSubtitle
+                  : kPatientsEmptySubtitle,
               fontSize: TextStyles.k14FontSize,
               color: kColorTextSecondary,
               align: TextAlign.center,

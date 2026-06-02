@@ -57,7 +57,8 @@ class RemindersListView extends GetView<RemindersListController> {
               final reminders = controller.filteredReminders;
               if (reminders.isEmpty) {
                 return _EmptyState(
-                  isSearch: controller.searchQuery.value.isNotEmpty ||
+                  isSearch:
+                      controller.searchQuery.value.isNotEmpty ||
                       controller.activeFilter.value != ReminderListFilter.all,
                 );
               }
@@ -105,7 +106,8 @@ class _FilterRow extends StatelessWidget {
               label: kRemindersFilterToday,
               selected:
                   controller.activeFilter.value == ReminderListFilter.today,
-              onTap: () => controller.onFilterSelected(ReminderListFilter.today),
+              onTap: () =>
+                  controller.onFilterSelected(ReminderListFilter.today),
             ),
             const SizedBox(width: 8),
             _FilterChip(
@@ -127,13 +129,13 @@ class _FilterRow extends StatelessWidget {
               label: kRemindersFilterFailed,
               selected:
                   controller.activeFilter.value == ReminderListFilter.failed,
-              onTap: () => controller.onFilterSelected(ReminderListFilter.failed),
+              onTap: () =>
+                  controller.onFilterSelected(ReminderListFilter.failed),
             ),
             const SizedBox(width: 8),
             _FilterChip(
               label: kRemindersFilterAll,
-              selected:
-                  controller.activeFilter.value == ReminderListFilter.all,
+              selected: controller.activeFilter.value == ReminderListFilter.all,
               onTap: () => controller.onFilterSelected(ReminderListFilter.all),
             ),
           ],
@@ -167,9 +169,7 @@ class _FilterChip extends StatelessWidget {
       showCheckmark: false,
       backgroundColor: kColorSurface,
       selectedColor: kColorSecondaryButtonBackground,
-      side: BorderSide(
-        color: selected ? kColorLink : kColorBorder,
-      ),
+      side: BorderSide(color: selected ? kColorLink : kColorBorder),
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
       padding: const EdgeInsets.symmetric(horizontal: 4),
     );

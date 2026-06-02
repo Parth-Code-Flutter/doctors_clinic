@@ -124,8 +124,7 @@ class AppointmentRepository extends GetxService {
     }
 
     final now = DateTime.now();
-    PatientModel patientAt(int index) =>
-        patients[index % patients.length];
+    PatientModel patientAt(int index) => patients[index % patients.length];
 
     _appointments.assignAll([
       _mock(

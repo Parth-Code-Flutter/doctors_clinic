@@ -26,12 +26,12 @@ class ReminderListTileCard extends StatelessWidget {
     final initials = reminder.patientName.trim().isEmpty
         ? '?'
         : reminder.patientName
-            .trim()
-            .split(RegExp(r'\s+'))
-            .map((p) => p[0])
-            .take(2)
-            .join()
-            .toUpperCase();
+              .trim()
+              .split(RegExp(r'\s+'))
+              .map((p) => p[0])
+              .take(2)
+              .join()
+              .toUpperCase();
 
     return Material(
       color: Colors.transparent,
@@ -47,8 +47,8 @@ class ReminderListTileCard extends StatelessWidget {
               color: reminder.status == ReminderStatus.failed
                   ? kColorAppointmentMissed.withValues(alpha: 0.45)
                   : reminder.isDeliverToday
-                      ? kColorLink
-                      : kColorBorder,
+                  ? kColorLink
+                  : kColorBorder,
               width: reminder.isDeliverToday ? 1.2 : 1,
             ),
             boxShadow: const [
@@ -66,8 +66,9 @@ class ReminderListTileCard extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   PatientAvatar(
-                    initials:
-                        initials.length > 2 ? initials.substring(0, 2) : initials,
+                    initials: initials.length > 2
+                        ? initials.substring(0, 2)
+                        : initials,
                     colorIndex: reminder.patientName.hashCode,
                     size: 42,
                   ),

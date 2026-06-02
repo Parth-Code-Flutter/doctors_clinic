@@ -62,8 +62,9 @@ class WhatsAppRepository extends GetxService {
 
   int get queuedCount =>
       _logs.where((e) => e.status == WhatsAppLogStatus.queued).length;
-  int get sentTodayCount =>
-      _logs.where((e) => e.status == WhatsAppLogStatus.sent && e.isToday).length;
+  int get sentTodayCount => _logs
+      .where((e) => e.status == WhatsAppLogStatus.sent && e.isToday)
+      .length;
   int get failedCount =>
       _logs.where((e) => e.status == WhatsAppLogStatus.failed).length;
 

@@ -207,7 +207,10 @@ class _ScheduleStep extends StatelessWidget {
                   ),
                   child: Row(
                     children: [
-                      const Icon(Icons.calendar_month_rounded, color: kColorLink),
+                      const Icon(
+                        Icons.calendar_month_rounded,
+                        color: kColorLink,
+                      ),
                       const SizedBox(width: 12),
                       Expanded(
                         child: SemiBoldText(

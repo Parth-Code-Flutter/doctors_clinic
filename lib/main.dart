@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:toastification/toastification.dart';
 
 import 'constants/color_constants.dart';
 import 'routes/app_pages.dart';
@@ -13,35 +14,52 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Doctors Clinic',
-      initialRoute: AppPages.INITIAL,
-      getPages: AppPages.routes,
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(
-          seedColor: kColorPrimary,
-          primary: kColorPrimary,
-          secondary: kColorAccent,
-          surface: kColorSurface,
-          error: kColorError,
-        ),
-        scaffoldBackgroundColor: kColorBackground,
-        appBarTheme: const AppBarTheme(
-          backgroundColor: kColorBackground,
-          surfaceTintColor: Colors.transparent,
-          elevation: 0,
-          scrolledUnderElevation: 0,
-          shadowColor: Colors.transparent,
-          iconTheme: IconThemeData(color: kColorTitle),
-          titleTextStyle: TextStyle(
-            color: kColorTitle,
-            fontSize: 18,
-            fontWeight: FontWeight.w600,
+    return ToastificationWrapper(
+      child: GetMaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'Doctors Clinic',
+        initialRoute: AppPages.INITIAL,
+        getPages: AppPages.routes,
+        builder: (context, child) {
+          return ToastificationConfigProvider(
+            config: const ToastificationConfig(
+              alignment: Alignment.topCenter,
+              animationDuration: Duration(milliseconds: 320),
+              itemWidth: 420,
+              marginBuilder: _toastMarginBuilder,
+            ),
+            child: child!,
+          );
+        },
+        theme: ThemeData(
+          colorScheme: ColorScheme.fromSeed(
+            seedColor: kColorPrimary,
+            primary: kColorPrimary,
+            secondary: kColorAccent,
+            surface: kColorSurface,
+            error: kColorError,
           ),
+          scaffoldBackgroundColor: kColorBackground,
+          appBarTheme: const AppBarTheme(
+            backgroundColor: kColorBackground,
+            surfaceTintColor: Colors.transparent,
+            elevation: 0,
+            scrolledUnderElevation: 0,
+            shadowColor: Colors.transparent,
+            iconTheme: IconThemeData(color: kColorTitle),
+            titleTextStyle: TextStyle(
+              color: kColorTitle,
+              fontSize: 18,
+              fontWeight: FontWeight.w600,
+            ),
+          ),
+          useMaterial3: true,
         ),
-        useMaterial3: true,
       ),
     );
   }
+}
+
+EdgeInsets _toastMarginBuilder(BuildContext context, AlignmentGeometry alignment) {
+  return const EdgeInsets.fromLTRB(12, 12, 12, 16);
 }

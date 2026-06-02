@@ -64,10 +64,7 @@ class SettingsClinicHeroCard extends StatelessWidget {
             ],
           ),
           const SizedBox(height: 14),
-          _HeroLine(
-            icon: Icons.phone_outlined,
-            text: settings.mobile,
-          ),
+          _HeroLine(icon: Icons.phone_outlined, text: settings.mobile),
           if (settings.locationLine.isNotEmpty) ...[
             const SizedBox(height: 6),
             _HeroLine(

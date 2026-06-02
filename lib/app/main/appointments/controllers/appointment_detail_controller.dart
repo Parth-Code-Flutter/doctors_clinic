@@ -6,6 +6,7 @@ import 'package:doctors_clinic/app/main/appointments/models/appointment_status.d
 import 'package:doctors_clinic/app/main/visits/visit_route_arguments.dart';
 import 'package:doctors_clinic/constants/string_constants.dart';
 import 'package:doctors_clinic/routes/app_pages.dart';
+import 'package:doctors_clinic/utils/ui_utils/app_toast.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -41,7 +42,7 @@ class AppointmentDetailController extends GetxController {
     final updated = current.copyWith(status: status);
     _repo.updateAppointment(updated);
     appointment.value = updated;
-    Get.snackbar(
+    showAppToast(
       kAppointmentDetailTitle,
       kAppointmentDetailStatusUpdated,
       snackPosition: SnackPosition.BOTTOM,
@@ -67,7 +68,7 @@ class AppointmentDetailController extends GetxController {
     if (Get.isRegistered<ReminderRepository>()) {
       Get.find<ReminderRepository>().markSentForAppointment(_appointmentId);
     }
-    Get.snackbar(
+    showAppToast(
       kAppointmentDetailSendReminder,
       kRemindersManualSentNote,
       snackPosition: SnackPosition.BOTTOM,
@@ -77,7 +78,7 @@ class AppointmentDetailController extends GetxController {
   }
 
   void onCallPatient() {
-    Get.snackbar(
+    showAppToast(
       kAppointmentDetailCall,
       appointment.value?.patientPhone ?? '',
       snackPosition: SnackPosition.BOTTOM,

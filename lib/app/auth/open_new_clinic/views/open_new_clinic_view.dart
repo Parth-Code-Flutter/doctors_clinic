@@ -33,10 +33,7 @@ class OpenNewClinicView extends GetView<OpenNewClinicController> {
           child: SingleChildScrollView(
             keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
             physics: const AlwaysScrollableScrollPhysics(),
-            padding: AppUIUtils.horizontalPadding.copyWith(
-              top: 8,
-              bottom: 24,
-            ),
+            padding: AppUIUtils.horizontalPadding.copyWith(top: 8, bottom: 24),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [

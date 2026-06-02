@@ -8,8 +8,4 @@ class AuthRouteArgs {
 }
 
 /// Why the user is on the OTP screen.
-enum AuthOtpFlow {
-  forgotPassword,
-  login,
-  register,
-}
+enum AuthOtpFlow { forgotPassword, login, register }

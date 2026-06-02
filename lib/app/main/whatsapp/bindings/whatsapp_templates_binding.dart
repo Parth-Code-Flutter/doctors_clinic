@@ -13,6 +13,8 @@ class WhatsAppTemplatesBinding extends Bindings {
     if (!Get.isRegistered<WhatsAppRepository>()) {
       Get.put(WhatsAppRepository(), permanent: true);
     }
-    Get.lazyPut<WhatsAppTemplatesController>(() => WhatsAppTemplatesController());
+    Get.lazyPut<WhatsAppTemplatesController>(
+      () => WhatsAppTemplatesController(),
+    );
   }
 }

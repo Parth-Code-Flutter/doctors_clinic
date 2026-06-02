@@ -16,15 +16,7 @@ class AppointmentFormatUtils {
     'Dec',
   ];
 
-  static const _weekdays = [
-    'Mon',
-    'Tue',
-    'Wed',
-    'Thu',
-    'Fri',
-    'Sat',
-    'Sun',
-  ];
+  static const _weekdays = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
 
   static String formatTime(DateTime dateTime) {
     final hour = dateTime.hour;
@@ -55,7 +47,11 @@ class AppointmentFormatUtils {
         dateTime.day == reference.day) {
       return 'Today';
     }
-    final tomorrow = DateTime(reference.year, reference.month, reference.day + 1);
+    final tomorrow = DateTime(
+      reference.year,
+      reference.month,
+      reference.day + 1,
+    );
     if (dateTime.year == tomorrow.year &&
         dateTime.month == tomorrow.month &&
         dateTime.day == tomorrow.day) {

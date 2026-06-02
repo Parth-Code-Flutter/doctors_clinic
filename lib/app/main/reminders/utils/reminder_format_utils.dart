@@ -4,15 +4,7 @@ import 'package:doctors_clinic/constants/string_constants.dart';
 class ReminderFormatUtils {
   ReminderFormatUtils._();
 
-  static const _weekdays = [
-    'Mon',
-    'Tue',
-    'Wed',
-    'Thu',
-    'Fri',
-    'Sat',
-    'Sun',
-  ];
+  static const _weekdays = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
 
   static const _months = [
     'Jan',

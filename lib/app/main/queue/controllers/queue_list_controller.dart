@@ -3,6 +3,7 @@ import 'package:doctors_clinic/app/main/queue/models/queue_token_model.dart';
 import 'package:doctors_clinic/app/main/queue/queue_route_arguments.dart';
 import 'package:doctors_clinic/constants/string_constants.dart';
 import 'package:doctors_clinic/routes/app_pages.dart';
+import 'package:doctors_clinic/utils/ui_utils/app_toast.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -51,7 +52,7 @@ class QueueListController extends GetxController {
     final result = await Get.toNamed(Routes.QUEUE_ADD);
     if (result == true) {
       refreshList();
-      Get.snackbar(
+      showAppToast(
         kQueueTitle,
         kQueueTokenCreatedMessage,
         snackPosition: SnackPosition.BOTTOM,

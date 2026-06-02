@@ -47,8 +47,9 @@ class WhatsAppMessageLogModel {
       preview: preview ?? this.preview,
       status: status ?? this.status,
       sentAt: sentAt ?? this.sentAt,
-      failureReason:
-          clearFailureReason ? null : (failureReason ?? this.failureReason),
+      failureReason: clearFailureReason
+          ? null
+          : (failureReason ?? this.failureReason),
     );
   }
 }

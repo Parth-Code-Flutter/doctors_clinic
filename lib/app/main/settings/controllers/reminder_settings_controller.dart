@@ -1,5 +1,6 @@
 import 'package:doctors_clinic/app/main/settings/data/clinic_settings_repository.dart';
 import 'package:doctors_clinic/constants/string_constants.dart';
+import 'package:doctors_clinic/utils/ui_utils/app_toast.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -50,7 +51,7 @@ class ReminderSettingsController extends GetxController {
         autoRemindersEnabled: autoRemindersEnabled.value,
       );
       Get.back();
-      Get.snackbar(
+      showAppToast(
         kSettingsRemindersScreenTitle,
         kSettingsRemindersSavedMessage,
         snackPosition: SnackPosition.BOTTOM,

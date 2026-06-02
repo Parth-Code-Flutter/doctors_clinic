@@ -2,6 +2,7 @@ import 'package:doctors_clinic/app/main/whatsapp/data/whatsapp_repository.dart';
 import 'package:doctors_clinic/app/main/whatsapp/models/whatsapp_template_model.dart';
 import 'package:doctors_clinic/app/main/whatsapp/whatsapp_route_arguments.dart';
 import 'package:doctors_clinic/constants/string_constants.dart';
+import 'package:doctors_clinic/utils/ui_utils/app_toast.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -60,8 +61,9 @@ class WhatsAppTemplateEditorController extends GetxController {
     if (template == null || isSaving.value) {
       return;
     }
-    if (titleController.text.trim().isEmpty || bodyController.text.trim().isEmpty) {
-      Get.snackbar(
+    if (titleController.text.trim().isEmpty ||
+        bodyController.text.trim().isEmpty) {
+      showAppToast(
         kWhatsAppTemplateEditorTitle,
         kWhatsAppValidationTemplateRequired,
         snackPosition: SnackPosition.BOTTOM,
@@ -82,7 +84,7 @@ class WhatsAppTemplateEditorController extends GetxController {
         ),
       );
       Get.back();
-      Get.snackbar(
+      showAppToast(
         kWhatsAppTemplatesTitle,
         kWhatsAppTemplateSaved,
         snackPosition: SnackPosition.BOTTOM,

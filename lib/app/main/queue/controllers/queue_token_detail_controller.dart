@@ -3,6 +3,7 @@ import 'package:doctors_clinic/app/main/queue/models/queue_token_model.dart';
 import 'package:doctors_clinic/app/main/queue/models/queue_token_status.dart';
 import 'package:doctors_clinic/app/main/queue/queue_route_arguments.dart';
 import 'package:doctors_clinic/constants/string_constants.dart';
+import 'package:doctors_clinic/utils/ui_utils/app_toast.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -18,7 +19,8 @@ class QueueTokenDetailController extends GetxController {
   @override
   void onInit() {
     super.onInit();
-    _queueTokenId = Get.arguments?[QueueRouteArgs.queueTokenId] as String? ?? '';
+    _queueTokenId =
+        Get.arguments?[QueueRouteArgs.queueTokenId] as String? ?? '';
     _loadToken();
   }
 
@@ -41,7 +43,7 @@ class QueueTokenDetailController extends GetxController {
   void _updateStatus(QueueTokenStatus status) {
     _repo.updateStatus(_queueTokenId, status);
     _loadToken();
-    Get.snackbar(
+    showAppToast(
       kQueueDetailTitle,
       kQueueStatusUpdatedMessage,
       snackPosition: SnackPosition.BOTTOM,
@@ -64,7 +66,7 @@ class QueueTokenDetailController extends GetxController {
       await Future<void>.delayed(const Duration(milliseconds: 200));
       _repo.updateNotes(_queueTokenId, notesController.text);
       _loadToken();
-      Get.snackbar(
+      showAppToast(
         kQueueDetailTitle,
         kQueueNotesSavedMessage,
         snackPosition: SnackPosition.BOTTOM,

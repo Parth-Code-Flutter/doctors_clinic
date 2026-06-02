@@ -1,10 +1,11 @@
 import 'package:doctors_clinic/constants/string_constants.dart';
+import 'package:doctors_clinic/utils/ui_utils/app_toast.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class AboutSettingsController extends GetxController {
   void onSupportTap() {
-    Get.snackbar(
+    showAppToast(
       kSettingsSupportTitle,
       kSettingsSupportEmail,
       snackPosition: SnackPosition.BOTTOM,
@@ -14,7 +15,7 @@ class AboutSettingsController extends GetxController {
   }
 
   void onLegalTap(String title) {
-    Get.snackbar(
+    showAppToast(
       title,
       kSettingsLegalPendingMessage,
       snackPosition: SnackPosition.BOTTOM,

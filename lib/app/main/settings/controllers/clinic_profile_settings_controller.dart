@@ -1,6 +1,7 @@
 import 'package:doctors_clinic/app/main/settings/data/clinic_settings_model.dart';
 import 'package:doctors_clinic/app/main/settings/data/clinic_settings_repository.dart';
 import 'package:doctors_clinic/constants/string_constants.dart';
+import 'package:doctors_clinic/utils/ui_utils/app_toast.dart';
 import 'package:doctors_clinic/utils/validations/text_field_validations.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -88,7 +89,7 @@ class ClinicProfileSettingsController extends GetxController {
 
       _repo.updateProfile(updated);
       Get.back();
-      Get.snackbar(
+      showAppToast(
         kSettingsClinicProfileScreenTitle,
         kSettingsProfileSavedMessage,
         snackPosition: SnackPosition.BOTTOM,

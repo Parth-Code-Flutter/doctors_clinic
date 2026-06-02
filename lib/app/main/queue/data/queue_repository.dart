@@ -4,14 +4,7 @@ import 'package:doctors_clinic/app/main/queue/models/queue_token_model.dart';
 import 'package:doctors_clinic/app/main/queue/models/queue_token_status.dart';
 import 'package:get/get.dart';
 
-enum QueueListFilter {
-  all,
-  waiting,
-  withDoctor,
-  completed,
-  skipped,
-  priority,
-}
+enum QueueListFilter { all, waiting, withDoctor, completed, skipped, priority }
 
 class QueueRepository extends GetxService {
   final _tokens = <QueueTokenModel>[].obs;
@@ -69,9 +62,9 @@ class QueueRepository extends GetxService {
     }).toList();
 
     filtered.sort((a, b) {
-      final statusCompare = _statusSortIndex(a.status).compareTo(
-        _statusSortIndex(b.status),
-      );
+      final statusCompare = _statusSortIndex(
+        a.status,
+      ).compareTo(_statusSortIndex(b.status));
       if (statusCompare != 0) {
         return statusCompare;
       }
@@ -151,7 +144,8 @@ class QueueRepository extends GetxService {
         startedAt: status == QueueTokenStatus.withDoctor
             ? DateTime.now()
             : token.startedAt,
-        completedAt: status == QueueTokenStatus.completed ||
+        completedAt:
+            status == QueueTokenStatus.completed ||
                 status == QueueTokenStatus.skipped
             ? DateTime.now()
             : token.completedAt,

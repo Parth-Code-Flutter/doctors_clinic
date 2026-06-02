@@ -92,7 +92,9 @@ class WhatsAppTemplatesView extends GetView<WhatsAppTemplatesController> {
                               const _Badge(text: kWhatsAppTemplateDefaultBadge),
                             if (!t.isActive) ...[
                               if (t.isDefault) const SizedBox(width: 6),
-                              const _Badge(text: kWhatsAppTemplateInactiveBadge),
+                              const _Badge(
+                                text: kWhatsAppTemplateInactiveBadge,
+                              ),
                             ],
                             const Spacer(),
                             SizedBox(

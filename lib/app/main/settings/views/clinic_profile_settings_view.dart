@@ -12,7 +12,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 
-class ClinicProfileSettingsView extends GetView<ClinicProfileSettingsController> {
+class ClinicProfileSettingsView
+    extends GetView<ClinicProfileSettingsController> {
   const ClinicProfileSettingsView({super.key});
 
   @override
@@ -20,7 +21,9 @@ class ClinicProfileSettingsView extends GetView<ClinicProfileSettingsController>
     return Scaffold(
       backgroundColor: kColorBackground,
       resizeToAvoidBottomInset: true,
-      appBar: const CommonAppBarWidget(title: kSettingsClinicProfileScreenTitle),
+      appBar: const CommonAppBarWidget(
+        title: kSettingsClinicProfileScreenTitle,
+      ),
       body: GestureDetector(
         onTap: () => FocusScope.of(context).unfocus(),
         child: Form(
@@ -104,8 +107,7 @@ class ClinicProfileSettingsView extends GetView<ClinicProfileSettingsController>
                 controller: controller.clinicTypeController,
                 hintText: kClinicTypeHint,
                 textCapitalization: TextCapitalization.words,
-                prefix:
-                    AppTextField.fieldIcon(Icons.medical_services_outlined),
+                prefix: AppTextField.fieldIcon(Icons.medical_services_outlined),
               ),
               Spacing.v12,
               AppTextField(

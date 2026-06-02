@@ -15,7 +15,8 @@ class ForgotPasswordController extends GetxController {
     super.onClose();
   }
 
-  String? validateContact(String? value) => Validate.emailOrPhoneValidation(value);
+  String? validateContact(String? value) =>
+      Validate.emailOrPhoneValidation(value);
 
   bool get _isPhoneContact {
     final trimmed = contactController.text.trim();

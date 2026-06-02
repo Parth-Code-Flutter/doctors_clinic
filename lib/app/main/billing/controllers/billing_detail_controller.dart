@@ -3,6 +3,7 @@ import 'package:doctors_clinic/app/main/billing/data/billing_repository.dart';
 import 'package:doctors_clinic/app/main/billing/models/billing_receipt_model.dart';
 import 'package:doctors_clinic/constants/string_constants.dart';
 import 'package:doctors_clinic/routes/app_pages.dart';
+import 'package:doctors_clinic/utils/ui_utils/app_toast.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -40,7 +41,7 @@ class BillingDetailController extends GetxController {
   }
 
   void onShare() {
-    Get.snackbar(
+    showAppToast(
       kBillingDetailTitle,
       kBillingShareMockMessage,
       snackPosition: SnackPosition.BOTTOM,

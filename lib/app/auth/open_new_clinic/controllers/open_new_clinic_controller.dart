@@ -42,7 +42,8 @@ class OpenNewClinicController extends GetxController {
   String? validateOwnerName(String? value) =>
       Validate.requiredText(value, kValidationOwnerNameRequired);
 
-  String? validateMobile(String? value) => Validate.mobile10DigitValidation(value);
+  String? validateMobile(String? value) =>
+      Validate.mobile10DigitValidation(value);
 
   String? validateEmail(String? value) => Validate.emailValidation(value);
 
@@ -50,10 +51,7 @@ class OpenNewClinicController extends GetxController {
       Validate.passwordValidation(value ?? '');
 
   String? validateConfirmPassword(String? value) =>
-      Validate.confirmPasswordValidation(
-        passwordController.text,
-        value,
-      );
+      Validate.confirmPasswordValidation(passwordController.text, value);
 
   bool validateForm() => formKey.currentState?.validate() ?? false;
 

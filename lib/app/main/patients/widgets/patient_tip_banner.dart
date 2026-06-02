@@ -21,7 +21,11 @@ class PatientTipBanner extends StatelessWidget {
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Icon(Icons.lightbulb_outline_rounded, size: 20, color: kColorLink),
+          const Icon(
+            Icons.lightbulb_outline_rounded,
+            size: 20,
+            color: kColorLink,
+          ),
           const SizedBox(width: 10),
           Expanded(
             child: AppText(

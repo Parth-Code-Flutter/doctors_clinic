@@ -3,6 +3,7 @@ import 'package:doctors_clinic/app/main/patients/models/patient_model.dart';
 import 'package:doctors_clinic/app/main/whatsapp/data/whatsapp_repository.dart';
 import 'package:doctors_clinic/app/main/whatsapp/models/whatsapp_template_model.dart';
 import 'package:doctors_clinic/constants/string_constants.dart';
+import 'package:doctors_clinic/utils/ui_utils/app_toast.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -57,7 +58,7 @@ class WhatsAppComposeController extends GetxController {
     final patient = selectedPatient;
     final template = selectedTemplate;
     if (patient == null || template == null) {
-      Get.snackbar(
+      showAppToast(
         kWhatsAppComposeTitle,
         kWhatsAppValidationSelectionRequired,
         snackPosition: SnackPosition.BOTTOM,
@@ -66,7 +67,7 @@ class WhatsAppComposeController extends GetxController {
       return;
     }
     if (messageController.text.trim().isEmpty) {
-      Get.snackbar(
+      showAppToast(
         kWhatsAppComposeTitle,
         kWhatsAppValidationMessageRequired,
         snackPosition: SnackPosition.BOTTOM,
@@ -84,7 +85,7 @@ class WhatsAppComposeController extends GetxController {
         message: messageController.text,
       );
       Get.back();
-      Get.snackbar(
+      showAppToast(
         kWhatsAppTitle,
         kWhatsAppMessageQueued,
         snackPosition: SnackPosition.BOTTOM,

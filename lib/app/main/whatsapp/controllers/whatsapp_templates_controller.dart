@@ -17,7 +17,9 @@ class WhatsAppTemplatesController extends GetxController {
   @override
   void onInit() {
     super.onInit();
-    searchController.addListener(() => searchQuery.value = searchController.text);
+    searchController.addListener(
+      () => searchQuery.value = searchController.text,
+    );
   }
 
   @override

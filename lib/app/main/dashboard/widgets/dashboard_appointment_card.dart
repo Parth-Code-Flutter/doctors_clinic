@@ -49,11 +49,7 @@ class DashboardAppointmentCard extends StatelessWidget {
                 ),
                 child: Column(
                   children: [
-                    Icon(
-                      Icons.schedule_rounded,
-                      size: 16,
-                      color: kColorLink,
-                    ),
+                    Icon(Icons.schedule_rounded, size: 16, color: kColorLink),
                     const SizedBox(height: 4),
                     SemiBoldText(
                       text: item.timeLabel,
@@ -87,7 +83,10 @@ class DashboardAppointmentCard extends StatelessWidget {
               ),
               const SizedBox(width: 8),
               Container(
-                padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 10,
+                  vertical: 6,
+                ),
                 decoration: BoxDecoration(
                   color: status.backgroundColor,
                   borderRadius: BorderRadius.circular(20),

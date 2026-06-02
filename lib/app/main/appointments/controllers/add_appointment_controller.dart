@@ -8,6 +8,7 @@ import 'package:doctors_clinic/app/main/appointments/widgets/quick_time_slot_chi
 import 'package:doctors_clinic/app/main/patients/data/patient_repository.dart';
 import 'package:doctors_clinic/app/main/patients/models/patient_model.dart';
 import 'package:doctors_clinic/constants/string_constants.dart';
+import 'package:doctors_clinic/utils/ui_utils/app_toast.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -61,8 +62,9 @@ class AddAppointmentController extends GetxController {
       ? kAddAppointmentStepPatientSubtitle
       : kAddAppointmentStepScheduleSubtitle;
 
-  String get primaryButtonLabel =>
-      currentStep.value < totalSteps - 1 ? kAddAppointmentContinue : kAddAppointmentSave;
+  String get primaryButtonLabel => currentStep.value < totalSteps - 1
+      ? kAddAppointmentContinue
+      : kAddAppointmentSave;
 
   String get selectedDateLabel {
     final date = selectedDate.value;
@@ -182,7 +184,7 @@ class AddAppointmentController extends GetxController {
     if (step == 0) {
       final error = validatePatientStep();
       if (error != null) {
-        Get.snackbar(
+        showAppToast(
           kAddAppointmentTitle,
           error,
           snackPosition: SnackPosition.BOTTOM,
@@ -195,7 +197,7 @@ class AddAppointmentController extends GetxController {
     if (step == 1) {
       final error = validateScheduleStep();
       if (error != null) {
-        Get.snackbar(
+        showAppToast(
           kAddAppointmentTitle,
           error,
           snackPosition: SnackPosition.BOTTOM,
@@ -265,10 +267,12 @@ class AddAppointmentController extends GetxController {
 
       _appointments.addAppointment(appointment);
       if (Get.isRegistered<ReminderRepository>()) {
-        Get.find<ReminderRepository>().upsertScheduledForAppointment(appointment);
+        Get.find<ReminderRepository>().upsertScheduledForAppointment(
+          appointment,
+        );
       }
       Get.back(result: true);
-      Get.snackbar(
+      showAppToast(
         kAddAppointmentTitle,
         kAddAppointmentSuccess,
         snackPosition: SnackPosition.BOTTOM,

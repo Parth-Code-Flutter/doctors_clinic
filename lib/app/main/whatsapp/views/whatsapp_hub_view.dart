@@ -190,7 +190,10 @@ class _ActionCard extends StatelessWidget {
                   ],
                 ),
               ),
-              const Icon(Icons.chevron_right_rounded, color: kColorTextSecondary),
+              const Icon(
+                Icons.chevron_right_rounded,
+                color: kColorTextSecondary,
+              ),
             ],
           ),
         ),

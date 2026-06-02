@@ -55,8 +55,9 @@ class ReminderModel {
       channelLabel: channelLabel,
       timingLabel: timingLabel,
       sentAt: clearSentAt ? null : (sentAt ?? this.sentAt),
-      failureMessage:
-          clearFailureMessage ? null : (failureMessage ?? this.failureMessage),
+      failureMessage: clearFailureMessage
+          ? null
+          : (failureMessage ?? this.failureMessage),
       createdAt: createdAt,
     );
   }

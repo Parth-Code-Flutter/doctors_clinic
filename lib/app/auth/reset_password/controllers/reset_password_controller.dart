@@ -1,5 +1,6 @@
 import 'package:doctors_clinic/constants/string_constants.dart';
 import 'package:doctors_clinic/routes/app_pages.dart';
+import 'package:doctors_clinic/utils/ui_utils/app_toast.dart';
 import 'package:doctors_clinic/utils/validations/text_field_validations.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -42,7 +43,7 @@ class ResetPasswordController extends GetxController {
     try {
       isLoading.value = true;
       await Future<void>.delayed(const Duration(milliseconds: 500));
-      Get.snackbar(
+      showAppToast(
         kResetPasswordTitle,
         kForgotPasswordApiPendingMessage,
         snackPosition: SnackPosition.BOTTOM,

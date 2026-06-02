@@ -1,12 +1,7 @@
 import 'package:doctors_clinic/constants/string_constants.dart';
 import 'package:flutter/material.dart';
 
-enum PatientGender {
-  male,
-  female,
-  other,
-  notSpecified,
-}
+enum PatientGender { male, female, other, notSpecified }
 
 extension PatientGenderX on PatientGender {
   String get label {

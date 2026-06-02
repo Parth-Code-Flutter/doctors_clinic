@@ -24,11 +24,11 @@ class QuickAgeChips extends StatelessWidget {
   final ValueChanged<int> onSelected;
 
   static List<QuickAgeChipData> get defaults => const [
-        QuickAgeChipData(label: kPatientQuickAgeChild, age: 10),
-        QuickAgeChipData(label: kPatientQuickAgeYoung, age: 25),
-        QuickAgeChipData(label: kPatientQuickAgeMid, age: 35),
-        QuickAgeChipData(label: kPatientQuickAgeSenior, age: 55),
-      ];
+    QuickAgeChipData(label: kPatientQuickAgeChild, age: 10),
+    QuickAgeChipData(label: kPatientQuickAgeYoung, age: 25),
+    QuickAgeChipData(label: kPatientQuickAgeMid, age: 35),
+    QuickAgeChipData(label: kPatientQuickAgeSenior, age: 55),
+  ];
 
   @override
   Widget build(BuildContext context) {

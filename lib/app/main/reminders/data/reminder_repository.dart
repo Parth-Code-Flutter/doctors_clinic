@@ -8,13 +8,7 @@ import 'package:doctors_clinic/app/main/settings/data/clinic_settings_repository
 import 'package:doctors_clinic/constants/string_constants.dart';
 import 'package:get/get.dart';
 
-enum ReminderListFilter {
-  all,
-  today,
-  scheduled,
-  sent,
-  failed,
-}
+enum ReminderListFilter { all, today, scheduled, sent, failed }
 
 class ReminderRepository extends GetxService {
   final _reminders = <ReminderModel>[].obs;
@@ -25,8 +19,8 @@ class ReminderRepository extends GetxService {
 
   ClinicSettingsRepository? get _settings =>
       Get.isRegistered<ClinicSettingsRepository>()
-          ? Get.find<ClinicSettingsRepository>()
-          : null;
+      ? Get.find<ClinicSettingsRepository>()
+      : null;
 
   @override
   void onInit() {
@@ -118,7 +112,10 @@ class ReminderRepository extends GetxService {
       return;
     }
 
-    _reminders.insert(0, _fromAppointment(appointment, status: ReminderStatus.sent));
+    _reminders.insert(
+      0,
+      _fromAppointment(appointment, status: ReminderStatus.sent),
+    );
   }
 
   void retryReminder(String id) {

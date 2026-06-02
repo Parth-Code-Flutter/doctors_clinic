@@ -2,7 +2,8 @@ import 'package:doctors_clinic/app/main/settings/controllers/account_settings_co
 import 'package:doctors_clinic/app/main/settings/widgets/settings_menu_tile.dart';
 import 'package:doctors_clinic/constants/color_constants.dart';
 import 'package:doctors_clinic/constants/string_constants.dart';
-import 'package:doctors_clinic/utils/app_widgets/app_button.dart' show AppButtonVariant, appButton;
+import 'package:doctors_clinic/utils/app_widgets/app_button.dart'
+    show AppButtonVariant, appButton;
 import 'package:doctors_clinic/utils/app_widgets/app_spaces.dart';
 import 'package:doctors_clinic/utils/app_widgets/common_app_bar_widget.dart';
 import 'package:doctors_clinic/utils/text_utils/app_text.dart';

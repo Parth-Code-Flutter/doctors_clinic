@@ -4,6 +4,7 @@ import 'package:doctors_clinic/app/main/patients/models/patient_model.dart';
 import 'package:doctors_clinic/app/main/patients/patient_route_arguments.dart';
 import 'package:doctors_clinic/app/main/patients/widgets/quick_age_chips.dart';
 import 'package:doctors_clinic/constants/string_constants.dart';
+import 'package:doctors_clinic/utils/ui_utils/app_toast.dart';
 import 'package:doctors_clinic/utils/validations/text_field_validations.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -80,7 +81,8 @@ class EditPatientController extends GetxController {
   }
 
   String? validateName(String? value) => Validate.patientNameValidation(value);
-  String? validatePhone(String? value) => Validate.mobile10DigitValidation(value);
+  String? validatePhone(String? value) =>
+      Validate.mobile10DigitValidation(value);
   String? validateAge(String? value) => Validate.optionalAgeValidation(value);
 
   Future<void> onSave() async {
@@ -114,7 +116,7 @@ class EditPatientController extends GetxController {
 
       _repo.updatePatient(updated);
       Get.back(result: true);
-      Get.snackbar(
+      showAppToast(
         kEditPatientTitle,
         kAddPatientUpdateSuccess,
         snackPosition: SnackPosition.BOTTOM,

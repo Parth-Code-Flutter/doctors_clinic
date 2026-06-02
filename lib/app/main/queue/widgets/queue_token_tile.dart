@@ -8,11 +8,7 @@ import 'package:doctors_clinic/utils/text_utils/text_styles.dart';
 import 'package:flutter/material.dart';
 
 class QueueTokenTile extends StatelessWidget {
-  const QueueTokenTile({
-    required this.token,
-    required this.onTap,
-    super.key,
-  });
+  const QueueTokenTile({required this.token, required this.onTap, super.key});
 
   final QueueTokenModel token;
   final VoidCallback onTap;
@@ -44,18 +40,21 @@ class QueueTokenTile extends StatelessWidget {
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              _TokenPill(number: token.tokenNumber, isPriority: token.isPriority),
+              _TokenPill(
+                number: token.tokenNumber,
+                isPriority: token.isPriority,
+              ),
               const SizedBox(width: 12),
               PatientAvatar(
                 initials: token.patientName.isEmpty
                     ? '?'
                     : token.patientName
-                        .trim()
-                        .split(RegExp(r'\s+'))
-                        .map((p) => p[0])
-                        .take(2)
-                        .join()
-                        .toUpperCase(),
+                          .trim()
+                          .split(RegExp(r'\s+'))
+                          .map((p) => p[0])
+                          .take(2)
+                          .join()
+                          .toUpperCase(),
                 colorIndex: token.patientName.hashCode,
                 size: 42,
               ),

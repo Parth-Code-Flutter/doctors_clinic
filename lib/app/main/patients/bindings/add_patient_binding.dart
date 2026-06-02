@@ -5,6 +5,9 @@ import '../controllers/add_patient_controller.dart';
 class AddPatientBinding extends Bindings {
   @override
   void dependencies() {
-    Get.lazyPut<AddPatientController>(() => AddPatientController(), fenix: true);
+    Get.lazyPut<AddPatientController>(
+      () => AddPatientController(),
+      fenix: true,
+    );
   }
 }

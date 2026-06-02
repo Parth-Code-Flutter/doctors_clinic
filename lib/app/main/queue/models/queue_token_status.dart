@@ -2,12 +2,7 @@ import 'package:doctors_clinic/constants/color_constants.dart';
 import 'package:doctors_clinic/constants/string_constants.dart';
 import 'package:flutter/material.dart';
 
-enum QueueTokenStatus {
-  waiting,
-  withDoctor,
-  completed,
-  skipped,
-}
+enum QueueTokenStatus { waiting, withDoctor, completed, skipped }
 
 extension QueueTokenStatusX on QueueTokenStatus {
   String get label {

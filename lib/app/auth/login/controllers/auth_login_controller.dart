@@ -1,6 +1,7 @@
 import 'package:doctors_clinic/app/auth/auth_route_arguments.dart';
 import 'package:doctors_clinic/constants/string_constants.dart';
 import 'package:doctors_clinic/routes/app_pages.dart';
+import 'package:doctors_clinic/utils/ui_utils/app_toast.dart';
 import 'package:doctors_clinic/utils/validations/text_field_validations.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -82,7 +83,7 @@ class AuthLoginController extends GetxController {
     final contact = emailOrPhoneController.text.trim();
     final error = validateUsername(contact);
     if (error != null) {
-      Get.snackbar(
+      showAppToast(
         kLoginWithOtp,
         error,
         snackPosition: SnackPosition.BOTTOM,

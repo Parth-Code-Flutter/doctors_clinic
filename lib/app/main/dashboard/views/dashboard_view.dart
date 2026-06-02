@@ -39,20 +39,20 @@ class DashboardView extends GetView<DashboardController> {
                   ),
                 ),
               ),
-                SliverToBoxAdapter(child: _buildStatsRow()),
-                SliverToBoxAdapter(child: _buildQuickActions()),
-                SliverToBoxAdapter(
-                  child: DashboardSectionHeader(
-                    title: kDashboardTodayTitle,
-                    actionLabel: controller.hasAppointmentsToday
-                        ? kDashboardViewAll
-                        : null,
-                    onActionTap: controller.hasAppointmentsToday
-                        ? controller.onViewAllAppointments
-                        : null,
-                  ),
+              SliverToBoxAdapter(child: _buildStatsRow()),
+              SliverToBoxAdapter(child: _buildQuickActions()),
+              SliverToBoxAdapter(
+                child: DashboardSectionHeader(
+                  title: kDashboardTodayTitle,
+                  actionLabel: controller.hasAppointmentsToday
+                      ? kDashboardViewAll
+                      : null,
+                  onActionTap: controller.hasAppointmentsToday
+                      ? controller.onViewAllAppointments
+                      : null,
                 ),
-                _buildAppointmentsSliver(),
+              ),
+              _buildAppointmentsSliver(),
               const SliverToBoxAdapter(child: SizedBox(height: 24)),
             ],
           ),
@@ -128,7 +128,9 @@ class DashboardView extends GetView<DashboardController> {
     return Obx(() {
       if (!controller.hasAppointmentsToday) {
         return SliverToBoxAdapter(
-          child: DashboardEmptySchedule(onBookTap: controller.onBookAppointment),
+          child: DashboardEmptySchedule(
+            onBookTap: controller.onBookAppointment,
+          ),
         );
       }
 

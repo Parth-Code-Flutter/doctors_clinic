@@ -1,5 +1,6 @@
 import 'package:doctors_clinic/constants/string_constants.dart';
 import 'package:doctors_clinic/routes/app_pages.dart';
+import 'package:doctors_clinic/utils/ui_utils/app_toast.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -42,7 +43,7 @@ class ClinicSetupController extends GetxController {
     try {
       isLoading.value = true;
       await Future<void>.delayed(const Duration(milliseconds: 600));
-      Get.snackbar(
+      showAppToast(
         kClinicSetupTitle,
         kClinicSetupSuccessMessage,
         snackPosition: SnackPosition.BOTTOM,

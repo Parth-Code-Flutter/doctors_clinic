@@ -7,6 +7,7 @@ import 'package:doctors_clinic/app/main/visits/data/visit_repository.dart';
 import 'package:doctors_clinic/app/main/visits/visit_route_arguments.dart';
 import 'package:doctors_clinic/constants/string_constants.dart';
 import 'package:doctors_clinic/routes/app_pages.dart';
+import 'package:doctors_clinic/utils/ui_utils/app_toast.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -54,7 +55,7 @@ class PatientProfileController extends GetxController {
   }
 
   void onCall() {
-    Get.snackbar(
+    showAppToast(
       kPatientProfileCall,
       patient.value?.phone ?? '',
       snackPosition: SnackPosition.BOTTOM,

@@ -68,12 +68,9 @@ class ClinicSettingsModel {
       clinicType: clinicType ?? this.clinicType,
       workingDays: workingDays ?? this.workingDays,
       workingHours: workingHours ?? this.workingHours,
-      defaultReminderIndex:
-          defaultReminderIndex ?? this.defaultReminderIndex,
-      reminderChannelIndex:
-          reminderChannelIndex ?? this.reminderChannelIndex,
-      autoRemindersEnabled:
-          autoRemindersEnabled ?? this.autoRemindersEnabled,
+      defaultReminderIndex: defaultReminderIndex ?? this.defaultReminderIndex,
+      reminderChannelIndex: reminderChannelIndex ?? this.reminderChannelIndex,
+      autoRemindersEnabled: autoRemindersEnabled ?? this.autoRemindersEnabled,
     );
   }
 }

@@ -1,11 +1,7 @@
 import 'package:doctors_clinic/constants/color_constants.dart';
 import 'package:flutter/material.dart';
 
-enum WhatsAppLogStatus {
-  queued,
-  sent,
-  failed,
-}
+enum WhatsAppLogStatus { queued, sent, failed }
 
 extension WhatsAppLogStatusX on WhatsAppLogStatus {
   Color get color {

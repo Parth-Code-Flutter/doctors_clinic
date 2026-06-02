@@ -41,15 +41,10 @@ class SettingsMenuTile extends StatelessWidget {
                 width: 44,
                 height: 44,
                 decoration: BoxDecoration(
-                  color: iconBackgroundColor ??
-                      kColorSecondaryButtonBackground,
+                  color: iconBackgroundColor ?? kColorSecondaryButtonBackground,
                   borderRadius: BorderRadius.circular(12),
                 ),
-                child: Icon(
-                  icon,
-                  size: 22,
-                  color: iconColor ?? kColorLink,
-                ),
+                child: Icon(icon, size: 22, color: iconColor ?? kColorLink),
               ),
               const SizedBox(width: 14),
               Expanded(

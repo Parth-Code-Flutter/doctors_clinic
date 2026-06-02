@@ -1,11 +1,7 @@
 import 'package:doctors_clinic/constants/color_constants.dart';
 import 'package:flutter/material.dart';
 
-enum ReminderStatus {
-  scheduled,
-  sent,
-  failed,
-}
+enum ReminderStatus { scheduled, sent, failed }
 
 extension ReminderStatusX on ReminderStatus {
   Color get color {

@@ -45,10 +45,7 @@ class DashboardSectionHeader extends StatelessWidget {
 }
 
 class DashboardEmptySchedule extends StatelessWidget {
-  const DashboardEmptySchedule({
-    required this.onBookTap,
-    super.key,
-  });
+  const DashboardEmptySchedule({required this.onBookTap, super.key});
 
   final VoidCallback onBookTap;
 

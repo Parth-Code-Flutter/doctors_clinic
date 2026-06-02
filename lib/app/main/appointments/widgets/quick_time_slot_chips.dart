@@ -4,7 +4,11 @@ import 'package:doctors_clinic/utils/text_utils/text_styles.dart';
 import 'package:flutter/material.dart';
 
 class QuickTimeSlot {
-  const QuickTimeSlot({required this.label, required this.hour, required this.minute});
+  const QuickTimeSlot({
+    required this.label,
+    required this.hour,
+    required this.minute,
+  });
 
   final String label;
   final int hour;

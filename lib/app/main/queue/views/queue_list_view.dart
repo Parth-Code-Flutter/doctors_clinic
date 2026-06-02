@@ -76,7 +76,8 @@ class QueueListView extends GetView<QueueListController> {
               final tokens = controller.filteredTokens;
               if (tokens.isEmpty) {
                 return _EmptyState(
-                  isSearch: controller.searchQuery.value.isNotEmpty ||
+                  isSearch:
+                      controller.searchQuery.value.isNotEmpty ||
                       controller.activeFilter.value != QueueListFilter.all,
                 );
               }
@@ -118,7 +119,8 @@ class _FilterRow extends StatelessWidget {
           children: [
             _FilterChip(
               label: kQueueFilterWaiting,
-              selected: controller.activeFilter.value == QueueListFilter.waiting,
+              selected:
+                  controller.activeFilter.value == QueueListFilter.waiting,
               onTap: () => controller.onFilterSelected(QueueListFilter.waiting),
             ),
             const SizedBox(width: 8),
@@ -132,20 +134,24 @@ class _FilterRow extends StatelessWidget {
             const SizedBox(width: 8),
             _FilterChip(
               label: kQueueFilterPriority,
-              selected: controller.activeFilter.value == QueueListFilter.priority,
-              onTap: () => controller.onFilterSelected(QueueListFilter.priority),
+              selected:
+                  controller.activeFilter.value == QueueListFilter.priority,
+              onTap: () =>
+                  controller.onFilterSelected(QueueListFilter.priority),
             ),
             const SizedBox(width: 8),
             _FilterChip(
               label: kQueueFilterCompleted,
               selected:
                   controller.activeFilter.value == QueueListFilter.completed,
-              onTap: () => controller.onFilterSelected(QueueListFilter.completed),
+              onTap: () =>
+                  controller.onFilterSelected(QueueListFilter.completed),
             ),
             const SizedBox(width: 8),
             _FilterChip(
               label: kQueueFilterSkipped,
-              selected: controller.activeFilter.value == QueueListFilter.skipped,
+              selected:
+                  controller.activeFilter.value == QueueListFilter.skipped,
               onTap: () => controller.onFilterSelected(QueueListFilter.skipped),
             ),
             const SizedBox(width: 8),

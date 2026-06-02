@@ -24,12 +24,12 @@ class AppointmentListTileCard extends StatelessWidget {
     final initials = appointment.patientName.trim().isEmpty
         ? '?'
         : appointment.patientName
-            .trim()
-            .split(RegExp(r'\s+'))
-            .map((p) => p[0])
-            .take(2)
-            .join()
-            .toUpperCase();
+              .trim()
+              .split(RegExp(r'\s+'))
+              .map((p) => p[0])
+              .take(2)
+              .join()
+              .toUpperCase();
 
     return Material(
       color: Colors.transparent,
@@ -82,7 +82,9 @@ class AppointmentListTileCard extends StatelessWidget {
               ),
               const SizedBox(width: 12),
               PatientAvatar(
-                initials: initials.length > 2 ? initials.substring(0, 2) : initials,
+                initials: initials.length > 2
+                    ? initials.substring(0, 2)
+                    : initials,
                 colorIndex: appointment.patientName.hashCode,
                 size: 40,
               ),

@@ -133,9 +133,12 @@ class DashboardController extends GetxController {
       (a) => a.patientName == item.patientName && a.reason == item.serviceLabel,
     );
     if (match.isEmpty) {
-      Get.toNamed(Routes.APPOINTMENT_DETAIL, arguments: {
-        AppointmentRouteArgs.appointmentId: repo.appointments.first.id,
-      });
+      Get.toNamed(
+        Routes.APPOINTMENT_DETAIL,
+        arguments: {
+          AppointmentRouteArgs.appointmentId: repo.appointments.first.id,
+        },
+      );
       return;
     }
     Get.toNamed(

@@ -1,6 +1,7 @@
 import 'package:doctors_clinic/app/main/whatsapp/data/whatsapp_repository.dart';
 import 'package:doctors_clinic/app/main/whatsapp/models/whatsapp_message_log_model.dart';
 import 'package:doctors_clinic/constants/string_constants.dart';
+import 'package:doctors_clinic/utils/ui_utils/app_toast.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -20,7 +21,9 @@ class WhatsAppLogsController extends GetxController {
   @override
   void onInit() {
     super.onInit();
-    searchController.addListener(() => searchQuery.value = searchController.text);
+    searchController.addListener(
+      () => searchQuery.value = searchController.text,
+    );
   }
 
   @override
@@ -32,7 +35,7 @@ class WhatsAppLogsController extends GetxController {
   void onRetry(WhatsAppMessageLogModel log) {
     _repo.retry(log.id);
     searchQuery.refresh();
-    Get.snackbar(
+    showAppToast(
       kWhatsAppLogsTitle,
       kWhatsAppRetryQueued,
       snackPosition: SnackPosition.BOTTOM,

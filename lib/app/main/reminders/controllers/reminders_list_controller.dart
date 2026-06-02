@@ -3,6 +3,7 @@ import 'package:doctors_clinic/app/main/reminders/data/reminder_repository.dart'
 import 'package:doctors_clinic/app/main/reminders/models/reminder_model.dart';
 import 'package:doctors_clinic/constants/string_constants.dart';
 import 'package:doctors_clinic/routes/app_pages.dart';
+import 'package:doctors_clinic/utils/ui_utils/app_toast.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -13,12 +14,12 @@ class RemindersListController extends GetxController {
 
   ReminderRepository get _repo => Get.find<ReminderRepository>();
 
-  int get scheduledCount =>
-      _repo.countForFilter(ReminderListFilter.scheduled);
+  int get scheduledCount => _repo.countForFilter(ReminderListFilter.scheduled);
 
-  int get sentTodayCount => _repo.searchAndFilter(
-        filter: ReminderListFilter.sent,
-      ).where((r) => r.isDeliverToday).length;
+  int get sentTodayCount => _repo
+      .searchAndFilter(filter: ReminderListFilter.sent)
+      .where((r) => r.isDeliverToday)
+      .length;
 
   int get failedCount => _repo.countForFilter(ReminderListFilter.failed);
 
@@ -32,7 +33,9 @@ class RemindersListController extends GetxController {
   @override
   void onInit() {
     super.onInit();
-    searchController.addListener(() => searchQuery.value = searchController.text);
+    searchController.addListener(
+      () => searchQuery.value = searchController.text,
+    );
   }
 
   @override
@@ -59,7 +62,7 @@ class RemindersListController extends GetxController {
   void onRetry(ReminderModel reminder) {
     _repo.retryReminder(reminder.id);
     refreshList();
-    Get.snackbar(
+    showAppToast(
       kRemindersTitle,
       kRemindersRetriedMessage,
       snackPosition: SnackPosition.BOTTOM,

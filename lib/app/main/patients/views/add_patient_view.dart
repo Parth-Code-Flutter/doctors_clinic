@@ -217,7 +217,8 @@ class _BottomBar extends StatelessWidget {
         () => Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            if (controller.currentStep.value == AddPatientController.totalSteps - 1)
+            if (controller.currentStep.value ==
+                AddPatientController.totalSteps - 1)
               Padding(
                 padding: const EdgeInsets.only(bottom: 10),
                 child: TextButton(

@@ -55,8 +55,7 @@ class QueueTokenModel {
       status: status ?? this.status,
       checkedInAt: checkedInAt ?? this.checkedInAt,
       startedAt: clearStartedAt ? null : (startedAt ?? this.startedAt),
-      completedAt:
-          clearCompletedAt ? null : (completedAt ?? this.completedAt),
+      completedAt: clearCompletedAt ? null : (completedAt ?? this.completedAt),
     );
   }
 }

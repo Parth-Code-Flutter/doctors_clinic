@@ -68,7 +68,8 @@ class AppointmentsTabView extends GetView<AppointmentsTabController> {
                 final keys = controller.sortedDayKeys;
                 if (keys.isEmpty) {
                   return _EmptyState(
-                    isSearch: controller.searchQuery.value.isNotEmpty ||
+                    isSearch:
+                        controller.searchQuery.value.isNotEmpty ||
                         controller.activeFilter.value !=
                             AppointmentListFilter.all,
                   );
@@ -133,8 +134,14 @@ class _FilterRow extends StatelessWidget {
             _chip(kAppointmentsFilterToday, AppointmentListFilter.today),
             _chip(kAppointmentsFilterUpcoming, AppointmentListFilter.upcoming),
             _chip(kAppointmentsFilterAll, AppointmentListFilter.all),
-            _chip(kAppointmentsFilterCompleted, AppointmentListFilter.completed),
-            _chip(kAppointmentsFilterCancelled, AppointmentListFilter.cancelled),
+            _chip(
+              kAppointmentsFilterCompleted,
+              AppointmentListFilter.completed,
+            ),
+            _chip(
+              kAppointmentsFilterCancelled,
+              AppointmentListFilter.cancelled,
+            ),
             _chip(kAppointmentsFilterMissed, AppointmentListFilter.missed),
           ],
         ),

@@ -99,7 +99,9 @@ class ClinicSetupView extends GetView<ClinicSetupController> {
                   hintText: kClinicTypeHint,
                   textInputAction: TextInputAction.next,
                   textCapitalization: TextCapitalization.words,
-                  prefix: AppTextField.fieldIcon(Icons.medical_services_outlined),
+                  prefix: AppTextField.fieldIcon(
+                    Icons.medical_services_outlined,
+                  ),
                 ),
                 Spacing.v12,
                 AppTextField(

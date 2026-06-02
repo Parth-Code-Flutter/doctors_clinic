@@ -1,9 +1,4 @@
-enum WhatsAppTemplateType {
-  reminder,
-  followUp,
-  receipt,
-  custom,
-}
+enum WhatsAppTemplateType { reminder, followUp, receipt, custom }
 
 extension WhatsAppTemplateTypeX on WhatsAppTemplateType {
   String get storageValue {

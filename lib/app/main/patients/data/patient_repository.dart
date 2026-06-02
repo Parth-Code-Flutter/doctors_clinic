@@ -59,8 +59,7 @@ class PatientRepository extends GetxService {
       return patient.fullName.toLowerCase().contains(normalized) ||
           phone.contains(normalized) ||
           (patient.notes ?? '').toLowerCase().contains(normalized);
-    }).toList()
-      ..sort((a, b) => a.fullName.compareTo(b.fullName));
+    }).toList()..sort((a, b) => a.fullName.compareTo(b.fullName));
   }
 
   void seedMockPatients() {

@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:doctors_clinic/app/auth/auth_route_arguments.dart';
 import 'package:doctors_clinic/constants/string_constants.dart';
 import 'package:doctors_clinic/routes/app_pages.dart';
+import 'package:doctors_clinic/utils/ui_utils/app_toast.dart';
 import 'package:doctors_clinic/utils/validations/text_field_validations.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -77,7 +78,7 @@ class OtpVerificationController extends GetxController {
     if (!canResend) {
       return;
     }
-    Get.snackbar(
+    showAppToast(
       kResendOtp,
       kOtpApiPendingMessage,
       snackPosition: SnackPosition.BOTTOM,

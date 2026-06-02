@@ -6,6 +6,7 @@ import 'package:doctors_clinic/app/main/visits/models/visit_record_model.dart';
 import 'package:doctors_clinic/app/main/visits/visit_route_arguments.dart';
 import 'package:doctors_clinic/app/main/visits/data/visit_repository.dart';
 import 'package:doctors_clinic/constants/string_constants.dart';
+import 'package:doctors_clinic/utils/ui_utils/app_toast.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -120,7 +121,7 @@ class VisitEditorController extends GetxController {
         dosage.isEmpty ||
         frequency.isEmpty ||
         duration.isEmpty) {
-      Get.snackbar(
+      showAppToast(
         kVisitEditorTitle,
         kVisitValidationMedicineRequired,
         snackPosition: SnackPosition.BOTTOM,
@@ -157,7 +158,7 @@ class VisitEditorController extends GetxController {
     }
     final patientId = selectedPatientId.value;
     if (patientId == null) {
-      Get.snackbar(
+      showAppToast(
         kVisitEditorTitle,
         kVisitValidationPatientRequired,
         snackPosition: SnackPosition.BOTTOM,
@@ -172,7 +173,7 @@ class VisitEditorController extends GetxController {
     if (complaintController.text.trim().isEmpty &&
         diagnosisController.text.trim().isEmpty &&
         prescriptionItems.isEmpty) {
-      Get.snackbar(
+      showAppToast(
         kVisitEditorTitle,
         kVisitValidationContentRequired,
         snackPosition: SnackPosition.BOTTOM,
@@ -207,7 +208,7 @@ class VisitEditorController extends GetxController {
       );
       _repo.save(record);
       Get.back(result: true);
-      Get.snackbar(
+      showAppToast(
         kVisitEditorTitle,
         kVisitSavedMessage,
         snackPosition: SnackPosition.BOTTOM,
