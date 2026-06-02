@@ -677,3 +677,51 @@ const String kFollowUpMarkMissedButton = 'Mark missed';
 const String kFollowUpEditButton = 'Edit follow-up';
 const String kFollowUpMarkedCompletedMessage = 'Follow-up marked completed';
 const String kFollowUpMarkedMissedMessage = 'Follow-up marked missed';
+
+// Staff management (UI only)
+const String kStaffTitle = 'Staff management';
+const String kStaffSubtitle =
+    'Manage clinic staff roles, shift status, and access actions.';
+const String kStaffMenuTitle = 'Staff management';
+const String kStaffMenuSubtitle = 'Team directory, roles, and access controls';
+const String kStaffEditorTitle = 'Add / edit staff';
+const String kStaffEditorSubtitle =
+    'Configure role, status, and shift details for non-doctor staff members.';
+const String kStaffDetailTitle = 'Staff detail';
+const String kStaffAddTooltip = 'Add staff';
+const String kStaffSummaryTotal = 'Total';
+const String kStaffSummaryActive = 'Active';
+const String kStaffSummaryLeave = 'On leave';
+const String kStaffSearchHint = 'Search by name, role, or phone';
+const String kStaffFilterActive = 'Active';
+const String kStaffFilterOnLeave = 'On leave';
+const String kStaffFilterInactive = 'Inactive';
+const String kStaffFilterAll = 'All';
+const String kStaffEmptyTitle = 'No staff records found.';
+const String kStaffDeactivateShort = 'Deactivate';
+const String kStaffNameHint = 'Staff full name';
+const String kStaffPhoneHint = 'Mobile number';
+const String kStaffEmailHint = 'Email (optional)';
+const String kStaffRoleHint = 'Select role';
+const String kStaffStatusHint = 'Select status';
+const String kStaffShiftHint = 'Shift label (optional)';
+const String kStaffPermissionsHint = 'Permissions summary';
+const String kStaffNotesHint = 'Notes (optional)';
+const String kStaffSaveButton = 'Save staff member';
+const String kStaffSavedMessage = 'Staff profile saved';
+const String kStaffValidationNamePhoneRequired = 'Name and phone are required.';
+const String kStaffValidationPhoneInvalid =
+    'Enter a valid 10-digit phone number.';
+const String kStaffJoinedLabel = 'Joined';
+const String kStaffShiftLabel = 'Shift';
+const String kStaffPermissionsLabel = 'Permissions';
+const String kStaffNotesLabel = 'Notes';
+const String kStaffMarkActiveButton = 'Mark active';
+const String kStaffMarkOnLeaveButton = 'Mark on leave';
+const String kStaffMarkInactiveButton = 'Mark inactive';
+const String kStaffEditButton = 'Edit staff profile';
+const String kStaffResetAccessButton = 'Reset access';
+const String kStaffMarkedActiveMessage = 'Staff marked active';
+const String kStaffMarkedOnLeaveMessage = 'Staff marked on leave';
+const String kStaffMarkedInactiveMessage = 'Staff marked inactive';
+const String kStaffResetAccessMessage = 'Access reset link shared (mock)';

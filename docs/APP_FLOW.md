@@ -56,6 +56,16 @@ Keep this file updated whenever a new screen/CTA is added.
       -> /billing-editor
       -> /billing-detail
 
+  follow-up routes:
+    -> /follow-up-list
+      -> /follow-up-editor
+      -> /follow-up-detail
+
+  staff routes:
+    -> /staff-list
+      -> /staff-editor
+      -> /staff-detail
+
   whatsapp routes:
     -> /whatsapp-hub
       -> /whatsapp-templates
@@ -112,6 +122,7 @@ Format:
 - `Visit Editor | Add medicine | VisitEditorController.onAddMedicine | local list update | medicine appears in prescription list`
 - `Visit Editor | Remove medicine | VisitEditorController.onRemoveMedicine | local list update | medicine removed`
 - `Visit Detail | Edit visit note | VisitDetailController.onEdit | toNamed('/visit-editor') | opens editor with existing values`
+- `Visit Detail | Create follow-up | VisitDetailController.onCreateFollowUp | toNamed('/follow-up-editor') | prefilled follow-up from visit context`
 
 ### More Tab -> Settings/Reminders/Queue/WhatsApp
 
@@ -120,6 +131,9 @@ Format:
 - `More | Reminders list | MoreTabController.onRemindersList | toNamed('/reminders-list') | opens reminder log`
 - `More | Queue management | MoreTabController.onQueue | toNamed('/queue-list') | opens queue module`
 - `More | WhatsApp communication | MoreTabController.onWhatsApp | toNamed('/whatsapp-hub') | opens WhatsApp hub`
+- `More | Billing & receipts | MoreTabController.onBilling | toNamed('/billing-list') | opens billing module`
+- `More | Follow-up reminders | MoreTabController.onFollowUps | toNamed('/follow-up-list') | opens follow-up module`
+- `More | Staff management | MoreTabController.onStaff | toNamed('/staff-list') | opens staff module`
 - `More | Account | MoreTabController.onAccount | toNamed('/settings-account') | account screen`
 - `More | About | MoreTabController.onAbout | toNamed('/settings-about') | app info screen`
 - `More | Logout | MoreTabController.onLogout | offAllNamed('/welcome') | exits to auth entry`
@@ -145,6 +159,26 @@ Format:
 - `Billing Editor | Save receipt | BillingEditorController.onSave | repository save + back(result:true) | receipt stored`
 - `Billing Detail | Edit receipt | BillingDetailController.onEdit | toNamed('/billing-editor') | opens editor with existing data`
 - `Billing Detail | Share receipt | BillingDetailController.onShare | snackbar (mock) | share preview simulation`
+- `Billing Detail | Create follow-up | BillingDetailController.onCreateFollowUp | toNamed('/follow-up-editor') | prefilled follow-up from billing context`
+
+### Follow-up reminders
+
+- `Follow-up List | Add follow-up | FollowUpListController.onCreate | toNamed('/follow-up-editor') | starts follow-up creation`
+- `Follow-up List | Follow-up row tap | FollowUpListController.onTap | toNamed('/follow-up-detail') | opens follow-up detail`
+- `Follow-up List | Quick done action | FollowUpListController.onMarkCompleted | repository update + toast | marks scheduled follow-up as completed`
+- `Follow-up Editor | Save follow-up | FollowUpEditorController.onSave | repository save + back(result:true) | follow-up saved`
+- `Follow-up Detail | Edit follow-up | FollowUpDetailController.onEdit | toNamed('/follow-up-editor') | opens editor with existing values`
+- `Follow-up Detail | Mark completed/missed | FollowUpDetailController.onMarkCompleted/onMarkMissed | repository status update | updates follow-up state`
+
+### Staff management
+
+- `Staff List | Add staff | StaffListController.onAddStaff | toNamed('/staff-editor') | opens staff editor`
+- `Staff List | Staff row tap | StaffListController.onMemberTap | toNamed('/staff-detail') | opens staff detail`
+- `Staff List | Quick deactivate | StaffListController.onQuickDeactivate | repository status update + toast | sets staff inactive`
+- `Staff Editor | Save staff | StaffEditorController.onSave | repository save + back(result:true) | staff profile saved`
+- `Staff Detail | Edit profile | StaffDetailController.onEdit | toNamed('/staff-editor') | opens editor with existing values`
+- `Staff Detail | Status actions | StaffDetailController.onMarkActive/onMarkOnLeave/onMarkInactive | repository status update | updates staff availability`
+- `Staff Detail | Reset access | StaffDetailController.onResetAccess | toast (mock) | access reset simulation`
 
 ### WhatsApp
 
@@ -200,15 +234,23 @@ flowchart TD
   MORE_TAB --> REM_LIST["/reminders-list"]
   MORE_TAB --> QUEUE_LIST["/queue-list"]
   MORE_TAB --> BILLING_LIST["/billing-list"]
+  MORE_TAB --> FOLLOW_UP_LIST["/follow-up-list"]
+  MORE_TAB --> STAFF_LIST["/staff-list"]
   MORE_TAB --> WA_HUB["/whatsapp-hub"]
   MORE_TAB --> WELCOME
 
   REM_LIST --> APP_DETAIL
+  VISIT_DETAIL --> FOLLOW_UP_EDITOR["/follow-up-editor"]
   QUEUE_LIST --> QUEUE_ADD["/queue-add"]
   QUEUE_LIST --> QUEUE_DETAIL["/queue-detail"]
   QUEUE_LIST --> QUEUE_BOARD["/queue-board"]
   BILLING_LIST --> BILLING_EDITOR["/billing-editor"]
   BILLING_LIST --> BILLING_DETAIL["/billing-detail"]
+  BILLING_DETAIL --> FOLLOW_UP_EDITOR
+  FOLLOW_UP_LIST --> FOLLOW_UP_EDITOR
+  FOLLOW_UP_LIST --> FOLLOW_UP_DETAIL
+  STAFF_LIST --> STAFF_EDITOR["/staff-editor"]
+  STAFF_LIST --> STAFF_DETAIL["/staff-detail"]
 
   WA_HUB --> WA_TPL["/whatsapp-templates"]
   WA_HUB --> WA_COMP["/whatsapp-compose"]

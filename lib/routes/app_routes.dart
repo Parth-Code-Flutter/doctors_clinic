@@ -42,6 +42,9 @@ abstract class Routes {
   static const FOLLOW_UP_LIST = _Paths.FOLLOW_UP_LIST;
   static const FOLLOW_UP_EDITOR = _Paths.FOLLOW_UP_EDITOR;
   static const FOLLOW_UP_DETAIL = _Paths.FOLLOW_UP_DETAIL;
+  static const STAFF_LIST = _Paths.STAFF_LIST;
+  static const STAFF_EDITOR = _Paths.STAFF_EDITOR;
+  static const STAFF_DETAIL = _Paths.STAFF_DETAIL;
 }
 
 abstract class _Paths {
@@ -83,4 +86,7 @@ abstract class _Paths {
   static const FOLLOW_UP_LIST = '/follow-up-list';
   static const FOLLOW_UP_EDITOR = '/follow-up-editor';
   static const FOLLOW_UP_DETAIL = '/follow-up-detail';
+  static const STAFF_LIST = '/staff-list';
+  static const STAFF_EDITOR = '/staff-editor';
+  static const STAFF_DETAIL = '/staff-detail';
 }

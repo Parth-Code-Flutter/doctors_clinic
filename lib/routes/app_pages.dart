@@ -59,6 +59,12 @@ import '../app/main/followups/bindings/follow_up_list_binding.dart';
 import '../app/main/followups/views/follow_up_detail_view.dart';
 import '../app/main/followups/views/follow_up_editor_view.dart';
 import '../app/main/followups/views/follow_up_list_view.dart';
+import '../app/main/staff/bindings/staff_detail_binding.dart';
+import '../app/main/staff/bindings/staff_editor_binding.dart';
+import '../app/main/staff/bindings/staff_list_binding.dart';
+import '../app/main/staff/views/staff_detail_view.dart';
+import '../app/main/staff/views/staff_editor_view.dart';
+import '../app/main/staff/views/staff_list_view.dart';
 import '../app/auth/clinic_setup/views/clinic_setup_view.dart';
 import '../app/auth/forgot_password/bindings/forgot_password_binding.dart';
 import '../app/auth/forgot_password/views/forgot_password_view.dart';
@@ -295,6 +301,24 @@ class AppPages {
       name: _Paths.FOLLOW_UP_DETAIL,
       page: () => const FollowUpDetailView(),
       binding: FollowUpDetailBinding(),
+      preventDuplicates: true,
+    ),
+    GetPage(
+      name: _Paths.STAFF_LIST,
+      page: () => const StaffListView(),
+      binding: StaffListBinding(),
+      preventDuplicates: true,
+    ),
+    GetPage(
+      name: _Paths.STAFF_EDITOR,
+      page: () => const StaffEditorView(),
+      binding: StaffEditorBinding(),
+      preventDuplicates: true,
+    ),
+    GetPage(
+      name: _Paths.STAFF_DETAIL,
+      page: () => const StaffDetailView(),
+      binding: StaffDetailBinding(),
       preventDuplicates: true,
     ),
   ];

@@ -7,6 +7,7 @@ import 'package:doctors_clinic/app/main/visits/data/visit_repository.dart';
 import 'package:doctors_clinic/app/main/whatsapp/data/whatsapp_repository.dart';
 import 'package:doctors_clinic/app/main/billing/data/billing_repository.dart';
 import 'package:doctors_clinic/app/main/followups/data/follow_up_repository.dart';
+import 'package:doctors_clinic/app/main/staff/data/staff_repository.dart';
 import 'package:doctors_clinic/app/main/dashboard/controllers/dashboard_controller.dart';
 import 'package:doctors_clinic/app/main/more/controllers/more_tab_controller.dart';
 import 'package:doctors_clinic/app/main/patients/controllers/patients_tab_controller.dart';
@@ -44,6 +45,9 @@ class BottomNavBinding extends Bindings {
     }
     if (!Get.isRegistered<FollowUpRepository>()) {
       Get.put(FollowUpRepository(), permanent: true);
+    }
+    if (!Get.isRegistered<StaffRepository>()) {
+      Get.put(StaffRepository(), permanent: true);
     }
     Get.lazyPut<BottomNavController>(() => BottomNavController(), fenix: true);
     Get.lazyPut<DashboardController>(() => DashboardController(), fenix: true);
