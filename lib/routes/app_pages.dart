@@ -47,6 +47,12 @@ import '../app/main/visits/bindings/visit_detail_binding.dart';
 import '../app/main/visits/bindings/visit_editor_binding.dart';
 import '../app/main/visits/views/visit_detail_view.dart';
 import '../app/main/visits/views/visit_editor_view.dart';
+import '../app/main/billing/bindings/billing_detail_binding.dart';
+import '../app/main/billing/bindings/billing_editor_binding.dart';
+import '../app/main/billing/bindings/billing_list_binding.dart';
+import '../app/main/billing/views/billing_detail_view.dart';
+import '../app/main/billing/views/billing_editor_view.dart';
+import '../app/main/billing/views/billing_list_view.dart';
 import '../app/auth/clinic_setup/views/clinic_setup_view.dart';
 import '../app/auth/forgot_password/bindings/forgot_password_binding.dart';
 import '../app/auth/forgot_password/views/forgot_password_view.dart';
@@ -247,6 +253,24 @@ class AppPages {
       name: _Paths.VISIT_DETAIL,
       page: () => const VisitDetailView(),
       binding: VisitDetailBinding(),
+      preventDuplicates: true,
+    ),
+    GetPage(
+      name: _Paths.BILLING_LIST,
+      page: () => const BillingListView(),
+      binding: BillingListBinding(),
+      preventDuplicates: true,
+    ),
+    GetPage(
+      name: _Paths.BILLING_EDITOR,
+      page: () => const BillingEditorView(),
+      binding: BillingEditorBinding(),
+      preventDuplicates: true,
+    ),
+    GetPage(
+      name: _Paths.BILLING_DETAIL,
+      page: () => const BillingDetailView(),
+      binding: BillingDetailBinding(),
       preventDuplicates: true,
     ),
   ];

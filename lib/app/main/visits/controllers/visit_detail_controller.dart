@@ -1,6 +1,7 @@
 import 'package:doctors_clinic/app/main/visits/data/visit_repository.dart';
 import 'package:doctors_clinic/app/main/visits/models/visit_record_model.dart';
 import 'package:doctors_clinic/app/main/visits/visit_route_arguments.dart';
+import 'package:doctors_clinic/app/main/billing/billing_route_arguments.dart';
 import 'package:doctors_clinic/routes/app_pages.dart';
 import 'package:get/get.dart';
 
@@ -35,5 +36,19 @@ class VisitDetailController extends GetxController {
     if (result == true) {
       loadVisit();
     }
+  }
+
+  Future<void> onCreateReceipt() async {
+    final current = visit.value;
+    if (current == null) {
+      return;
+    }
+    await Get.toNamed(
+      Routes.BILLING_EDITOR,
+      arguments: {
+        BillingRouteArgs.patientId: current.patientId,
+        BillingRouteArgs.visitId: current.id,
+      },
+    );
   }
 }

@@ -121,6 +121,12 @@ class VisitDetailView extends GetView<VisitDetailController> {
             ],
             Spacing.v12,
             appButton(
+              onPressed: controller.onCreateReceipt,
+              buttonText: kBillingCreateFromVisitButton,
+              variant: AppButtonVariant.secondary,
+            ),
+            const SizedBox(height: 10),
+            appButton(
               onPressed: controller.onEdit,
               buttonText: kVisitEditButton,
               variant: AppButtonVariant.secondary,

@@ -51,6 +51,11 @@ Keep this file updated whenever a new screen/CTA is added.
       -> /queue-detail
       -> /queue-board
 
+  billing routes:
+    -> /billing-list
+      -> /billing-editor
+      -> /billing-detail
+
   whatsapp routes:
     -> /whatsapp-hub
       -> /whatsapp-templates
@@ -130,6 +135,17 @@ Format:
 - `Queue List | Live board | QueueListController.onOpenBoard | toNamed('/queue-board') | opens display board`
 - `Queue List | Token row tap | QueueListController.onTokenTap | toNamed('/queue-detail') | opens token detail`
 
+### Billing
+
+- `More | Billing & receipts | MoreTabController.onBilling | toNamed('/billing-list') | opens billing module`
+- `Billing List | Add receipt icon | BillingListController.onCreateReceipt | toNamed('/billing-editor') | starts invoice creation`
+- `Billing List | Receipt row tap | BillingListController.onReceiptTap | toNamed('/billing-detail') | opens receipt details`
+- `Visit Detail | Create receipt | VisitDetailController.onCreateReceipt | toNamed('/billing-editor') | prefilled billing from visit context`
+- `Billing Editor | Add item | BillingEditorController.onAddLineItem | local list update | item added to invoice`
+- `Billing Editor | Save receipt | BillingEditorController.onSave | repository save + back(result:true) | receipt stored`
+- `Billing Detail | Edit receipt | BillingDetailController.onEdit | toNamed('/billing-editor') | opens editor with existing data`
+- `Billing Detail | Share receipt | BillingDetailController.onShare | snackbar (mock) | share preview simulation`
+
 ### WhatsApp
 
 - `WhatsApp Hub | Templates | WhatsAppHubController.onTemplates | toNamed('/whatsapp-templates') | templates screen`
@@ -183,6 +199,7 @@ flowchart TD
   MORE_TAB --> SET_ABOUT["/settings-about"]
   MORE_TAB --> REM_LIST["/reminders-list"]
   MORE_TAB --> QUEUE_LIST["/queue-list"]
+  MORE_TAB --> BILLING_LIST["/billing-list"]
   MORE_TAB --> WA_HUB["/whatsapp-hub"]
   MORE_TAB --> WELCOME
 
@@ -190,6 +207,8 @@ flowchart TD
   QUEUE_LIST --> QUEUE_ADD["/queue-add"]
   QUEUE_LIST --> QUEUE_DETAIL["/queue-detail"]
   QUEUE_LIST --> QUEUE_BOARD["/queue-board"]
+  BILLING_LIST --> BILLING_EDITOR["/billing-editor"]
+  BILLING_LIST --> BILLING_DETAIL["/billing-detail"]
 
   WA_HUB --> WA_TPL["/whatsapp-templates"]
   WA_HUB --> WA_COMP["/whatsapp-compose"]

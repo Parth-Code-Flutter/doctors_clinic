@@ -586,3 +586,52 @@ const String kVisitValidationContentRequired =
 const String kVisitValidationMedicineRequired =
     'Medicine, dosage, frequency, and duration are required.';
 const String kAppointmentDetailVisitNoteButton = 'Visit notes';
+
+// Billing / receipts (UI only)
+const String kBillingTitle = 'Billing & receipts';
+const String kBillingSubtitle =
+    'Create invoices, track paid amount, and monitor dues.';
+const String kBillingMenuTitle = 'Billing & receipts';
+const String kBillingMenuSubtitle =
+    'Invoice builder, payments, and due tracking';
+const String kBillingEditorTitle = 'Create receipt';
+const String kBillingEditorSubtitle =
+    'Add bill items and payment summary for a patient.';
+const String kBillingDetailTitle = 'Receipt detail';
+const String kBillingAddTooltip = 'Create receipt';
+const String kBillingCreateFromVisitButton = 'Create receipt';
+const String kBillingSearchHint = 'Search invoice, name, or phone';
+const String kBillingSummaryInvoices = 'Invoices';
+const String kBillingSummaryCollected = 'Collected';
+const String kBillingSummaryDue = 'Due';
+const String kBillingEmptyTitle = 'No receipts yet.';
+const String kBillingPatientHint = 'Select patient';
+const String kBillingServiceHint = 'Service / item name';
+const String kBillingQtyHint = 'Qty';
+const String kBillingPriceHint = 'Price';
+const String kBillingAddItemButton = 'Add item';
+const String kBillingItemsTitle = 'Line items';
+const String kBillingNoItemsText = 'No line items added.';
+const String kBillingDiscountHint = 'Discount';
+const String kBillingPaidHint = 'Paid amount';
+const String kBillingPaymentModeHint = 'Payment mode';
+const String kBillingNoteHint = 'Note (optional)';
+const String kBillingSaveButton = 'Save receipt';
+const String kBillingEditButton = 'Edit receipt';
+const String kBillingShareButton = 'Share receipt';
+const String kBillingSavedMessage = 'Receipt saved';
+const String kBillingShareMockMessage = 'Share preview opened (mock)';
+const String kBillingValidationPatientRequired = 'Please select a patient.';
+const String kBillingValidationNoItems = 'Add at least one line item.';
+const String kBillingValidationLineRequired =
+    'Item name, quantity, and price are required.';
+const String kBillingSubtotalLabel = 'Subtotal';
+const String kBillingDiscountLabel = 'Discount';
+const String kBillingTotalLabel = 'Total';
+const String kBillingCollectedLabel = 'Collected';
+const String kBillingDueLabel = 'Due';
+const String kBillingPaymentModeLabel = 'Payment mode';
+const String kBillingQtyLabel = 'Qty';
+const String kBillingPriceLabel = 'Price';
+const String kBillingNoteLabel = 'Note';
+const List<String> kBillingPaymentModes = ['Cash', 'UPI', 'Card', 'Bank'];
