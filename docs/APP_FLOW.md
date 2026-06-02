@@ -66,6 +66,14 @@ Keep this file updated whenever a new screen/CTA is added.
       -> /staff-editor
       -> /staff-detail
 
+  doctor routes:
+    -> /doctor-list
+      -> /doctor-editor
+      -> /doctor-detail
+
+  reports routes:
+    -> /reports-dashboard
+
   whatsapp routes:
     -> /whatsapp-hub
       -> /whatsapp-templates
@@ -134,6 +142,8 @@ Format:
 - `More | Billing & receipts | MoreTabController.onBilling | toNamed('/billing-list') | opens billing module`
 - `More | Follow-up reminders | MoreTabController.onFollowUps | toNamed('/follow-up-list') | opens follow-up module`
 - `More | Staff management | MoreTabController.onStaff | toNamed('/staff-list') | opens staff module`
+- `More | Doctor management | MoreTabController.onDoctors | toNamed('/doctor-list') | opens doctor module`
+- `More | Reports dashboard | MoreTabController.onReports | toNamed('/reports-dashboard') | opens reports dashboard`
 - `More | Account | MoreTabController.onAccount | toNamed('/settings-account') | account screen`
 - `More | About | MoreTabController.onAbout | toNamed('/settings-about') | app info screen`
 - `More | Logout | MoreTabController.onLogout | offAllNamed('/welcome') | exits to auth entry`
@@ -179,6 +189,21 @@ Format:
 - `Staff Detail | Edit profile | StaffDetailController.onEdit | toNamed('/staff-editor') | opens editor with existing values`
 - `Staff Detail | Status actions | StaffDetailController.onMarkActive/onMarkOnLeave/onMarkInactive | repository status update | updates staff availability`
 - `Staff Detail | Reset access | StaffDetailController.onResetAccess | toast (mock) | access reset simulation`
+
+### Doctor management
+
+- `Doctor List | Add doctor | DoctorListController.onAddDoctor | toNamed('/doctor-editor') | opens doctor editor`
+- `Doctor List | Doctor row tap | DoctorListController.onDoctorTap | toNamed('/doctor-detail') | opens doctor detail`
+- `Doctor List | Quick off duty | DoctorListController.onQuickOffDuty | repository status update + toast | marks doctor off duty`
+- `Doctor Editor | Save doctor | DoctorEditorController.onSave | repository save + back(result:true) | doctor profile saved`
+- `Doctor Detail | Edit doctor | DoctorDetailController.onEdit | toNamed('/doctor-editor') | opens editor with existing values`
+- `Doctor Detail | Status actions | DoctorDetailController.onMarkAvailable/onMarkBusy/onMarkOffDuty | repository status update | updates doctor availability`
+
+### Reports dashboard
+
+- `Reports Dashboard | Range dropdown | ReportsDashboardController.onRangeChanged | local state update | KPI + trend values update`
+- `Reports Dashboard | Billing quick action | ReportsDashboardController.onOpenBilling | toNamed('/billing-list') | opens billing list`
+- `Reports Dashboard | Follow-up quick action | ReportsDashboardController.onOpenFollowUps | toNamed('/follow-up-list') | opens follow-up list`
 
 ### WhatsApp
 
@@ -236,6 +261,8 @@ flowchart TD
   MORE_TAB --> BILLING_LIST["/billing-list"]
   MORE_TAB --> FOLLOW_UP_LIST["/follow-up-list"]
   MORE_TAB --> STAFF_LIST["/staff-list"]
+  MORE_TAB --> DOCTOR_LIST["/doctor-list"]
+  MORE_TAB --> REPORTS["/reports-dashboard"]
   MORE_TAB --> WA_HUB["/whatsapp-hub"]
   MORE_TAB --> WELCOME
 
@@ -251,6 +278,10 @@ flowchart TD
   FOLLOW_UP_LIST --> FOLLOW_UP_DETAIL
   STAFF_LIST --> STAFF_EDITOR["/staff-editor"]
   STAFF_LIST --> STAFF_DETAIL["/staff-detail"]
+  DOCTOR_LIST --> DOCTOR_EDITOR["/doctor-editor"]
+  DOCTOR_LIST --> DOCTOR_DETAIL["/doctor-detail"]
+  REPORTS --> BILLING_LIST
+  REPORTS --> FOLLOW_UP_LIST
 
   WA_HUB --> WA_TPL["/whatsapp-templates"]
   WA_HUB --> WA_COMP["/whatsapp-compose"]

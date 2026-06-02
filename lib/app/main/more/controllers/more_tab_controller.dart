@@ -25,6 +25,10 @@ class MoreTabController extends GetxController {
 
   void onStaff() => Get.toNamed(Routes.STAFF_LIST);
 
+  void onDoctors() => Get.toNamed(Routes.DOCTOR_LIST);
+
+  void onReports() => Get.toNamed(Routes.REPORTS_DASHBOARD);
+
   void onRemindersList() => Get.toNamed(Routes.REMINDERS_LIST);
 
   void onReminderSettings() => Get.toNamed(Routes.SETTINGS_REMINDERS);

@@ -89,6 +89,13 @@ class AppointmentDetailView extends GetView<AppointmentDetailController> {
                     icon: Icons.schedule_rounded,
                     label: AppointmentFormatUtils.formatTime(item.scheduledAt),
                   ),
+                  if (item.doctorName != null && item.doctorName!.isNotEmpty) ...[
+                    const SizedBox(height: 8),
+                    _HeroRow(
+                      icon: Icons.medical_services_outlined,
+                      label: '$kAppointmentDetailDoctorLabel: ${item.doctorName!}',
+                    ),
+                  ],
                   if (item.reason != null && item.reason!.isNotEmpty) ...[
                     const SizedBox(height: 8),
                     _HeroRow(

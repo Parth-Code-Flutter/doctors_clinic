@@ -242,6 +242,28 @@ class _ScheduleStep extends StatelessWidget {
             ),
           ),
           Spacing.v20,
+          const SemiBoldText(
+            text: kAddAppointmentDoctorLabel,
+            fontSize: TextStyles.k14FontSize,
+            color: kColorTitle,
+          ),
+          Spacing.v8,
+          Obx(
+            () => AppDropDown<String>(
+              value: controller.selectedDoctorId.value,
+              hint: kAddAppointmentDoctorHint,
+              items: controller.doctors
+                  .map(
+                    (doctor) => DropdownMenuItem<String>(
+                      value: doctor.id,
+                      child: Text(doctor.fullName),
+                    ),
+                  )
+                  .toList(),
+              onChanged: controller.onDoctorChanged,
+            ),
+          ),
+          Spacing.v20,
           AppTextField(
             controller: controller.reasonController,
             hintText: kAddAppointmentReasonHint,

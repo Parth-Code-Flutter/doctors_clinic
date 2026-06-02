@@ -91,6 +91,20 @@ class MoreTabView extends GetView<MoreTabController> {
             ),
             const SizedBox(height: 10),
             SettingsMenuTile(
+              icon: Icons.badge_outlined,
+              title: kDoctorMenuTitle,
+              subtitle: kDoctorMenuSubtitle,
+              onTap: controller.onDoctors,
+            ),
+            const SizedBox(height: 10),
+            SettingsMenuTile(
+              icon: Icons.insights_outlined,
+              title: kReportsMenuTitle,
+              subtitle: kReportsMenuSubtitle,
+              onTap: controller.onReports,
+            ),
+            const SizedBox(height: 10),
+            SettingsMenuTile(
               icon: Icons.tune_rounded,
               title: kSettingsRemindersTitle,
               subtitle: controller.reminderMenuSubtitle,

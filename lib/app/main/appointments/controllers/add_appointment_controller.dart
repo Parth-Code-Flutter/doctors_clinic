@@ -7,6 +7,8 @@ import 'package:doctors_clinic/app/main/appointments/utils/appointment_format_ut
 import 'package:doctors_clinic/app/main/appointments/widgets/quick_time_slot_chips.dart';
 import 'package:doctors_clinic/app/main/patients/data/patient_repository.dart';
 import 'package:doctors_clinic/app/main/patients/models/patient_model.dart';
+import 'package:doctors_clinic/app/main/doctors/data/doctor_repository.dart';
+import 'package:doctors_clinic/app/main/doctors/models/doctor_model.dart';
 import 'package:doctors_clinic/constants/string_constants.dart';
 import 'package:doctors_clinic/utils/ui_utils/app_toast.dart';
 import 'package:flutter/material.dart';
@@ -28,10 +30,15 @@ class AddAppointmentController extends GetxController {
   final selectedHour = Rxn<int>();
   final selectedMinute = Rxn<int>();
   final selectedReminderIndex = 1.obs;
+  final selectedDoctorId = RxnString();
   final isSaving = false.obs;
 
   AppointmentRepository get _appointments => Get.find<AppointmentRepository>();
   PatientRepository get _patients => Get.find<PatientRepository>();
+  DoctorRepository? get _doctors =>
+      Get.isRegistered<DoctorRepository>() ? Get.find<DoctorRepository>() : null;
+
+  List<DoctorModel> get doctors => _doctors?.doctors ?? const [];
 
   String? _preselectedPatientId;
 
@@ -135,6 +142,10 @@ class AddAppointmentController extends GetxController {
     if (index != null) {
       selectedReminderIndex.value = index;
     }
+  }
+
+  void onDoctorChanged(String? doctorId) {
+    selectedDoctorId.value = doctorId;
   }
 
   Future<void> onPrimaryAction() async {
@@ -251,6 +262,10 @@ class AddAppointmentController extends GetxController {
         patientPhone: patient.phone,
         scheduledAt: scheduledAt,
         status: AppointmentStatus.upcoming,
+        doctorId: selectedDoctorId.value,
+        doctorName: selectedDoctorId.value == null || _doctors == null
+            ? null
+            : _doctors!.findById(selectedDoctorId.value!)?.fullName,
         reason: reasonController.text.trim().isEmpty
             ? null
             : reasonController.text.trim(),

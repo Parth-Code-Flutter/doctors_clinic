@@ -65,6 +65,14 @@ import '../app/main/staff/bindings/staff_list_binding.dart';
 import '../app/main/staff/views/staff_detail_view.dart';
 import '../app/main/staff/views/staff_editor_view.dart';
 import '../app/main/staff/views/staff_list_view.dart';
+import '../app/main/doctors/bindings/doctor_detail_binding.dart';
+import '../app/main/doctors/bindings/doctor_editor_binding.dart';
+import '../app/main/doctors/bindings/doctor_list_binding.dart';
+import '../app/main/doctors/views/doctor_detail_view.dart';
+import '../app/main/doctors/views/doctor_editor_view.dart';
+import '../app/main/doctors/views/doctor_list_view.dart';
+import '../app/main/reports/bindings/reports_dashboard_binding.dart';
+import '../app/main/reports/views/reports_dashboard_view.dart';
 import '../app/auth/clinic_setup/views/clinic_setup_view.dart';
 import '../app/auth/forgot_password/bindings/forgot_password_binding.dart';
 import '../app/auth/forgot_password/views/forgot_password_view.dart';
@@ -319,6 +327,30 @@ class AppPages {
       name: _Paths.STAFF_DETAIL,
       page: () => const StaffDetailView(),
       binding: StaffDetailBinding(),
+      preventDuplicates: true,
+    ),
+    GetPage(
+      name: _Paths.DOCTOR_LIST,
+      page: () => const DoctorListView(),
+      binding: DoctorListBinding(),
+      preventDuplicates: true,
+    ),
+    GetPage(
+      name: _Paths.DOCTOR_EDITOR,
+      page: () => const DoctorEditorView(),
+      binding: DoctorEditorBinding(),
+      preventDuplicates: true,
+    ),
+    GetPage(
+      name: _Paths.DOCTOR_DETAIL,
+      page: () => const DoctorDetailView(),
+      binding: DoctorDetailBinding(),
+      preventDuplicates: true,
+    ),
+    GetPage(
+      name: _Paths.REPORTS_DASHBOARD,
+      page: () => const ReportsDashboardView(),
+      binding: ReportsDashboardBinding(),
       preventDuplicates: true,
     ),
   ];

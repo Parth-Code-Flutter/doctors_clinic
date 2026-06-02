@@ -45,6 +45,10 @@ abstract class Routes {
   static const STAFF_LIST = _Paths.STAFF_LIST;
   static const STAFF_EDITOR = _Paths.STAFF_EDITOR;
   static const STAFF_DETAIL = _Paths.STAFF_DETAIL;
+  static const DOCTOR_LIST = _Paths.DOCTOR_LIST;
+  static const DOCTOR_EDITOR = _Paths.DOCTOR_EDITOR;
+  static const DOCTOR_DETAIL = _Paths.DOCTOR_DETAIL;
+  static const REPORTS_DASHBOARD = _Paths.REPORTS_DASHBOARD;
 }
 
 abstract class _Paths {
@@ -89,4 +93,8 @@ abstract class _Paths {
   static const STAFF_LIST = '/staff-list';
   static const STAFF_EDITOR = '/staff-editor';
   static const STAFF_DETAIL = '/staff-detail';
+  static const DOCTOR_LIST = '/doctor-list';
+  static const DOCTOR_EDITOR = '/doctor-editor';
+  static const DOCTOR_DETAIL = '/doctor-detail';
+  static const REPORTS_DASHBOARD = '/reports-dashboard';
 }

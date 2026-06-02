@@ -725,3 +725,66 @@ const String kStaffMarkedActiveMessage = 'Staff marked active';
 const String kStaffMarkedOnLeaveMessage = 'Staff marked on leave';
 const String kStaffMarkedInactiveMessage = 'Staff marked inactive';
 const String kStaffResetAccessMessage = 'Access reset link shared (mock)';
+
+// Doctor management (UI only)
+const String kDoctorTitle = 'Doctor management';
+const String kDoctorSubtitle =
+    'Manage available doctors, specializations, and OPD schedules.';
+const String kDoctorMenuTitle = 'Doctor management';
+const String kDoctorMenuSubtitle = 'Doctor roster, status, and OPD schedules';
+const String kDoctorEditorTitle = 'Add / edit doctor';
+const String kDoctorEditorSubtitle =
+    'Configure profile, specialization, and current duty status.';
+const String kDoctorDetailTitle = 'Doctor detail';
+const String kDoctorAddTooltip = 'Add doctor';
+const String kDoctorSummaryTotal = 'Total';
+const String kDoctorSummaryAvailable = 'Available';
+const String kDoctorSummaryBusy = 'Busy';
+const String kDoctorSearchHint = 'Search by doctor name or specialization';
+const String kDoctorFilterAvailable = 'Available';
+const String kDoctorFilterBusy = 'Busy';
+const String kDoctorFilterOffDuty = 'Off duty';
+const String kDoctorFilterAll = 'All';
+const String kDoctorEmptyTitle = 'No doctors found.';
+const String kDoctorOffDutyShort = 'Off duty';
+const String kDoctorNameHint = 'Doctor full name';
+const String kDoctorSpecializationHint = 'Specialization';
+const String kDoctorPhoneHint = 'Mobile number';
+const String kDoctorEmailHint = 'Email (optional)';
+const String kDoctorStatusHint = 'Select status';
+const String kDoctorExperienceHint = 'Experience (e.g. 8 years)';
+const String kDoctorOpdHint = 'OPD timings';
+const String kDoctorNotesHint = 'Notes (optional)';
+const String kDoctorSaveButton = 'Save doctor profile';
+const String kDoctorSavedMessage = 'Doctor profile saved';
+const String kDoctorValidationRequired =
+    'Name, specialization, and phone are required.';
+const String kDoctorValidationPhoneInvalid =
+    'Enter a valid 10-digit phone number.';
+const String kDoctorExperienceLabel = 'Experience';
+const String kDoctorOpdLabel = 'OPD timings';
+const String kDoctorNotesLabel = 'Notes';
+const String kDoctorMarkAvailableButton = 'Mark available';
+const String kDoctorMarkBusyButton = 'Mark busy';
+const String kDoctorMarkOffDutyButton = 'Mark off duty';
+const String kDoctorEditButton = 'Edit doctor profile';
+const String kDoctorMarkedAvailableMessage = 'Doctor marked available';
+const String kDoctorMarkedBusyMessage = 'Doctor marked busy';
+const String kDoctorMarkedOffDutyMessage = 'Doctor marked off duty';
+const String kAddAppointmentDoctorLabel = 'Doctor';
+const String kAddAppointmentDoctorHint = 'Assign doctor (optional)';
+const String kAppointmentDetailDoctorLabel = 'Doctor';
+
+// Reports dashboard (UI only)
+const String kReportsTitle = 'Reports dashboard';
+const String kReportsSubtitle =
+    'Track visits, revenue, no-shows, and conversion trends.';
+const String kReportsMenuTitle = 'Reports dashboard';
+const String kReportsMenuSubtitle = 'KPIs, trends, and quick insights';
+const String kReportsKpiVisits = 'Total visits';
+const String kReportsKpiRevenue = 'Revenue';
+const String kReportsKpiNoShows = 'No-shows';
+const String kReportsKpiFollowUpConversion = 'Follow-up conversion';
+const String kReportsTrendTitle = 'Trend breakdown';
+const String kReportsActionBilling = 'Open billing details';
+const String kReportsActionFollowUp = 'Open follow-up outcomes';

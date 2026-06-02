@@ -8,6 +8,8 @@ class AppointmentModel {
     required this.patientPhone,
     required this.scheduledAt,
     required this.status,
+    this.doctorId,
+    this.doctorName,
     this.reason,
     this.notes,
     this.reminderLabel = '30 minutes before',
@@ -22,6 +24,8 @@ class AppointmentModel {
   final String patientPhone;
   final DateTime scheduledAt;
   final AppointmentStatus status;
+  final String? doctorId;
+  final String? doctorName;
   final String? reason;
   final String? notes;
   final String reminderLabel;
@@ -37,6 +41,8 @@ class AppointmentModel {
   }
 
   AppointmentModel copyWith({
+    String? doctorId,
+    String? doctorName,
     AppointmentStatus? status,
     DateTime? scheduledAt,
     String? reason,
@@ -54,6 +60,8 @@ class AppointmentModel {
       patientPhone: patientPhone,
       scheduledAt: scheduledAt ?? this.scheduledAt,
       status: status ?? this.status,
+      doctorId: doctorId ?? this.doctorId,
+      doctorName: doctorName ?? this.doctorName,
       reason: clearReason ? null : (reason ?? this.reason),
       notes: clearNotes ? null : (notes ?? this.notes),
       reminderLabel: reminderLabel ?? this.reminderLabel,
