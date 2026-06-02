@@ -742,7 +742,7 @@ Status values:
 | Notifications / Reminders | Medium | Done | Not Started | List with filters, summary, retry; mock repository |
 | Settings | Medium | Done | Not Started | More hub + clinic profile, reminders, account, about (mock repository) |
 | Queue / Token Management | High | Done | Not Started | Queue dashboard, add token, token detail, live board (mock repository) |
-| WhatsApp Communication | High | Not Started | Not Started | Phase 2 UI-first feature for confirmations, reminders, receipts, and follow-ups |
+| WhatsApp Communication | High | Done | Not Started | Templates, compose preview, delivery logs, retry (mock repository) |
 | Visit Notes / Basic Prescription | High | Not Started | Not Started | Phase 2 UI-first feature; keep lightweight, not full EMR |
 | Billing / Receipts | High | Not Started | Not Started | Phase 2 UI-first feature for consultation bills, payments, and PDF/WhatsApp receipt sharing |
 | Follow-Up Reminders | High | Not Started | Not Started | Phase 2 UI-first feature for repeat visits after completed appointments |
@@ -822,7 +822,7 @@ Status values:
 | Dashboard | In Progress | Done | Not Started | Not Started | Home tab UI with mock data; APIs in v0.3 |
 | Settings | In Progress | Done | Not Started | Not Started | UI complete; APIs in v0.2/v0.4 |
 | Queue / Token Management | In Progress | Done | Not Started | Not Started | UI complete with mock token flow; APIs planned after UI phase |
-| WhatsApp Communication | Not Started | Not Started | Not Started | Not Started | Phase 2 UI-first module for templates, sending, and status display |
+| WhatsApp Communication | In Progress | Done | Not Started | Not Started | UI complete with templates, compose, and logs; APIs later |
 | Visit Notes / Basic Prescription | Not Started | Not Started | Not Started | Not Started | Phase 2 UI-first module; lightweight clinical notes only |
 | Billing / Receipts | Not Started | Not Started | Not Started | Not Started | Phase 2 UI-first module for consultation billing and receipt sharing |
 | Follow-Up Reminders | Not Started | Not Started | Not Started | Not Started | Phase 2 UI-first module for post-visit reminders |

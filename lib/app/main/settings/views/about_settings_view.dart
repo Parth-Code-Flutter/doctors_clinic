@@ -2,6 +2,7 @@ import 'package:doctors_clinic/app/main/settings/controllers/about_settings_cont
 import 'package:doctors_clinic/app/main/settings/widgets/settings_menu_tile.dart';
 import 'package:doctors_clinic/constants/color_constants.dart';
 import 'package:doctors_clinic/constants/string_constants.dart';
+import 'package:doctors_clinic/utils/app_widgets/app_clinic_logo.dart';
 import 'package:doctors_clinic/utils/app_widgets/app_spaces.dart';
 import 'package:doctors_clinic/utils/app_widgets/common_app_bar_widget.dart';
 import 'package:doctors_clinic/utils/text_utils/app_text.dart';
@@ -30,18 +31,11 @@ class AboutSettingsView extends GetView<AboutSettingsController> {
             ),
             child: Column(
               children: [
-                Container(
-                  width: 64,
-                  height: 64,
-                  decoration: BoxDecoration(
-                    color: kColorLogoBackground,
-                    borderRadius: BorderRadius.circular(18),
-                  ),
-                  child: const Icon(
-                    Icons.local_hospital_rounded,
-                    color: kColorLogoIcon,
-                    size: 32,
-                  ),
+                const AppClinicLogo(
+                  size: 64,
+                  iconSize: 32,
+                  borderRadius: 18,
+                  showShadow: false,
                 ),
                 Spacing.v12,
                 const BoldText(

@@ -29,6 +29,11 @@ abstract class Routes {
   static const QUEUE_ADD = _Paths.QUEUE_ADD;
   static const QUEUE_DETAIL = _Paths.QUEUE_DETAIL;
   static const QUEUE_BOARD = _Paths.QUEUE_BOARD;
+  static const WHATSAPP_HUB = _Paths.WHATSAPP_HUB;
+  static const WHATSAPP_TEMPLATES = _Paths.WHATSAPP_TEMPLATES;
+  static const WHATSAPP_COMPOSE = _Paths.WHATSAPP_COMPOSE;
+  static const WHATSAPP_LOGS = _Paths.WHATSAPP_LOGS;
+  static const WHATSAPP_TEMPLATE_EDITOR = _Paths.WHATSAPP_TEMPLATE_EDITOR;
 }
 
 abstract class _Paths {
@@ -57,4 +62,9 @@ abstract class _Paths {
   static const QUEUE_ADD = '/queue-add';
   static const QUEUE_DETAIL = '/queue-detail';
   static const QUEUE_BOARD = '/queue-board';
+  static const WHATSAPP_HUB = '/whatsapp-hub';
+  static const WHATSAPP_TEMPLATES = '/whatsapp-templates';
+  static const WHATSAPP_COMPOSE = '/whatsapp-compose';
+  static const WHATSAPP_LOGS = '/whatsapp-logs';
+  static const WHATSAPP_TEMPLATE_EDITOR = '/whatsapp-template-editor';
 }

@@ -1,5 +1,6 @@
 import 'package:doctors_clinic/app/main/settings/data/clinic_settings_model.dart';
 import 'package:doctors_clinic/constants/color_constants.dart';
+import 'package:doctors_clinic/utils/app_widgets/app_clinic_logo.dart';
 import 'package:doctors_clinic/utils/text_utils/app_text.dart';
 import 'package:doctors_clinic/utils/text_utils/text_styles.dart';
 import 'package:flutter/material.dart';
@@ -34,18 +35,11 @@ class SettingsClinicHeroCard extends StatelessWidget {
         children: [
           Row(
             children: [
-              Container(
-                width: 52,
-                height: 52,
-                decoration: BoxDecoration(
-                  color: Colors.white.withValues(alpha: 0.14),
-                  borderRadius: BorderRadius.circular(14),
-                ),
-                child: const Icon(
-                  Icons.local_hospital_rounded,
-                  color: kColorOnPrimary,
-                  size: 28,
-                ),
+              const AppClinicLogo(
+                size: 52,
+                iconSize: 28,
+                borderRadius: 14,
+                showShadow: false,
               ),
               const SizedBox(width: 14),
               Expanded(

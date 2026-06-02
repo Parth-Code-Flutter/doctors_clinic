@@ -33,6 +33,16 @@ import '../app/main/queue/views/add_queue_token_view.dart';
 import '../app/main/queue/views/queue_board_view.dart';
 import '../app/main/queue/views/queue_list_view.dart';
 import '../app/main/queue/views/queue_token_detail_view.dart';
+import '../app/main/whatsapp/bindings/whatsapp_compose_binding.dart';
+import '../app/main/whatsapp/bindings/whatsapp_hub_binding.dart';
+import '../app/main/whatsapp/bindings/whatsapp_logs_binding.dart';
+import '../app/main/whatsapp/bindings/whatsapp_template_editor_binding.dart';
+import '../app/main/whatsapp/bindings/whatsapp_templates_binding.dart';
+import '../app/main/whatsapp/views/whatsapp_compose_view.dart';
+import '../app/main/whatsapp/views/whatsapp_hub_view.dart';
+import '../app/main/whatsapp/views/whatsapp_logs_view.dart';
+import '../app/main/whatsapp/views/whatsapp_template_editor_view.dart';
+import '../app/main/whatsapp/views/whatsapp_templates_view.dart';
 import '../app/auth/clinic_setup/views/clinic_setup_view.dart';
 import '../app/auth/forgot_password/bindings/forgot_password_binding.dart';
 import '../app/auth/forgot_password/views/forgot_password_view.dart';
@@ -191,6 +201,36 @@ class AppPages {
       name: _Paths.QUEUE_BOARD,
       page: () => const QueueBoardView(),
       binding: QueueBoardBinding(),
+      preventDuplicates: true,
+    ),
+    GetPage(
+      name: _Paths.WHATSAPP_HUB,
+      page: () => const WhatsAppHubView(),
+      binding: WhatsAppHubBinding(),
+      preventDuplicates: true,
+    ),
+    GetPage(
+      name: _Paths.WHATSAPP_TEMPLATES,
+      page: () => const WhatsAppTemplatesView(),
+      binding: WhatsAppTemplatesBinding(),
+      preventDuplicates: true,
+    ),
+    GetPage(
+      name: _Paths.WHATSAPP_COMPOSE,
+      page: () => const WhatsAppComposeView(),
+      binding: WhatsAppComposeBinding(),
+      preventDuplicates: true,
+    ),
+    GetPage(
+      name: _Paths.WHATSAPP_LOGS,
+      page: () => const WhatsAppLogsView(),
+      binding: WhatsAppLogsBinding(),
+      preventDuplicates: true,
+    ),
+    GetPage(
+      name: _Paths.WHATSAPP_TEMPLATE_EDITOR,
+      page: () => const WhatsAppTemplateEditorView(),
+      binding: WhatsAppTemplateEditorBinding(),
       preventDuplicates: true,
     ),
   ];

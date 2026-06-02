@@ -17,6 +17,8 @@ class MoreTabController extends GetxController {
 
   void onQueue() => Get.toNamed(Routes.QUEUE_LIST);
 
+  void onWhatsApp() => Get.toNamed(Routes.WHATSAPP_HUB);
+
   void onRemindersList() => Get.toNamed(Routes.REMINDERS_LIST);
 
   void onReminderSettings() => Get.toNamed(Routes.SETTINGS_REMINDERS);

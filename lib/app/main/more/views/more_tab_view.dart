@@ -66,6 +66,13 @@ class MoreTabView extends GetView<MoreTabController> {
               ),
               const SizedBox(height: 10),
               SettingsMenuTile(
+                icon: Icons.chat_outlined,
+                title: kWhatsAppMenuTitle,
+                subtitle: kWhatsAppMenuSubtitle,
+                onTap: controller.onWhatsApp,
+              ),
+              const SizedBox(height: 10),
+              SettingsMenuTile(
                 icon: Icons.tune_rounded,
                 title: kSettingsRemindersTitle,
                 subtitle: controller.reminderMenuSubtitle,

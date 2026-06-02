@@ -463,3 +463,83 @@ const String kQueueStatusUpdatedMessage = 'Queue status updated';
 const String kQueueNotesSavedMessage = 'Queue notes saved';
 const String kQueueAddTooltip = 'Add queue token';
 const String kQueueBoardTooltip = 'Open live board';
+
+// WhatsApp communication (UI only)
+const String kWhatsAppTitle = 'WhatsApp communication';
+const String kWhatsAppSubtitle =
+    'Templates, quick compose, and delivery logs for patient messaging.';
+const String kWhatsAppMenuTitle = 'WhatsApp communication';
+const String kWhatsAppMenuSubtitle =
+    'Templates, compose flow, and delivery log';
+const String kWhatsAppTemplatesTitle = 'Message templates';
+const String kWhatsAppTemplatesSubtitle =
+    'Manage reminder, follow-up, and receipt templates.';
+const String kWhatsAppTemplatesSearchHint = 'Search template';
+const String kWhatsAppTemplatesEmpty = 'No templates found.';
+const String kWhatsAppTemplateReminderTitle = 'Visit reminder';
+const String kWhatsAppTemplateFollowUpTitle = 'Follow-up check-in';
+const String kWhatsAppTemplateReceiptTitle = 'Receipt shared';
+const String kWhatsAppTemplateReminderBody =
+    'Hello {{patientName}}, reminder for your appointment at {{clinicName}} on {{date}} at {{time}}.';
+const String kWhatsAppTemplateFollowUpBody =
+    'Hello {{patientName}}, hope you are doing well. Reply to book a follow-up visit.';
+const String kWhatsAppTemplateReceiptBody =
+    'Hello {{patientName}}, your consultation receipt is shared. Contact {{clinicPhone}} for any help.';
+const String kWhatsAppTypeReminder = 'Reminder';
+const String kWhatsAppTypeFollowUp = 'Follow-up';
+const String kWhatsAppTypeReceipt = 'Receipt';
+const String kWhatsAppTypeCustom = 'Custom';
+const String kWhatsAppTemplateDefaultBadge = 'Default';
+const String kWhatsAppTemplateInactiveBadge = 'Inactive';
+const String kWhatsAppEditTemplate = 'Edit';
+const String kWhatsAppComposeTitle = 'Compose message';
+const String kWhatsAppComposeSubtitle =
+    'Pick patient and template, then preview before sending.';
+const String kWhatsAppPatientHint = 'Select patient';
+const String kWhatsAppTemplateHint = 'Select template';
+const String kWhatsAppMessageHint = 'Message preview';
+const String kWhatsAppComposeNote =
+    'UI-only mode: messages are queued locally and shown in logs.';
+const String kWhatsAppSendButton = 'Queue message';
+const String kWhatsAppMessageQueued = 'Message queued in WhatsApp logs';
+const String kWhatsAppLogsTitle = 'Delivery logs';
+const String kWhatsAppLogsSubtitle =
+    'Track queued, sent, and failed WhatsApp messages.';
+const String kWhatsAppLogsSearchHint = 'Search patient or template';
+const String kWhatsAppLogsEmpty = 'No delivery logs yet.';
+const String kWhatsAppLogQueued = 'Queued';
+const String kWhatsAppLogSent = 'Sent';
+const String kWhatsAppLogFailed = 'Failed';
+const String kWhatsAppSummaryTemplates = 'Templates';
+const String kWhatsAppSummaryQueued = 'Queued';
+const String kWhatsAppSummarySentToday = 'Sent today';
+const String kWhatsAppSummaryFailed = 'Failed';
+const String kWhatsAppRetryButton = 'Retry';
+const String kWhatsAppRetryQueued = 'Message re-queued';
+const String kWhatsAppTemplateEditorTitle = 'Edit template';
+const String kWhatsAppTemplateEditorSubtitle =
+    'Tune copy and placeholders before enabling for staff use.';
+const String kWhatsAppTemplateTitleHint = 'Template title';
+const String kWhatsAppTemplateBodyHint = 'Template body';
+const String kWhatsAppVariableLabel = 'Insert variable';
+const String kWhatsAppTemplateActiveTitle = 'Template active';
+const String kWhatsAppTemplateActiveSubtitle = 'Show in compose template list.';
+const String kWhatsAppTemplateDefaultTitle = 'Mark as default';
+const String kWhatsAppTemplateDefaultSubtitle =
+    'Preselect this template in compose flow.';
+const String kWhatsAppTemplateSaveButton = 'Save template';
+const String kWhatsAppTemplateSaved = 'Template updated';
+const String kWhatsAppValidationSelectionRequired =
+    'Please select patient and template.';
+const String kWhatsAppValidationMessageRequired = 'Message cannot be empty.';
+const String kWhatsAppValidationTemplateRequired =
+    'Template title and body are required.';
+const String kWhatsAppMockFailureReason =
+    'Delivery failed: recipient blocked business account';
+const List<String> kWhatsAppTemplateVariables = [
+  '{{patientName}}',
+  '{{clinicName}}',
+  '{{date}}',
+  '{{time}}',
+  '{{clinicPhone}}',
+];
