@@ -156,6 +156,12 @@ class BillingDetailView extends GetView<BillingDetailController> {
             ),
             const SizedBox(height: 10),
             appButton(
+              onPressed: controller.onCreateFollowUp,
+              buttonText: kFollowUpCreateFromBillingButton,
+              variant: AppButtonVariant.secondary,
+            ),
+            const SizedBox(height: 10),
+            appButton(
               onPressed: controller.onEdit,
               buttonText: kBillingEditButton,
               variant: AppButtonVariant.secondary,

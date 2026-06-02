@@ -21,6 +21,8 @@ class MoreTabController extends GetxController {
 
   void onBilling() => Get.toNamed(Routes.BILLING_LIST);
 
+  void onFollowUps() => Get.toNamed(Routes.FOLLOW_UP_LIST);
+
   void onRemindersList() => Get.toNamed(Routes.REMINDERS_LIST);
 
   void onReminderSettings() => Get.toNamed(Routes.SETTINGS_REMINDERS);

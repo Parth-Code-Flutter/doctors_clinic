@@ -635,3 +635,45 @@ const String kBillingQtyLabel = 'Qty';
 const String kBillingPriceLabel = 'Price';
 const String kBillingNoteLabel = 'Note';
 const List<String> kBillingPaymentModes = ['Cash', 'UPI', 'Card', 'Bank'];
+
+// Follow-up reminders (UI only)
+const String kFollowUpTitle = 'Follow-up reminders';
+const String kFollowUpSubtitle =
+    'Track due patients and convert follow-ups into completed outcomes.';
+const String kFollowUpMenuTitle = 'Follow-up reminders';
+const String kFollowUpMenuSubtitle =
+    'Due list, quick reschedule, and completion tracking';
+const String kFollowUpEditorTitle = 'Create follow-up';
+const String kFollowUpEditorSubtitle =
+    'Schedule a follow-up linked to visit, billing, or general patient care.';
+const String kFollowUpDetailTitle = 'Follow-up detail';
+const String kFollowUpCreateFromVisitButton = 'Create follow-up';
+const String kFollowUpCreateFromBillingButton = 'Create follow-up';
+const String kFollowUpAddTooltip = 'Add follow-up';
+const String kFollowUpSummaryToday = 'Today';
+const String kFollowUpSummaryUpcoming = 'Upcoming';
+const String kFollowUpSummaryCompleted = 'Completed';
+const String kFollowUpSearchHint = 'Search patient name or phone';
+const String kFollowUpFilterToday = 'Today';
+const String kFollowUpFilterUpcoming = 'Upcoming';
+const String kFollowUpFilterCompleted = 'Completed';
+const String kFollowUpFilterMissed = 'Missed';
+const String kFollowUpFilterAll = 'All';
+const String kFollowUpEmptyTitle = 'No follow-ups found.';
+const String kFollowUpNoReason = 'No reason added';
+const String kFollowUpMarkDoneShort = 'Done';
+const String kFollowUpPatientHint = 'Select patient';
+const String kFollowUpReasonHint = 'Follow-up reason';
+const String kFollowUpNotesHint = 'Notes (optional)';
+const String kFollowUpSaveButton = 'Save follow-up';
+const String kFollowUpSavedMessage = 'Follow-up saved';
+const String kFollowUpValidationPatientRequired = 'Please select a patient.';
+const String kFollowUpValidationReasonRequired =
+    'Please add follow-up reason before saving.';
+const String kFollowUpReasonSectionTitle = 'Reason';
+const String kFollowUpNotesSectionTitle = 'Notes';
+const String kFollowUpMarkCompletedButton = 'Mark completed';
+const String kFollowUpMarkMissedButton = 'Mark missed';
+const String kFollowUpEditButton = 'Edit follow-up';
+const String kFollowUpMarkedCompletedMessage = 'Follow-up marked completed';
+const String kFollowUpMarkedMissedMessage = 'Follow-up marked missed';

@@ -127,6 +127,12 @@ class VisitDetailView extends GetView<VisitDetailController> {
             ),
             const SizedBox(height: 10),
             appButton(
+              onPressed: controller.onCreateFollowUp,
+              buttonText: kFollowUpCreateFromVisitButton,
+              variant: AppButtonVariant.secondary,
+            ),
+            const SizedBox(height: 10),
+            appButton(
               onPressed: controller.onEdit,
               buttonText: kVisitEditButton,
               variant: AppButtonVariant.secondary,

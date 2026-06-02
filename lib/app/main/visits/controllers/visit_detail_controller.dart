@@ -2,6 +2,7 @@ import 'package:doctors_clinic/app/main/visits/data/visit_repository.dart';
 import 'package:doctors_clinic/app/main/visits/models/visit_record_model.dart';
 import 'package:doctors_clinic/app/main/visits/visit_route_arguments.dart';
 import 'package:doctors_clinic/app/main/billing/billing_route_arguments.dart';
+import 'package:doctors_clinic/app/main/followups/follow_up_route_arguments.dart';
 import 'package:doctors_clinic/routes/app_pages.dart';
 import 'package:get/get.dart';
 
@@ -48,6 +49,20 @@ class VisitDetailController extends GetxController {
       arguments: {
         BillingRouteArgs.patientId: current.patientId,
         BillingRouteArgs.visitId: current.id,
+      },
+    );
+  }
+
+  Future<void> onCreateFollowUp() async {
+    final current = visit.value;
+    if (current == null) {
+      return;
+    }
+    await Get.toNamed(
+      Routes.FOLLOW_UP_EDITOR,
+      arguments: {
+        FollowUpRouteArgs.patientId: current.patientId,
+        FollowUpRouteArgs.visitId: current.id,
       },
     );
   }

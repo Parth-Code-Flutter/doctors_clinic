@@ -1,6 +1,7 @@
 import 'package:doctors_clinic/app/main/billing/billing_route_arguments.dart';
 import 'package:doctors_clinic/app/main/billing/data/billing_repository.dart';
 import 'package:doctors_clinic/app/main/billing/models/billing_receipt_model.dart';
+import 'package:doctors_clinic/app/main/followups/follow_up_route_arguments.dart';
 import 'package:doctors_clinic/constants/string_constants.dart';
 import 'package:doctors_clinic/routes/app_pages.dart';
 import 'package:doctors_clinic/utils/ui_utils/app_toast.dart';
@@ -46,6 +47,20 @@ class BillingDetailController extends GetxController {
       kBillingShareMockMessage,
       snackPosition: SnackPosition.BOTTOM,
       margin: const EdgeInsets.all(16),
+    );
+  }
+
+  Future<void> onCreateFollowUp() async {
+    final current = receipt.value;
+    if (current == null) {
+      return;
+    }
+    await Get.toNamed(
+      Routes.FOLLOW_UP_EDITOR,
+      arguments: {
+        FollowUpRouteArgs.patientId: current.patientId,
+        FollowUpRouteArgs.receiptId: current.id,
+      },
     );
   }
 }

@@ -39,6 +39,9 @@ abstract class Routes {
   static const BILLING_LIST = _Paths.BILLING_LIST;
   static const BILLING_EDITOR = _Paths.BILLING_EDITOR;
   static const BILLING_DETAIL = _Paths.BILLING_DETAIL;
+  static const FOLLOW_UP_LIST = _Paths.FOLLOW_UP_LIST;
+  static const FOLLOW_UP_EDITOR = _Paths.FOLLOW_UP_EDITOR;
+  static const FOLLOW_UP_DETAIL = _Paths.FOLLOW_UP_DETAIL;
 }
 
 abstract class _Paths {
@@ -77,4 +80,7 @@ abstract class _Paths {
   static const BILLING_LIST = '/billing-list';
   static const BILLING_EDITOR = '/billing-editor';
   static const BILLING_DETAIL = '/billing-detail';
+  static const FOLLOW_UP_LIST = '/follow-up-list';
+  static const FOLLOW_UP_EDITOR = '/follow-up-editor';
+  static const FOLLOW_UP_DETAIL = '/follow-up-detail';
 }
