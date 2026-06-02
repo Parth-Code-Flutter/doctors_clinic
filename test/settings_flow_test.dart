@@ -37,6 +37,7 @@ void main() {
     expect(find.text(kDashboardMockClinicName), findsOneWidget);
     expect(find.text(kSettingsClinicProfileTitle), findsOneWidget);
     expect(find.text(kRemindersListMenuTitle), findsOneWidget);
+    await tester.scrollUntilVisible(find.text(kSettingsRemindersTitle), 120);
     expect(find.text(kSettingsRemindersTitle), findsOneWidget);
   });
 

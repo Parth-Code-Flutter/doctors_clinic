@@ -96,7 +96,16 @@ Do not put API calls, navigation decisions, or multi-step workflows directly in 
 
 ---
 
-## 7. Adding new rules later
+## 7. UI quality standard (mandatory)
+
+- For every new screen or major UI update, prefer a **modern, attractive, and current visual style** over plain placeholder-like layouts.
+- UI must stay **easy to use for reception staff**: clear hierarchy, obvious actions, readable spacing, and simple navigation.
+- Avoid boring or repetitive layouts; use consistent visual variation (cards, status chips, sectioning, icon cues) while staying aligned with existing app theme/tokens.
+- Prioritize practical usability first, then polish (no flashy effects that reduce speed or clarity).
+
+---
+
+## 8. Adding new rules later
 
 This file is **living documentation**. New rules can be appended as numbered sections; all future work must comply with the full list unless explicitly overridden for a one-off task.
 

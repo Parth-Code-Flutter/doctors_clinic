@@ -406,3 +406,60 @@ const String kRemindersMockFailureDelivery =
     'Could not deliver — patient number unreachable';
 const String kRemindersManualSentNote =
     'Delivery APIs connect in the next release. Status updated locally.';
+
+// Queue / token management
+const String kQueueTitle = 'Queue';
+const String kQueueSubtitle =
+    'Manage walk-ins and live token flow for faster front desk operations.';
+const String kQueueMenuTitle = 'Queue and token';
+const String kQueueMenuSubtitle = 'Walk-in queue, token board, and statuses';
+const String kQueueAddTitle = 'Add to queue';
+const String kQueueAddSubtitle =
+    'Pick a patient and create a queue token for consultation.';
+const String kQueueDetailTitle = 'Queue token details';
+const String kQueueBoardTitle = 'Live queue board';
+const String kQueueNowServingLabel = 'Now serving';
+const String kQueueNowServingEmpty = 'Waiting for next patient';
+const String kQueueBoardEmpty = 'No active tokens right now.';
+const String kQueueTokenShort = 'Token';
+const String kQueuePriorityLabel = 'Priority token';
+const String kQueuePrioritySwitchTitle = 'Mark as priority';
+const String kQueuePrioritySwitchSubtitle =
+    'Priority tokens are highlighted at the top of queue.';
+const String kQueuePatientHint = 'Select patient';
+const String kQueueReasonHint = 'Reason for visit';
+const String kQueueNotesHint = 'Queue notes (optional)';
+const String kQueueCreateButton = 'Create token';
+const String kQueueSaveNotesButton = 'Save notes';
+const String kQueueSearchHint = 'Search token, patient, or reason';
+const String kQueueFilterAll = 'All';
+const String kQueueFilterWaiting = 'Waiting';
+const String kQueueFilterWithDoctor = 'In consultation';
+const String kQueueFilterCompleted = 'Completed';
+const String kQueueFilterSkipped = 'Skipped';
+const String kQueueFilterPriority = 'Priority';
+const String kQueueSummaryWaiting = 'Waiting';
+const String kQueueSummaryInConsultation = 'In consult';
+const String kQueueSummaryCompleted = 'Completed';
+const String kQueueSummarySkipped = 'Skipped';
+const String kQueueStatusWaiting = 'Waiting';
+const String kQueueStatusWithDoctor = 'In consultation';
+const String kQueueStatusCompleted = 'Completed';
+const String kQueueStatusSkipped = 'Skipped';
+const String kQueueActionWaiting = 'Move to waiting';
+const String kQueueActionWithDoctor = 'Start consult';
+const String kQueueActionCompleted = 'Mark done';
+const String kQueueActionSkipped = 'Skip token';
+const String kQueueActionsTitle = 'Quick actions';
+const String kQueueReasonTitle = 'Visit reason';
+const String kQueueEmptyTitle = 'Queue is empty';
+const String kQueueEmptySearchSubtitle =
+    'Try another search or filter to find tokens.';
+const String kQueueEmptyFilterSubtitle =
+    'Create a token to start the queue for today.';
+const String kQueueValidationPatientRequired = 'Please select a patient first.';
+const String kQueueTokenCreatedMessage = 'Queue token created';
+const String kQueueStatusUpdatedMessage = 'Queue status updated';
+const String kQueueNotesSavedMessage = 'Queue notes saved';
+const String kQueueAddTooltip = 'Add queue token';
+const String kQueueBoardTooltip = 'Open live board';

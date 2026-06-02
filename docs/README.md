@@ -524,15 +524,15 @@ Important principles:
 - Add clear privacy policy and terms
 - Follow India's Digital Personal Data Protection Act requirements
 
-MVP should avoid:
+Phase 1 MVP should avoid:
 
-- Prescription generation
+- Full prescription generation workflows
 - Diagnosis storage
 - Lab report storage
 - Deep medical history
 - Insurance or payment records
 
-These can be added later after stronger compliance planning.
+Lightweight visit notes and basic prescriptions can be added in Phase 2, but deeper EMR, diagnosis, lab, and insurance workflows should wait for stronger compliance planning.
 
 ## 18. Development Phases
 
@@ -553,29 +553,39 @@ Features:
 - Appointment status update
 - Basic reminder status
 
-### Phase 2: Reminder Automation
+### Phase 2: Clinic Workflow Expansion
 
-Goal: Reduce manual work for clinic staff.
+Goal: Make the product easier and more useful for daily small-clinic and medium-clinic operations, starting with UI-only screens and mock data before API integration.
 
 Features:
 
+- Queue / token management
+- WhatsApp patient communication
+- Basic visit notes and prescription
+- Billing and receipt sharing
+- Follow-up reminders
+- Staff roles
+- Multi-doctor schedule
+- Reports dashboard
+- QR patient self-registration
+- Google review request
 - Scheduled SMS reminders
 - Scheduled WhatsApp reminders
 - Reminder retry
 - Reminder delivery status
 - Default reminder time setting
 
-### Phase 3: Staff & Multi-Doctor Support
+### Phase 3: Medium Clinic Controls
 
-Goal: Support larger clinics.
+Goal: Add deeper operational controls for clinics with multiple staff members, doctors, and repeatable workflows after the Phase 2 UI is validated.
 
 Features:
 
-- Staff accounts
-- Role permissions
-- Multiple doctors
-- Doctor-wise appointment calendar
-- Receptionist workflow
+- Advanced role permissions
+- Staff shift and availability management
+- Doctor-wise holidays and blocked slots
+- Receptionist task workflow
+- Activity logs for important actions
 
 ### Phase 4: Growth Features
 
@@ -583,8 +593,8 @@ Goal: Help clinics improve repeat visits and reputation.
 
 Features:
 
-- Follow-up reminders
-- Google review request
+- Automated follow-up campaigns
+- Google review performance tracking
 - Missed appointment follow-up
 - Birthday or health camp messages
 - Patient segmentation
@@ -731,12 +741,18 @@ Status values:
 | Appointment Detail | Medium | Done | Not Started | Status actions + reminder placeholder |
 | Notifications / Reminders | Medium | Done | Not Started | List with filters, summary, retry; mock repository |
 | Settings | Medium | Done | Not Started | More hub + clinic profile, reminders, account, about (mock repository) |
-| Staff Management | Future | Not Started | Not Started | Phase 3 feature |
-| Doctor Management | Future | Not Started | Not Started | Phase 3 feature |
+| Queue / Token Management | High | Done | Not Started | Queue dashboard, add token, token detail, live board (mock repository) |
+| WhatsApp Communication | High | Not Started | Not Started | Phase 2 UI-first feature for confirmations, reminders, receipts, and follow-ups |
+| Visit Notes / Basic Prescription | High | Not Started | Not Started | Phase 2 UI-first feature; keep lightweight, not full EMR |
+| Billing / Receipts | High | Not Started | Not Started | Phase 2 UI-first feature for consultation bills, payments, and PDF/WhatsApp receipt sharing |
+| Follow-Up Reminders | High | Not Started | Not Started | Phase 2 UI-first feature for repeat visits after completed appointments |
+| Staff Management | Medium | Not Started | Not Started | Phase 2 UI-first feature for owner, doctor, and receptionist roles |
+| Doctor Management | Medium | Not Started | Not Started | Phase 2 UI-first feature for multi-doctor clinic schedules |
+| Reports Dashboard | Medium | Not Started | Not Started | Phase 2 UI-first feature for appointments, patients, revenue, dues, and reminder success |
+| QR Patient Self-Registration | Medium | Not Started | Not Started | Phase 2 UI-first feature for reception desk onboarding |
+| Google Review Request | Medium | Not Started | Not Started | Phase 2 UI-first feature after marking visits completed |
 | Branch Management | Future | Not Started | Not Started | Phase 5 feature |
 | Patient Timeline | Future | Not Started | Not Started | Phase 5 feature |
-| Billing | Future | Not Started | Not Started | Phase 5 feature |
-| Reports | Future | Not Started | Not Started | Phase 5 feature |
 | Subscription Plan | Future | Not Started | Not Started | SaaS billing feature |
 | Patient Portal | Future | Not Started | Not Started | Patient-facing feature |
 
@@ -766,6 +782,30 @@ Status values:
 | `/reminders` | GET | Medium | Not Started | Notifications / Reminders |
 | `/appointments/:id/send-reminder` | POST | Medium | Not Started | Appointment Detail |
 | `/reminders/:id/retry` | POST | Low | Not Started | Notifications / Reminders |
+| `/queue` | GET | High | Not Started | Queue / Token Management |
+| `/queue` | POST | High | Not Started | Queue / Token Management |
+| `/queue/:id/status` | PATCH | High | Not Started | Queue / Token Management |
+| `/communications/whatsapp/templates` | GET | High | Not Started | WhatsApp Communication |
+| `/communications/whatsapp/send` | POST | High | Not Started | WhatsApp Communication |
+| `/visits` | POST | High | Not Started | Visit Notes / Basic Prescription |
+| `/visits/:id` | GET | High | Not Started | Visit Notes / Basic Prescription |
+| `/visits/:id/prescription` | PATCH | High | Not Started | Visit Notes / Basic Prescription |
+| `/bills` | GET | High | Not Started | Billing / Receipts |
+| `/bills` | POST | High | Not Started | Billing / Receipts |
+| `/bills/:id/payment` | POST | Medium | Not Started | Billing / Receipts |
+| `/bills/:id/share-receipt` | POST | Medium | Not Started | Billing / Receipts |
+| `/follow-ups` | GET | High | Not Started | Follow-Up Reminders |
+| `/follow-ups` | POST | High | Not Started | Follow-Up Reminders |
+| `/follow-ups/:id/complete` | POST | Medium | Not Started | Follow-Up Reminders |
+| `/staff` | GET | Medium | Not Started | Staff Management |
+| `/staff` | POST | Medium | Not Started | Staff Management |
+| `/staff/:id` | PATCH | Medium | Not Started | Staff Management |
+| `/doctors` | GET | Medium | Not Started | Doctor Management |
+| `/doctors` | POST | Medium | Not Started | Doctor Management |
+| `/reports/clinic-summary` | GET | Medium | Not Started | Reports Dashboard |
+| `/patients/self-registration-link` | POST | Medium | Not Started | QR Patient Self-Registration |
+| `/patients/self-register` | POST | Medium | Not Started | QR Patient Self-Registration |
+| `/review-requests` | POST | Medium | Not Started | Google Review Request |
 
 ### 24.3 Module Progress
 
@@ -781,16 +821,25 @@ Status values:
 | Reminder System | In Progress | Done | Not Started | Not Started | Reminders log UI; delivery APIs in v0.4 |
 | Dashboard | In Progress | Done | Not Started | Not Started | Home tab UI with mock data; APIs in v0.3 |
 | Settings | In Progress | Done | Not Started | Not Started | UI complete; APIs in v0.2/v0.4 |
+| Queue / Token Management | In Progress | Done | Not Started | Not Started | UI complete with mock token flow; APIs planned after UI phase |
+| WhatsApp Communication | Not Started | Not Started | Not Started | Not Started | Phase 2 UI-first module for templates, sending, and status display |
+| Visit Notes / Basic Prescription | Not Started | Not Started | Not Started | Not Started | Phase 2 UI-first module; lightweight clinical notes only |
+| Billing / Receipts | Not Started | Not Started | Not Started | Not Started | Phase 2 UI-first module for consultation billing and receipt sharing |
+| Follow-Up Reminders | Not Started | Not Started | Not Started | Not Started | Phase 2 UI-first module for post-visit reminders |
+| Staff & Doctor Management | Not Started | Not Started | Not Started | Not Started | Phase 2 UI-first module for roles and multi-doctor schedules |
+| Reports | Not Started | Not Started | Not Started | Not Started | Phase 2 UI-first module for clinic owner summary metrics |
+| QR Self-Registration | Not Started | Not Started | Not Started | Not Started | Phase 2 UI-first module for patient intake at reception |
 
 ### 24.4 Release Progress
 
 | Version | Goal | Status | Notes |
 | --- | --- | --- | --- |
 | v0.1 | Static UI screens and navigation | Done | Full auth + clinic setup UI flow complete |
-| v0.2 | Auth, clinic setup, patient CRUD | Not Started | Wire auth/clinic APIs + patient CRUD |
-| v0.3 | Appointment CRUD and dashboard | Not Started | First clinic demo version |
-| v0.4 | Manual reminders | Not Started | Can test real workflow |
-| v0.5 | Automated reminders | Not Started | Pilot-ready version |
+| v0.2 | Phase 2 clinic workflow UI | Not Started | Queue, WhatsApp communication, visit notes, billing, follow-ups, staff/doctors, reports, QR self-registration, review requests |
+| v0.3 | Auth, clinic setup, patient CRUD APIs | Not Started | Wire auth/clinic APIs + patient CRUD |
+| v0.4 | Appointment CRUD and dashboard APIs | Not Started | First clinic demo version with connected data |
+| v0.5 | Manual reminders and communication APIs | Not Started | Can test real workflow |
+| v0.6 | Automated reminders | Not Started | Pilot-ready version |
 | v1.0 | Paid MVP launch | Not Started | Stable enough for first paying clinics |
 
 ## 25. Important Product Decision

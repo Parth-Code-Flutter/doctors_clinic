@@ -25,6 +25,10 @@ abstract class Routes {
   static const SETTINGS_ACCOUNT = _Paths.SETTINGS_ACCOUNT;
   static const SETTINGS_ABOUT = _Paths.SETTINGS_ABOUT;
   static const REMINDERS_LIST = _Paths.REMINDERS_LIST;
+  static const QUEUE_LIST = _Paths.QUEUE_LIST;
+  static const QUEUE_ADD = _Paths.QUEUE_ADD;
+  static const QUEUE_DETAIL = _Paths.QUEUE_DETAIL;
+  static const QUEUE_BOARD = _Paths.QUEUE_BOARD;
 }
 
 abstract class _Paths {
@@ -49,4 +53,8 @@ abstract class _Paths {
   static const SETTINGS_ACCOUNT = '/settings-account';
   static const SETTINGS_ABOUT = '/settings-about';
   static const REMINDERS_LIST = '/reminders-list';
+  static const QUEUE_LIST = '/queue-list';
+  static const QUEUE_ADD = '/queue-add';
+  static const QUEUE_DETAIL = '/queue-detail';
+  static const QUEUE_BOARD = '/queue-board';
 }
